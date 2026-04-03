@@ -1,15 +1,60 @@
 #include "minishell.h"
 
+static int	ft_readline_signal_hook(void)
+{
+	if (g_exit_status == SIGINT)
+	{
+		g_exit_status = 130;
+		rl_on_new_line();
+		rl_replace_line("", 0);
+		rl_redisplay();
+	}
+	return (0);
+}
+
+static void	ft_sigint_handler(int sig)
+{
+	g_exit_status = sig;
+	write(1, "\n", 1);
+}
+
+void	ft_setup_signals(void)
+{
+	struct sigaction	sa_int;
+	struct sigaction	sa_quit;
+
+	ft_bzero(&sa_int, sizeof(sa_int));
+	sa_int.sa_handler = ft_sigint_handler;
+	sigemptyset(&sa_int.sa_mask);
+	sa_int.sa_flags = 0;
+	sigaction(SIGINT, &sa_int, NULL);
+	ft_bzero(&sa_quit, sizeof(sa_quit));
+	sa_quit.sa_handler = SIG_IGN;
+	sigemptyset(&sa_quit.sa_mask);
+	sigaction(SIGQUIT, &sa_quit, NULL);
+	rl_signal_event_hook = ft_readline_signal_hook;
+}
+
+void	ft_reset_signals(void)
+{
+	struct sigaction	sa;
+
+	ft_bzero(&sa, sizeof(sa));
+	sa.sa_handler = SIG_DFL;
+	sigemptyset(&sa.sa_mask);
+	sigaction(SIGINT, &sa, NULL);
+	sigaction(SIGQUIT, &sa, NULL);
+}
+
 int	ft_cleanup_runtime(t_data **data)
 {
 	if (!data || !*data)
 		return (1);
-
 	ft_free((void **)&(*data)->line);
-	(*data)->pipeline = NULL;
-
 	if ((*data)->cmds)
 		ft_free_cmds(*data);
+	(*data)->cmds = NULL;
+	(*data)->pipeline = NULL;
 	if ((*data)->quit || (*data)->malloc_err)
 		return (1);
 	return (0);
@@ -17,6 +62,7 @@ int	ft_cleanup_runtime(t_data **data)
 
 int	ft_cleanup_quit(t_data **data, bool malloc_err)
 {
+	rl_clear_history();
 	ft_free_data(data);
 	if (malloc_err)
 		return (write(2, "minishell> SYSCALL ERROR: Malloc. Exiting\n", 42), 1);
@@ -41,24 +87,33 @@ t_data	*ft_init_data(int ac, char **av, char **env)
 
 bool	ft_prompt(t_data *data)
 {
+	t_dlist	*tmp;
+
 	while (data && !data->malloc_err && !data->quit)
 	{
 		data->line = readline("minishell>");
 		if (!data->line)
 		{
-			/* Ctrl-D / EOF */
 			data->quit = true;
-			break;
+			break ;
+		}
+		if (data->line[0] != '\0')
+			add_history(data->line);
+		if (!ft_tokenize(data))
+			return (false);
+		tmp = data->pipeline;
+		while (tmp)
+		{
+			printf("LINEEEE[%s]\n", (char *)tmp->content);
+			tmp = tmp->next;
 		}
 		if (!ft_cmds_create(data) || !ft_expander(data))
 			return (false);
 		if (!ft_direct_token_pointers(data))
 			return (false);
-
-		/* TODO: execution */
-
+		ft_cmds_distro(data);
 		if (ft_cleanup_runtime(&data))
-			break;
+			break ;
 	}
 	return (data && !data->malloc_err);
 }
@@ -70,9 +125,8 @@ int	main(int ac, char **av, char **env)
 	data = ft_init_data(ac, av, env);
 	if (!data)
 		return (ft_cleanup_quit(NULL, true));
+	ft_setup_signals();
 	if (ft_prompt(data))
 		return (ft_cleanup_quit(&data, data->malloc_err));
-	write(1, "T\n", 2);
-	ft_print_data(data);
 	return (ft_cleanup_quit(&data, data->malloc_err));
 }

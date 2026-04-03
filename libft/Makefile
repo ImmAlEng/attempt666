@@ -27,8 +27,8 @@ SRCS = srcs/ft_atoi.c srcs/ft_bzero.c srcs/ft_calloc.c srcs/ft_isalnum.c srcs/ft
 	srcs/ft_putchar_fd.c srcs/ft_putnbr_fd.c srcs/ft_putstr_fd.c srcs/ft_putendl_fd.c \
 	limit/ft_limit_int_ll.c limit/ft_limit_short_sst.c limit/ft_limit_unsigned.c srcs/ft_table.c \
 	srcs/ft_free_null.c srcs/ft_arr.c srcs/ft_str_f.c srcs/ft_arr_f.c srcs/ft_str_checks.c \
-	srcs/ft_insertsubstr.c srcs/ft_delsubstr.c srcs/ft_split_f.c \
-	srcs/ft_arr_checks.c srcs/ft_isspace.c gnl/get_next_line.c gnl/get_next_line_utils.c
+	srcs/ft_insertsubstr.c srcs/ft_delsubstr.c srcs/ft_split_f.c srcs/ft_strcpy.c srcs/ft_strcat.c \
+	srcs/ft_arr_checks.c srcs/ft_isspace.c gnl/get_next_line.c gnl/get_next_line_utils.c srcs/ft_strcmp.c
 BONUS_OBJS      = $(BONUS_SRCS:.c=.o)
 BONUS_DEPS	= $(BONUS_OBJS:.o=.d) 
 OBJS    = $(SRCS:.c=.o)

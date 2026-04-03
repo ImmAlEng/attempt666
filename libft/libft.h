@@ -61,6 +61,9 @@ char					**ft_split_f(char const *s, bool (*f)(unsigned char));
 
 /*		FT_STR_UTIL		*/
 size_t					ft_strlen(const char *s);
+char					*ft_strcpy(char *dest, char *src);
+char					*ft_strcat(char *dest, char *src);
+int						ft_strcmp(char *s1, char *s2);
 size_t					ft_strlcpy(char *dst, const char *src, size_t size);
 size_t					ft_strlcat(char *dst, const char *src, size_t size);
 char					*ft_strchr(const char *s, int c);

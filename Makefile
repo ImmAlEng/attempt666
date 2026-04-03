@@ -25,7 +25,23 @@ SRCS    = ft_cmds_init.c \
 	ft_unquoted_expansion.c \
 	ft_free_cmds.c \
 	ft_convert_tokens.c \
-	main.c
+	main.c \
+	ft_cmds_distro.c \
+	ft_exec_builtin.c \
+	ft_exec_external.c \
+	ft_exec_pipeline.c \
+	ft_handle_pipes.c \
+	ft_handle_redirs.c \
+	ft_exec_heredoc.c \
+	ft_heredoc_expand.c \
+	ft_echo.c \
+	ft_pwd.c \
+	ft_unset.c \
+	ft_export.c \
+	ft_export_print.c \
+	ft_export_utils.c \
+	ft_cd.c \
+	ft_cd_utils.c
 
 OBJS        = $(SRCS:.c=.o)
 DEPS        = $(OBJS:.o=.d)
@@ -73,4 +89,3 @@ re: fclean all
 -include $(DEPS) $(VAL_DEPS)
 
 .PHONY: all val valrun clean fclean re
-

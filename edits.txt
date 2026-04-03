@@ -1,0 +1,42 @@
+Here is the full changelog of what I changed in this session.
+
+1. Added signal API support in header
+- Added signal include in minishell.h.
+- Added signal function declarations in minishell.h and minishell.h:
+  - ft_setup_signals
+  - ft_reset_signals
+
+2. Implemented signal handling in main loop
+- Added readline hook callback in main.c:
+  - ft_readline_signal_hook
+  - Handles prompt redraw outside the signal handler using rl_on_new_line, rl_replace_line, rl_redisplay.
+- Added SIGINT handler in main.c:
+  - ft_sigint_handler now only sets global signal state and writes newline (async-signal-safe behavior).
+- Added parent signal setup in main.c:
+  - SIGINT handled by ft_sigint_handler
+  - SIGQUIT ignored
+  - readline hook assignment via rl_signal_event_hook
+- Added reset-to-default helper in main.c:
+  - ft_reset_signals restores SIGINT/SIGQUIT to SIG_DFL.
+- Wired setup call in main startup at main.c:
+  - ft_setup_signals is now called after data initialization.
+
+3. Reset child process signals before exec
+- Added ft_reset_signals in child branch for external execution at ft_exec_external.c.
+- Added ft_reset_signals in child branch for pipeline execution at ft_exec_pipeline.c.
+
+4. Important correction made after your warning
+- Initial draft used readline UI calls directly inside the signal handler (unsafe).
+- I replaced that approach with readline hook based handling in main.c and kept the signal handler minimal in main.c.
+
+5. Validation
+- TPD
+
+6. Readline history integration
+- Added add_history(data->line) in main.c for non-empty input lines.
+- This enables interactive command history as required by subject/eval.
+
+7. Readline history cleanup
+- Added rl_clear_history() in shutdown path (ft_cleanup_quit in main.c).
+- This is optional for eval, but better practice for cleaner teardown.
+
