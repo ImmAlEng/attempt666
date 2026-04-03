@@ -1,4 +1,4 @@
-Here is the full changelog of what I changed in this session.
+Here is the full changelog 
 
 1. Added signal API support in header
 - Added signal include in minishell.h.
@@ -25,7 +25,7 @@ Here is the full changelog of what I changed in this session.
 - Added ft_reset_signals in child branch for external execution at ft_exec_external.c.
 - Added ft_reset_signals in child branch for pipeline execution at ft_exec_pipeline.c.
 
-4. Important correction made after your warning
+4. Important correction made
 - Initial draft used readline UI calls directly inside the signal handler (unsafe).
 - I replaced that approach with readline hook based handling in main.c and kept the signal handler minimal in main.c.
 
