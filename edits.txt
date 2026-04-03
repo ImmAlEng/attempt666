@@ -27,7 +27,7 @@ Here is the full changelog
 
 4. Important correction made
 - Initial draft used readline UI calls directly inside the signal handler (unsafe).
-- I replaced that approach with readline hook based handling in main.c and kept the signal handler minimal in main.c.
+- Replaced that approach with readline hook based handling in main.c and kept the signal handler minimal in main.c.
 
 5. Validation
 - TPD
