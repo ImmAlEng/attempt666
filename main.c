@@ -85,9 +85,33 @@ t_data	*ft_init_data(int ac, char **av, char **env)
 	return (data);
 }
 
-bool	ft_prompt(t_data *data)
+static int	ft_process_prompt_line(t_data *data)
 {
 	t_dlist	*tmp;
+
+	if (data->line[0] != '\0')
+		add_history(data->line);
+	if (!ft_tokenize(data))
+		return (-1);
+	tmp = data->pipeline;
+	while (tmp)
+	{
+		printf("LINEEEE[%s]\n", (char *)tmp->content);
+		tmp = tmp->next;
+	}
+	if (!ft_cmds_create(data) || !ft_expander(data))
+		return (-1);
+	if (!ft_direct_token_pointers(data))
+		return (-1);
+	ft_cmds_distro(data);
+	if (ft_cleanup_runtime(&data))
+		return (0);
+	return (1);
+}
+
+bool	ft_prompt(t_data *data)
+{
+	int		state;
 
 	while (data && !data->malloc_err && !data->quit)
 	{
@@ -97,22 +121,10 @@ bool	ft_prompt(t_data *data)
 			data->quit = true;
 			break ;
 		}
-		if (data->line[0] != '\0')
-			add_history(data->line);
-		if (!ft_tokenize(data))
+		state = ft_process_prompt_line(data);
+		if (state < 0)
 			return (false);
-		tmp = data->pipeline;
-		while (tmp)
-		{
-			printf("LINEEEE[%s]\n", (char *)tmp->content);
-			tmp = tmp->next;
-		}
-		if (!ft_cmds_create(data) || !ft_expander(data))
-			return (false);
-		if (!ft_direct_token_pointers(data))
-			return (false);
-		ft_cmds_distro(data);
-		if (ft_cleanup_runtime(&data))
+		if (state == 0)
 			break ;
 	}
 	return (data && !data->malloc_err);
