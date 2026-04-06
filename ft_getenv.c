@@ -26,6 +26,8 @@ char	*ft_getenv(char *name, char **env)
 	size_t	len;
 	size_t	i;
 
+	if (ft_strcmp(name, "?") == 0)
+		return (ft_itoa(g_exit_status));
 	len = ft_strlen(name);
 	i = 0;
 	while (env && env[i])

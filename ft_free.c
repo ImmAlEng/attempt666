@@ -1,4 +1,4 @@
-#include "minishell.h" 
+#include "minishell.h"
 
 void	ft_close_if(int *fd)
 {
@@ -8,7 +8,6 @@ void	ft_close_if(int *fd)
 		close(*fd);
 	*fd = -1;
 }
-
 
 void	ft_free_data(t_data **data)
 {
@@ -23,4 +22,3 @@ void	ft_free_data(t_data **data)
 	ft_free((void **)data);
 	rl_clear_history();
 }
-

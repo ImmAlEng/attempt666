@@ -30,16 +30,14 @@ static void	ft_free_cmd_content(t_cmd **cmd)
 {
 	if (!cmd || !*cmd)
 		return ;
+	if ((*cmd)->argv)
+		ft_free((void **)&(*cmd)->argv);
 	if ((*cmd)->redirs)
 		ft_free_redirs(&(*cmd)->redirs);
 	if ((*cmd)->tokens)
 		ft_dlstclear(&(*cmd)->tokens, ft_free_token_content);
 	ft_close_if(&(*cmd)->fd_in);
 	ft_close_if(&(*cmd)->fd_out);
-	ft_close_if(&(*cmd)->pipe_in[0]);
-	ft_close_if(&(*cmd)->pipe_in[1]);
-	ft_close_if(&(*cmd)->pipe_out[0]);
-	ft_close_if(&(*cmd)->pipe_out[1]);
 	ft_free((void **)cmd);
 }
 
@@ -57,4 +55,3 @@ void	ft_free_cmds(t_data *data)
 	}
 	ft_free((void **)&data->cmds);
 }
-

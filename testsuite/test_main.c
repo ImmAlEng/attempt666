@@ -1,4 +1,6 @@
-#include "minishell.h"
+/* Copy of ../main.c with isatty-based prompt suppression for the test harness.
+   The eval codebase (main.c) is untouched.                                    */
+#include "../minishell.h"
 
 static int	ft_readline_signal_hook(void)
 {
@@ -115,11 +117,14 @@ static int	ft_process_prompt_line(t_data *data)
 
 bool	ft_prompt(t_data *data)
 {
-	int	state;
+	int		state;
 
 	while (data && !data->malloc_err && !data->quit)
 	{
-		data->line = readline("minishell>");
+		if (isatty(STDIN_FILENO))
+			data->line = readline("minishell>");
+		else
+			data->line = readline("");
 		if (!data->line)
 		{
 			data->quit = true;
@@ -136,8 +141,10 @@ bool	ft_prompt(t_data *data)
 
 int	main(int ac, char **av, char **env)
 {
-	t_data *data;
+	t_data	*data;
 
+	if (!isatty(STDIN_FILENO))
+		rl_outstream = stderr;
 	data = ft_init_data(ac, av, env);
 	if (!data)
 		return (ft_cleanup_quit(NULL, true));

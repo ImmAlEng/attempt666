@@ -21,7 +21,7 @@ int	ft_export(t_data *data, int cmd_i)
 					ft_add_var(data, data->cmds[cmd_i]->argv[i]);
 			}
 			else
-				return (write (2, "arg not valid\n", 14), 1);
+				return (write(2, "arg not valid\n", 14), 1);
 		}
 		return (0);
 	}

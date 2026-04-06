@@ -1,7 +1,5 @@
 #include "minishell.h"
 
-#include "minishell.h"
-
 static bool	ft_conv_token_argv_one(t_cmd *cmd)
 {
 	t_dlist	*node;
@@ -62,7 +60,6 @@ bool	ft_direct_token_pointers(t_data *data)
 		return (false);
 	if (!ft_conv_token_argv(data))
 		return (false);
-
 	i = 0;
 	while (data->cmds[i])
 	{
@@ -81,4 +78,3 @@ bool	ft_direct_token_pointers(t_data *data)
 	}
 	return (true);
 }
-

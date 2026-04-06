@@ -25,7 +25,7 @@ static bool	ft_expand_helper(t_expand *e, char *q, t_data *data,
 	else if (*q && !ft_is_quoted(e->start, q, false))
 	{
 		if (!ft_remove_quotes(q, e, tokens, *e->start))
-			return (write(1, "\nRMQ\n", 5), false);
+			return (false);
 	}
 	else if (*q == 0 && *e->start == '$')
 	{

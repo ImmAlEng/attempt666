@@ -1,4 +1,6 @@
-#include "minishell.h"
+/* Copy of ../ft_exec_heredoc.c with isatty-based prompt suppression for the
+   test harness. The eval codebase (ft_exec_heredoc.c) is untouched.          */
+#include "../minishell.h"
 
 void	ft_exec_heredoc(t_data *data, int c_i)
 {
@@ -36,7 +38,10 @@ void	ft_heredoc_loop(t_data *data, int c_i, char *del, bool quoted)
 
 	while (1)
 	{
-		line = readline("> ");
+		if (isatty(STDIN_FILENO))
+			line = readline("> ");
+		else
+			line = readline("");
 		if (!line)
 			break ;
 		if (ft_strcmp(line, del) == 0)
@@ -50,8 +55,8 @@ void	ft_heredoc_loop(t_data *data, int c_i, char *del, bool quoted)
 			if (!line)
 				return ;
 		}
-		write(data->cmds[c_i]->her_pipe[1], line, ft_strlen(line));
-		write(data->cmds[c_i]->her_pipe[1], "\n", 1);
+		write (data->cmds[c_i]->her_pipe[1], line, ft_strlen(line));
+		write (data->cmds[c_i]->her_pipe[1], "\n", 1);
 		free(line);
 	}
 	close(data->cmds[c_i]->her_pipe[1]);

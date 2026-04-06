@@ -41,7 +41,9 @@ SRCS    = ft_cmds_init.c \
 	ft_export_print.c \
 	ft_export_utils.c \
 	ft_cd.c \
-	ft_cd_utils.c
+	ft_cd_utils.c \
+	ft_exit.c \
+	ft_err_msgs.c
 
 OBJS        = $(SRCS:.c=.o)
 DEPS        = $(OBJS:.o=.d)

@@ -29,7 +29,7 @@ static bool	ft_glue_suffix_last(t_dlist **tok, char *suf, char **stop,
 	char	*tmp;
 
 	if (!suf || !*suf)
-		return (true);
+		return (*stop = NULL, true);
 	if (!trail_sep)
 	{
 		tmp = ft_strjoin((char *)(*tok)->content, suf);
@@ -69,7 +69,6 @@ static bool	ft_apply_glue_ifs(t_dlist **tok, t_dlist *fields)
 	return (true);
 }
 
-
 bool	ft_superglue_ifs(t_dlist **tok, char *value, size_t start, char **stop)
 {
 	t_ifs	*ifs;
@@ -87,7 +86,7 @@ bool	ft_superglue_ifs(t_dlist **tok, char *value, size_t start, char **stop)
 		|| !ft_apply_glue_ifs(tok, ifs->fields) || !ft_glue_suffix_last(tok,
 			suf, stop, ifs->trail_sep))
 		return (free(pre), free(suf), ft_free_ifs(ifs), free(value), false);
-	if (!**stop)
+	if (!*stop || !**stop)
 		*stop = (char *)(*tok)->content + ft_strlen((char *)(*tok)->content);
 	return (free(pre), free(suf), ft_free_ifs(ifs), free(value), true);
 }

@@ -29,7 +29,7 @@ int	ft_var_present(t_data *data, char *argv)
 		while (data->env[i][j] == argv[j])
 		{
 			if ((data->env[i][j + 1] == '=' || data->env[i][j + 1] == '\0')
-					&& argv[j + 1] == '=')
+				&& argv[j + 1] == '=')
 				return (i);
 			j++;
 		}
@@ -43,9 +43,9 @@ bool	ft_modify_var(t_data *data, char *argv, int env_i)
 	data->env[env_i] = ft_strdup(argv);
 	if (!data->env[env_i])
 	{
-		write (2, "env malloc failed\n", 18);
+		write(2, "env malloc failed\n", 18);
 		data->malloc_err = true;
-		exit (1);//??
+		exit(1);
 	}
 	return (1);
 }
@@ -55,9 +55,9 @@ bool	ft_add_var(t_data *data, char *argv)
 	data->env = ft_actual_export(data, argv);
 	if (!data->env)
 	{
-		write (2, "env malloc failed\n", 18);
+		write(2, "env malloc failed\n", 18);
 		data->malloc_err = true;
-		exit (1);//??
+		exit(1);
 	}
 	return (1);
 }

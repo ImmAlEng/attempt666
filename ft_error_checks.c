@@ -23,4 +23,3 @@ bool	ft_has_ambiguous_redirect(t_cmd **cmds)
 	}
 	return (false);
 }
-

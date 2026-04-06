@@ -36,7 +36,8 @@ bool	ft_find_tokenend(char *line, size_t s, size_t *e)
 		quote = 0;
 	while (line[*e])
 	{
-		if (!quote && (line[*e] == '\'' || line[*e] == '\"') && ft_match_found(&line[*e]))
+		if (!quote && (line[*e] == '\'' || line[*e] == '\"')
+				&& ft_match_found(&line[*e]))
 			quote = line[*e];
 		else if (quote == line[*e])
 			quote = 0;

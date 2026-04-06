@@ -61,25 +61,21 @@ void	ft_has_heredoc(t_cmd *cmd)
 	return ;
 }
 
-bool	ft_is_builtin(t_cmd *cmd)//should use strcmp
+bool	ft_is_builtin(t_cmd *cmd)
 {
-	if (ft_strncmp(cmd->cmd, "echo", 4) == 0
-		&& cmd->cmd[4] == '\0')
+	if (ft_strcmp(cmd->cmd, "echo") == 0)
 		return (1);
-	if (ft_strncmp(cmd->cmd, "pwd", 3) == 0
-		&& cmd->cmd[3] == '\0')
+	if (ft_strcmp(cmd->cmd, "pwd") == 0)
 		return (1);
-	if (ft_strncmp(cmd->cmd, "env", 3) == 0
-		&& cmd->cmd[3] == '\0')
+	if (ft_strcmp(cmd->cmd, "env") == 0)
 		return (1);
-	if (ft_strncmp(cmd->cmd, "unset", 5) == 0
-		&& cmd->cmd[5] == '\0')
+	if (ft_strcmp(cmd->cmd, "unset") == 0)
 		return (1);
-	if (ft_strncmp(cmd->cmd, "export", 6) == 0
-		&& cmd->cmd[6] == '\0')
+	if (ft_strcmp(cmd->cmd, "export") == 0)
 		return (1);
-	if (ft_strncmp(cmd->cmd, "cd", 2) == 0
-		&& cmd->cmd[2] == '\0')
+	if (ft_strcmp(cmd->cmd, "cd") == 0)
+		return (1);
+	if (ft_strcmp(cmd->cmd, "exit") == 0)
 		return (1);
 	return (0);
 }

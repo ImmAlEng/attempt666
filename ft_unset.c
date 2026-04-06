@@ -20,7 +20,7 @@ int	ft_unset(t_data *data, int cmd_i)
 				if (!data->env)
 				{
 					data->malloc_err = true;
-					exit (1);
+					exit(1);
 				}
 				break ;
 			}
@@ -40,7 +40,7 @@ char	**ft_remove_var(char **env, int env_i)
 		i++;
 	r_env = malloc(sizeof(char *) * i);
 	if (!r_env)
-		return (write (2, "env malloc failed\n", 18), NULL);
+		return (write(2, "env malloc failed\n", 18), NULL);
 	i = 0;
 	j = 0;
 	while (env[j])

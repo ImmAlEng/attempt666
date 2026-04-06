@@ -32,13 +32,13 @@ int	ft_run_pipeline(t_data *data, int i, int *status, char *path)
 			ft_reset_signals();
 			ft_handle_pipes(data, i);
 			if (data->cmds[i]->is_builtin)
-				exit (ft_exec_builtin(data, i));
+				exit(ft_exec_builtin(data, i));
 			if (!ft_handle_redirs(data->cmds[i]))
-				exit (1);
+				exit(1);
 			path = ft_find_binary(data, i);
 			execve(path, data->cmds[i]->argv, data->env);
-			perror ("execve");
-			exit (1);
+			perror("execve");
+			exit(1);
 		}
 	}
 	ft_close_heredoc(data);
@@ -54,9 +54,13 @@ void	ft_wait_kiddo(t_data *data, int *status)
 	i = -1;
 	while (++i < (int)data->n_cmds)
 	{
-		waitpid(data->cmds[i]->pid, status, 0);
+		while (waitpid(data->cmds[i]->pid, status, 0) == -1)
+			if (errno != EINTR)
+				break ;
 		if (WIFEXITED(*status))
 			data->cmds[i]->exit_status = WEXITSTATUS(*status);
+		else if (WIFSIGNALED(*status))
+			data->cmds[i]->exit_status = 128 + WTERMSIG(*status);
 	}
 	return ;
 }

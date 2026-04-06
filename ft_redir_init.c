@@ -19,6 +19,33 @@ t_redir	*ft_redir_new(void)
 	return (redir);
 }
 
+static bool	ft_strip_quotes(char **content)
+{
+	char	*old;
+	char	*newstr;
+	size_t	i;
+	size_t	j;
+
+	if (!content || !*content)
+		return (false);
+	old = *content;
+	newstr = malloc(ft_strlen(old) + 1);
+	if (!newstr)
+		return (false);
+	i = 0;
+	j = 0;
+	while (old[i])
+	{
+		if (old[i] != '\'' && old[i] != '"')
+			newstr[j++] = old[i];
+		i++;
+	}
+	newstr[j] = '\0';
+	free(old);
+	*content = newstr;
+	return (true);
+}
+
 static bool	ft_redir_unlink_pair(t_dlist **it, t_dlist **tokens, t_dlist **op,
 		t_dlist **target)
 {
@@ -46,6 +73,10 @@ static bool	ft_redir_attach(t_cmd *cmd, t_dlist *op, t_dlist *target)
 			ft_dlstdelone(target, free), false);
 	redir->quoted = (ft_strchr((char *)target->content, '\'')
 				|| ft_strchr((char *)target->content, '"'));
+	if (redir->type == R_HEREDOC && redir->quoted
+		&& !ft_strip_quotes((char **)&target->content))
+		return (ft_free((void **)&redir), ft_dlstdelone(op, free),
+			ft_dlstdelone(target, free), false);
 	ft_dlstdelone(op, free);
 	ft_dlstadd_back(&redir->tokens, target);
 	rnode = ft_dlstnew(redir);

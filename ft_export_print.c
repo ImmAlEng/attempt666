@@ -22,18 +22,18 @@ int	ft_actual_export_print(char **env)
 	while (env[++i])
 	{
 		eq_fl = 0;
-		write (1, "declare -x ", 11);
+		write(1, "declare -x ", 11);
 		j = -1;
 		while (env[i][++j])
 		{
-			write (1, &env[i][j], 1);
+			write(1, &env[i][j], 1);
 			if ((env[i][j] == '=' && eq_fl == 0) || env[i][j + 1] == '\0')
 			{
-				write (1, "\"", 1);
+				write(1, "\"", 1);
 				eq_fl = 1;
 			}
 		}
-		write (1, "\n", 1);
+		write(1, "\n", 1);
 	}
 	return (0);
 }

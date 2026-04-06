@@ -5,7 +5,7 @@ int	ft_exec_external(t_data *data)
 	char	*path;
 	int		status;
 
-	data->cmds[0]->exit_status = 1;//check ft_exec_builtin not sure if neccessary tho
+	data->cmds[0]->exit_status = 1;
 	data->cmds[0]->pid = fork();
 	if (data->cmds[0]->pid == -1)
 		return (perror("fork"), data->cmds[0]->exit_status);
@@ -13,17 +13,23 @@ int	ft_exec_external(t_data *data)
 	{
 		ft_reset_signals();
 		if (!ft_handle_redirs(data->cmds[0]))
-			exit (1);
+			exit(1);
 		path = ft_find_binary(data, 0);
 		execve(path, data->cmds[0]->argv, data->env);
 		perror("execve");
-		exit (1);
+		if (errno == ENOENT)
+			exit(127);
+		exit(126);
 	}
 	if (data->cmds[0]->has_heredoc)
 		close(data->cmds[0]->her_pipe[0]);
-	waitpid(data->cmds[0]->pid, &status, 0);
+	while (waitpid(data->cmds[0]->pid, &status, 0) == -1)
+		if (errno != EINTR)
+			break ;
 	if (WIFEXITED(status))
 		data->cmds[0]->exit_status = WEXITSTATUS(status);
+	else if (WIFSIGNALED(status))
+		data->cmds[0]->exit_status = 128 + WTERMSIG(status);
 	return (data->cmds[0]->exit_status);
 }
 
@@ -39,8 +45,8 @@ char	*ft_find_binary(t_data *data, int c_i)
 	path_env = ft_get_path_env(data->env);
 	dirs = ft_split(path_env, ':');
 	if (!dirs)
-		if (write (2, "malloc error\n", 13) != -1)
-			exit (1);
+		if (write(2, "malloc error\n", 13) != -1)
+			exit(1);
 	i = -1;
 	while (dirs[++i])
 	{
@@ -50,8 +56,8 @@ char	*ft_find_binary(t_data *data, int c_i)
 		free(path);
 	}
 	ft_env_cleanup(dirs, -1);
-	write(2, "command not found\n", 18);//this also happens in case of "echoo" or "cdd" kennts besser lösen but it works blyat
-	exit (127);
+	write(2, "command not found\n", 18);
+	exit(127);
 }
 
 char	*ft_get_path_env(char **env)
@@ -62,8 +68,8 @@ char	*ft_get_path_env(char **env)
 	while (env[++i])
 		if (ft_strncmp(env[i], "PATH=", 5) == 0)
 			return (env[i] + 5);
-	write (2, "$PATH variable doesn't exist\n", 29);
-	exit (1);
+	write(2, "command not found\n", 18);
+	exit(127);
 }
 
 char	*ft_get_path_exec(char **dirs, char *cmd, int i)
@@ -75,9 +81,9 @@ char	*ft_get_path_exec(char **dirs, char *cmd, int i)
 	path = malloc(sizeof(char) * len);
 	if (!path)
 	{
-		write (2, "malloc error\n", 13);
+		write(2, "malloc error\n", 13);
 		if (ft_env_cleanup(dirs, -1))
-			exit (1);
+			exit(1);
 	}
 	ft_strcpy(path, dirs[i]);
 	ft_strcat(path, "/");
