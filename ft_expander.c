@@ -27,12 +27,13 @@ static bool	ft_expand_helper(t_expand *e, char *q, t_data *data,
 		if (!ft_remove_quotes(q, e, tokens, *e->start))
 			return (false);
 	}
-	else if (*q == 0 && *e->start == '$')
+	else if (*q == 0 && *e->start == '$' && ft_should_expand_dollar(e->start))
 	{
 		if (!ft_expand_nq(e, data, tokens))
 			return (false);
 	}
-	else if (*q == '\"' && *e->start == '$')
+	else if (*q == '"' && *e->start == '$'
+		&& ft_should_expand_dollar(e->start))
 	{
 		if (!ft_expand_dq(e, data, tokens))
 			return (false);

@@ -21,6 +21,15 @@ char	*ft_get_varname(char *str, char **end)
 	return (ft_substr(str, (size_t)(p - str), (size_t)(*end - p)));
 }
 
+bool	ft_should_expand_dollar(char *dollar)
+{
+	if (!dollar || *dollar != '$')
+		return (false);
+	if (dollar[1] == '?')
+		return (true);
+	return (ft_isalpha((unsigned char)dollar[1]));
+}
+
 char	*ft_getenv(char *name, char **env)
 {
 	size_t	len;

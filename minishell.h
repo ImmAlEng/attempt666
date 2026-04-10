@@ -219,6 +219,7 @@ bool				ft_remove_quotes(char *q, t_expand *e, t_dlist **tokens,
 /*		ft_getenv.c	*/
 char				*ft_getenv(char *name, char **env);
 char				*ft_get_varname(char *str, char **end);
+bool				ft_should_expand_dollar(char *dollar);
 
 /*		ft_expand_dq.c		*/
 bool				ft_expand_dq(t_expand *e, t_data *data, t_dlist **tok);

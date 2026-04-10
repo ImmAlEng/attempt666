@@ -14,7 +14,7 @@ char	*ft_heredoc_expand(t_data *data, char *line)
 	e.start = e.str;
 	while (*e.start)
 	{
-		if (*e.start == '$')
+		if (*e.start == '$' && ft_should_expand_dollar(e.start))
 		{
 			if (!ft_expand_dq(&e, data, &tok))
 				return (free(tok->content), NULL);
