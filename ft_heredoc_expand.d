@@ -1,8 +1,0 @@
-ft_heredoc_expand.o: ft_heredoc_expand.c minishell.h libft/libft.h \
- libft/./bonus/libft_list.h libft/./gnl/get_next_line.h \
- libft/./limit/libft_limit.h
-minishell.h:
-libft/libft.h:
-libft/./bonus/libft_list.h:
-libft/./gnl/get_next_line.h:
-libft/./limit/libft_limit.h:
