@@ -85,24 +85,31 @@ t_data	*ft_init_data(int ac, char **av, char **env)
 	return (data);
 }
 
+static int	ft_handle_syntax_error(t_data *data)
+{
+	ft_dlstclear(&data->pipeline, free);
+	data->pipeline = NULL;
+	if (data->cmds)
+		ft_free_cmds(data);
+	data->cmds = NULL;
+	ft_free((void **)&data->line);
+	if (data->malloc_err)
+		return (-1);
+	ft_error_messages(ERR_SYNTAX, "");
+	g_exit_status = 2;
+	return (1);
+}
+
 static int	ft_process_prompt_line(t_data *data)
 {
 	if (data->line[0] != '\0')
 		add_history(data->line);
-	if (!ft_tokenize(data) || !ft_cmds_create(data))
-	{
-		ft_dlstclear(&data->pipeline, free);
-		data->pipeline = NULL;
-		if (data->cmds)
-			ft_free_cmds(data);
-		data->cmds = NULL;
-		ft_free((void **)&data->line);
-		if (data->malloc_err)
-			return (-1);
-		ft_error_messages(ERR_SYNTAX, "");
-		g_exit_status = 2;
-		return (1);
-	}
+	if (!ft_tokenize(data))
+		return (ft_handle_syntax_error(data));
+	if (!data->pipeline)
+		return (ft_free((void **)&data->line), 1);
+	if (!ft_cmds_create(data))
+		return (ft_handle_syntax_error(data));
 	if (!ft_expander(data))
 		return (-1);
 	if (!ft_direct_token_pointers(data))

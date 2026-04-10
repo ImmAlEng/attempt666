@@ -50,6 +50,17 @@ bool	ft_find_tokenend(char *line, size_t s, size_t *e)
 	return (quote == 0);
 }
 
+static bool	ft_operator_token(char *line, size_t s, size_t *e)
+{
+	if (line[s] == '|')
+		return (true);
+	if ((line[s] == '<' || line[s] == '>') && line[s + 1] == line[s])
+		return (*e = s + 2, true);
+	if (line[s] == '<' || line[s] == '>')
+		return (true);
+	return (false);
+}
+
 bool	ft_tokenize(t_data *data)
 {
 	size_t	s;
@@ -64,7 +75,8 @@ bool	ft_tokenize(t_data *data)
 		if (!data->line[s])
 			break ;
 		e = s + 1;
-		if (!ft_find_tokenend(data->line, s, &e))
+		if (!ft_operator_token(data->line, s, &e)
+			&& !ft_find_tokenend(data->line, s, &e))
 			return (false);
 		if (!ft_add_token(data, s, e))
 			return (false);

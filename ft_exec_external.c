@@ -40,6 +40,13 @@ char	*ft_find_binary(t_data *data, int c_i)
 	char	*path;
 	char	**dirs;
 
+	if (!data || !data->cmds || !data->cmds[c_i] || !data->cmds[c_i]->cmd
+		|| !*data->cmds[c_i]->cmd)
+	{
+		write(2, "command not found\n", 18);
+		exit(127);
+	}
+
 	if (ft_strchr(data->cmds[c_i]->cmd, '/'))
 		return (data->cmds[c_i]->cmd);
 	path_env = ft_get_path_env(data->env);

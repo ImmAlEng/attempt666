@@ -1,5 +1,27 @@
 #include "minishell.h"
 
+static int	ft_exec_redirs_only(t_cmd *cmd)
+{
+	int	std_out;
+	int	std_in;
+	int	exit_status;
+
+	exit_status = 1;
+	std_out = dup(STDOUT_FILENO);
+	std_in = dup(STDIN_FILENO);
+	if (std_in == -1 || std_out == -1)
+		return (perror("dup"), 1);
+	if (ft_handle_redirs(cmd))
+		exit_status = 0;
+	if (dup2(std_out, STDOUT_FILENO) == -1 || dup2(std_in, STDIN_FILENO) == -1)
+		return (perror("dup2"), close(std_out), close(std_in), 1);
+	if (cmd->has_heredoc)
+		close(cmd->her_pipe[0]);
+	close(std_out);
+	close(std_in);
+	return (exit_status);
+}
+
 int	ft_cmds_distro(t_data *data)
 {
 	ft_cmds_check(data);
@@ -9,6 +31,8 @@ int	ft_cmds_distro(t_data *data)
 	{
 		if (data->cmds[0]->has_heredoc)
 			ft_exec_heredoc(data, 0);
+		if (!data->cmds[0]->cmd)
+			return (ft_exec_redirs_only(data->cmds[0]));
 		if (data->cmds[0]->is_builtin)
 			return (ft_exec_builtin(data, 0));
 		else
@@ -63,6 +87,8 @@ void	ft_has_heredoc(t_cmd *cmd)
 
 bool	ft_is_builtin(t_cmd *cmd)
 {
+	if (!cmd || !cmd->cmd)
+		return (0);
 	if (ft_strcmp(cmd->cmd, "echo") == 0)
 		return (1);
 	if (ft_strcmp(cmd->cmd, "pwd") == 0)
