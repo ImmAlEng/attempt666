@@ -33,17 +33,17 @@ int	ft_exec_builtin(t_data *data, int i)
 
 int	ft_run_builtin(t_data *data, int i)
 {
-	if (ft_strncmp(data->cmds[i]->cmd, "echo", 4) == 0)
+	if (ft_strcmp(data->cmds[i]->cmd, "echo") == 0)
 		return (ft_echo(data->cmds[i]));
-	if (ft_strncmp(data->cmds[i]->cmd, "pwd", 3) == 0)
+	if (ft_strcmp(data->cmds[i]->cmd, "pwd") == 0)
 		return (ft_pwd());
-	if (ft_strncmp(data->cmds[i]->cmd, "env", 3) == 0)
-		return (ft_env(data->env));
-	if (ft_strncmp(data->cmds[i]->cmd, "unset", 5) == 0)
+	if (ft_strcmp(data->cmds[i]->cmd, "env") == 0)
+		return (ft_env(data, i));
+	if (ft_strcmp(data->cmds[i]->cmd, "unset") == 0)
 		return (ft_unset(data, i));
-	if (ft_strncmp(data->cmds[i]->cmd, "export", 6) == 0)
+	if (ft_strcmp(data->cmds[i]->cmd, "export") == 0)
 		return (ft_export(data, i));
-	if (ft_strncmp(data->cmds[i]->cmd, "cd", 2) == 0)
+	if (ft_strcmp(data->cmds[i]->cmd, "cd") == 0)
 		return (ft_cd(data, i));
 	if (ft_strcmp(data->cmds[i]->cmd, "exit") == 0)
 		return (ft_exit(data, i));

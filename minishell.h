@@ -117,7 +117,7 @@ int					ft_run_builtin(t_data *data, int i);
 int					ft_exec_external(t_data *data);
 char				*ft_find_binary(t_data *data, int c_i);
 char				*ft_get_path_env(char **env);
-char	*ft_get_path_exec(char **dirs, char *cmd, int i);
+char		*ft_get_path_exec(char **dirs, char *cmd, int i);
 		// added strcpy and strcat into libft
 
 /*		redir		*/
@@ -148,7 +148,7 @@ bool				ft_n_flag(char *str);
 
 /*		pwd and env		*/
 int					ft_pwd(void);
-int					ft_env(char **env);
+int					ft_env(t_data *data, int c_i);
 
 /*		unset		*/
 int					ft_unset(t_data *data, int cmd_i);

@@ -1,0 +1,49 @@
+==893225== Memcheck, a memory error detector
+==893225== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==893225== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==893225== Command: /home/amkhuder/desktop/minishell/minishell
+==893225== Parent PID: 893224
+==893225== 
+==893225== 
+==893225== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==893225== Open file descriptor 3: /tmp/tmp.CjWckjZxOe/tmp_valgrind_out
+==893225==    <inherited from parent>
+==893225== 
+==893225== Open file descriptor 2: /dev/null
+==893225==    <inherited from parent>
+==893225== 
+==893225== Open file descriptor 1: /dev/null
+==893225==    at 0x49E109B: dup2 (syscall-template.S:120)
+==893225==    by 0x4054C2: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==893225==    by 0x4051F1: ft_exec_one_cmd (ft_cmds_distro.c:32)
+==893225==    by 0x40509D: ft_cmds_distro (ft_cmds_distro.c:46)
+==893225==    by 0x404EC5: ft_process_prompt_line (main.c:123)
+==893225==    by 0x404D87: ft_prompt (main.c:141)
+==893225==    by 0x404F5C: main (main.c:158)
+==893225== 
+==893225== Open file descriptor 0:
+==893225==    at 0x49E109B: dup2 (syscall-template.S:120)
+==893225==    by 0x4054D5: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==893225==    by 0x4051F1: ft_exec_one_cmd (ft_cmds_distro.c:32)
+==893225==    by 0x40509D: ft_cmds_distro (ft_cmds_distro.c:46)
+==893225==    by 0x404EC5: ft_process_prompt_line (main.c:123)
+==893225==    by 0x404D87: ft_prompt (main.c:141)
+==893225==    by 0x404F5C: main (main.c:158)
+==893225== 
+==893225== 
+==893225== HEAP SUMMARY:
+==893225==     in use at exit: 4,016 bytes in 1 blocks
+==893225==   total heap usage: 71 allocs, 70 frees, 11,094 bytes allocated
+==893225== 
+==893225== LEAK SUMMARY:
+==893225==    definitely lost: 0 bytes in 0 blocks
+==893225==    indirectly lost: 0 bytes in 0 blocks
+==893225==      possibly lost: 0 bytes in 0 blocks
+==893225==    still reachable: 0 bytes in 0 blocks
+==893225==         suppressed: 4,016 bytes in 1 blocks
+==893225== 
+==893225== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--893225-- 
+--893225-- used_suppression:      1 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==893225== 
+==893225== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)

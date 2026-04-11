@@ -1,0 +1,141 @@
+==941326== Memcheck, a memory error detector
+==941326== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==941326== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==941326== Command: /home/amkhuder/desktop/minishell/minishell
+==941326== Parent PID: 941325
+==941326== 
+==941338== 
+==941338== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==941338== Open file descriptor 3: /tmp/tmp.CjWckjZxOe/tmp_valgrind_out
+==941338==    <inherited from parent>
+==941338== 
+==941338== Open file descriptor 2: /dev/null
+==941338==    <inherited from parent>
+==941338== 
+==941338== Open file descriptor 1: /dev/null
+==941338==    <inherited from parent>
+==941338== 
+==941338== Open file descriptor 0:
+==941338==    <inherited from parent>
+==941338== 
+==941338== 
+==941338== HEAP SUMMARY:
+==941338==     in use at exit: 6,867 bytes in 63 blocks
+==941338==   total heap usage: 73 allocs, 10 frees, 11,047 bytes allocated
+==941338== 
+==941338== 15 bytes in 1 blocks are still reachable in loss record 3 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x408E63: ft_strjoin (in /home/amkhuder/desktop/minishell/minishell)
+==941338==    by 0x404033: ft_glue_prefix_first (ft_superglue_ifs.c:15)
+==941338==    by 0x403E97: ft_superglue_ifs (ft_superglue_ifs.c:85)
+==941338==    by 0x40437E: ft_expand_nq (ft_superglue_ifs.c:103)
+==941338==    by 0x401F7E: ft_expand_helper (ft_expander.c:32)
+==941338==    by 0x401CBA: ft_expand_cmd (ft_expander.c:76)
+==941338==    by 0x401BAA: ft_expander (ft_expander.c:118)
+==941338==    by 0x404E8B: ft_process_prompt_line (main.c:119)
+==941338==    by 0x404D87: ft_prompt (main.c:141)
+==941338==    by 0x404F5C: main (main.c:158)
+==941338== 
+==941338== 16 bytes in 1 blocks are still reachable in loss record 4 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x408B53: ft_calloc (in /home/amkhuder/desktop/minishell/minishell)
+==941338==    by 0x40165D: ft_cmds_create (ft_cmds_init.c:86)
+==941338==    by 0x404E69: ft_process_prompt_line (main.c:117)
+==941338==    by 0x404D87: ft_prompt (main.c:141)
+==941338==    by 0x404F5C: main (main.c:158)
+==941338== 
+==941338== 16 bytes in 1 blocks are still reachable in loss record 5 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x408B53: ft_calloc (in /home/amkhuder/desktop/minishell/minishell)
+==941338==    by 0x404704: ft_conv_token_argv_one (ft_convert_tokens.c:12)
+==941338==    by 0x404682: ft_conv_token_argv (ft_convert_tokens.c:36)
+==941338==    by 0x404877: ft_direct_token_pointers (ft_convert_tokens.c:61)
+==941338==    by 0x404EA8: ft_process_prompt_line (main.c:121)
+==941338==    by 0x404D87: ft_prompt (main.c:141)
+==941338==    by 0x404F5C: main (main.c:158)
+==941338== 
+==941338== 24 bytes in 1 blocks are still reachable in loss record 7 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x409B85: ft_dlstnew (in /home/amkhuder/desktop/minishell/minishell)
+==941338==    by 0x4031E5: ft_add_token (ft_pipeline.c:22)
+==941338==    by 0x403516: ft_tokenize (ft_pipeline.c:81)
+==941338==    by 0x404E23: ft_process_prompt_line (main.c:113)
+==941338==    by 0x404D87: ft_prompt (main.c:141)
+==941338==    by 0x404F5C: main (main.c:158)
+==941338== 
+==941338== 48 bytes in 1 blocks are still reachable in loss record 8 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x404C7C: ft_init_data (main.c:84)
+==941338==    by 0x404F29: main (main.c:154)
+==941338== 
+==941338== 80 bytes in 1 blocks are still reachable in loss record 9 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x401361: ft_cmd_new (ft_cmds_init.c:21)
+==941338==    by 0x4016A5: ft_cmds_create (ft_cmds_init.c:92)
+==941338==    by 0x404E69: ft_process_prompt_line (main.c:117)
+==941338==    by 0x404D87: ft_prompt (main.c:141)
+==941338==    by 0x404F5C: main (main.c:158)
+==941338== 
+==941338== 120 bytes in 1 blocks are still reachable in loss record 10 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x494C122: getdelim (iogetdelim.c:62)
+==941338==    by 0x485C410: readline (in /home/amkhuder/42_minishell_tester/utils/libintercept/libintercept.so)
+==941338==    by 0x404D59: ft_prompt (main.c:135)
+==941338==    by 0x404F5C: main (main.c:158)
+==941338== 
+==941338== 416 bytes in 1 blocks are still reachable in loss record 11 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x409667: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==941338==    by 0x404CAF: ft_init_data (main.c:88)
+==941338==    by 0x404F29: main (main.c:154)
+==941338== 
+==941338== 2,074 bytes in 51 blocks are still reachable in loss record 12 of 13
+==941338==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==941338==    by 0x408D21: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==941338==    by 0x4096B6: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==941338==    by 0x404CAF: ft_init_data (main.c:88)
+==941338==    by 0x404F29: main (main.c:154)
+==941338== 
+==941338== LEAK SUMMARY:
+==941338==    definitely lost: 0 bytes in 0 blocks
+==941338==    indirectly lost: 0 bytes in 0 blocks
+==941338==      possibly lost: 0 bytes in 0 blocks
+==941338==    still reachable: 2,809 bytes in 59 blocks
+==941338==         suppressed: 4,058 bytes in 4 blocks
+==941338== 
+==941338== ERROR SUMMARY: 9 errors from 9 contexts (suppressed: 4 from 4)
+--941338-- 
+--941338-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,058 bytes in 4 blocks
+==941338== 
+==941338== ERROR SUMMARY: 9 errors from 9 contexts (suppressed: 4 from 4)
+==941326== 
+==941326== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==941326== Open file descriptor 3: /tmp/tmp.CjWckjZxOe/tmp_valgrind_out
+==941326==    <inherited from parent>
+==941326== 
+==941326== Open file descriptor 2: /dev/null
+==941326==    <inherited from parent>
+==941326== 
+==941326== Open file descriptor 1: /dev/null
+==941326==    <inherited from parent>
+==941326== 
+==941326== Open file descriptor 0:
+==941326==    <inherited from parent>
+==941326== 
+==941326== 
+==941326== HEAP SUMMARY:
+==941326==     in use at exit: 4,016 bytes in 1 blocks
+==941326==   total heap usage: 76 allocs, 75 frees, 11,201 bytes allocated
+==941326== 
+==941326== LEAK SUMMARY:
+==941326==    definitely lost: 0 bytes in 0 blocks
+==941326==    indirectly lost: 0 bytes in 0 blocks
+==941326==      possibly lost: 0 bytes in 0 blocks
+==941326==    still reachable: 0 bytes in 0 blocks
+==941326==         suppressed: 4,016 bytes in 1 blocks
+==941326== 
+==941326== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--941326-- 
+--941326-- used_suppression:      1 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==941326== 
+==941326== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
