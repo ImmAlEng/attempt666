@@ -38,15 +38,18 @@ static void	ft_exec_child(t_data *data, int i, char *path)
 	ft_reset_signals();
 	ft_handle_pipes(data, i);
 	if (data->cmds[i]->is_builtin)
-		exit(ft_exec_builtin(data, i));
+	{
+		ft_exec_builtin(data, i);
+		ft_free_exit(data, i);
+	}
 	if (!ft_handle_redirs(data->cmds[i]))
-		exit(1);
+		exit(1);//exit
 	if (!data->cmds[i]->cmd)
 		exit(0);
 	path = ft_find_binary(data, i);
 	execve(path, data->cmds[i]->argv, data->env);
 	perror("execve");
-	exit(1);
+	ft_free_exit(data, data->cmds[i]->exit_status);
 }
 
 int	ft_run_pipeline(t_data *data, int i, int *status, char *path)

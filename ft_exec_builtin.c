@@ -4,7 +4,7 @@ int	ft_exec_builtin(t_data *data, int i)
 {
 	int	std_out;
 	int	std_in;
-	bool	has_redir;
+	bool	has_redir;//maybe into cmd struct
 
 	data->cmds[i]->exit_status = 1;
 	has_redir = (data->cmds[i]->redirs != NULL);

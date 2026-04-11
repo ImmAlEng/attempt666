@@ -1,0 +1,3661 @@
+==1043574== Memcheck, a memory error detector
+==1043574== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1043574== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1043574== Command: /home/amkhuder/desktop/minishell/minishell
+==1043574== Parent PID: 1043573
+==1043574== 
+==1043575== 
+==1043575== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043575== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043575==    <inherited from parent>
+==1043575== 
+==1043575== Open file descriptor 2: /dev/null
+==1043575==    <inherited from parent>
+==1043575== 
+==1043575== Open file descriptor 1:
+==1043575==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043575==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043575==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043575==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043575==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043575==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043575==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043575==    by 0x404D77: ft_prompt (main.c:141)
+==1043575==    by 0x404F4C: main (main.c:158)
+==1043575== 
+==1043575== Open file descriptor 0:
+==1043575==    <inherited from parent>
+==1043575== 
+==1043575== 
+==1043575== HEAP SUMMARY:
+==1043575==     in use at exit: 6,924 bytes in 57 blocks
+==1043575==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043575== 
+==1043576== 
+==1043576== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043576== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043576==    <inherited from parent>
+==1043576== 
+==1043576== Open file descriptor 2: /dev/null
+==1043576==    <inherited from parent>
+==1043576== 
+==1043576== Open file descriptor 1:
+==1043576==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043576==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043576==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043576==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043576==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043576==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043576==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043576==    by 0x404D77: ft_prompt (main.c:141)
+==1043576==    by 0x404F4C: main (main.c:158)
+==1043576== 
+==1043576== Open file descriptor 0:
+==1043576==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043576==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043576==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043576==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043576==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043576==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043576==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043576==    by 0x404D77: ft_prompt (main.c:141)
+==1043576==    by 0x404F4C: main (main.c:158)
+==1043576== 
+==1043576== 
+==1043576== HEAP SUMMARY:
+==1043576==     in use at exit: 6,924 bytes in 57 blocks
+==1043576==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043576== 
+==1043575== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043575==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043575==    by 0x404C6C: ft_init_data (main.c:84)
+==1043575==    by 0x404F19: main (main.c:154)
+==1043575== 
+==1043575== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043575==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043575==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043575==    by 0x404C9F: ft_init_data (main.c:88)
+==1043575==    by 0x404F19: main (main.c:154)
+==1043575== 
+==1043575== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043575==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043575==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043575==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043575==    by 0x404C9F: ft_init_data (main.c:88)
+==1043575==    by 0x404F19: main (main.c:154)
+==1043575== 
+==1043575== LEAK SUMMARY:
+==1043575==    definitely lost: 0 bytes in 0 blocks
+==1043575==    indirectly lost: 0 bytes in 0 blocks
+==1043575==      possibly lost: 0 bytes in 0 blocks
+==1043575==    still reachable: 2,538 bytes in 53 blocks
+==1043575==         suppressed: 4,386 bytes in 4 blocks
+==1043575== 
+==1043575== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043575-- 
+--1043575-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043575== 
+==1043575== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043576== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043576==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043576==    by 0x404C6C: ft_init_data (main.c:84)
+==1043576==    by 0x404F19: main (main.c:154)
+==1043576== 
+==1043576== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043576==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043576==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043576==    by 0x404C9F: ft_init_data (main.c:88)
+==1043576==    by 0x404F19: main (main.c:154)
+==1043576== 
+==1043576== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043576==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043576==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043576==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043576==    by 0x404C9F: ft_init_data (main.c:88)
+==1043576==    by 0x404F19: main (main.c:154)
+==1043576== 
+==1043576== LEAK SUMMARY:
+==1043576==    definitely lost: 0 bytes in 0 blocks
+==1043576==    indirectly lost: 0 bytes in 0 blocks
+==1043576==      possibly lost: 0 bytes in 0 blocks
+==1043576==    still reachable: 2,538 bytes in 53 blocks
+==1043576==         suppressed: 4,386 bytes in 4 blocks
+==1043576== 
+==1043576== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043576-- 
+--1043576-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043576== 
+==1043576== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043577== 
+==1043577== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043577== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043577==    <inherited from parent>
+==1043577== 
+==1043577== Open file descriptor 2: /dev/null
+==1043577==    <inherited from parent>
+==1043577== 
+==1043577== Open file descriptor 1:
+==1043577==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043577==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043577==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043577==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043577==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043577==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043577==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043577==    by 0x404D77: ft_prompt (main.c:141)
+==1043577==    by 0x404F4C: main (main.c:158)
+==1043577== 
+==1043577== Open file descriptor 0:
+==1043577==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043577==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043577==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043577==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043577==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043577==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043577==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043577==    by 0x404D77: ft_prompt (main.c:141)
+==1043577==    by 0x404F4C: main (main.c:158)
+==1043577== 
+==1043577== 
+==1043577== HEAP SUMMARY:
+==1043577==     in use at exit: 6,924 bytes in 57 blocks
+==1043577==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043577== 
+==1043577== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043577==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043577==    by 0x404C6C: ft_init_data (main.c:84)
+==1043577==    by 0x404F19: main (main.c:154)
+==1043577== 
+==1043577== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043577==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043577==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043577==    by 0x404C9F: ft_init_data (main.c:88)
+==1043577==    by 0x404F19: main (main.c:154)
+==1043577== 
+==1043577== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043577==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043577==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043577==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043577==    by 0x404C9F: ft_init_data (main.c:88)
+==1043577==    by 0x404F19: main (main.c:154)
+==1043577== 
+==1043577== LEAK SUMMARY:
+==1043577==    definitely lost: 0 bytes in 0 blocks
+==1043577==    indirectly lost: 0 bytes in 0 blocks
+==1043577==      possibly lost: 0 bytes in 0 blocks
+==1043577==    still reachable: 2,538 bytes in 53 blocks
+==1043577==         suppressed: 4,386 bytes in 4 blocks
+==1043577== 
+==1043577== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043577-- 
+--1043577-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043577== 
+==1043577== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043583== 
+==1043583== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043583== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043583==    <inherited from parent>
+==1043583== 
+==1043583== Open file descriptor 2: /dev/null
+==1043583==    <inherited from parent>
+==1043583== 
+==1043583== Open file descriptor 1:
+==1043583==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043583==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043583==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043583==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043583==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043583==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043583==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043583==    by 0x404D77: ft_prompt (main.c:141)
+==1043583==    by 0x404F4C: main (main.c:158)
+==1043583== 
+==1043583== Open file descriptor 0:
+==1043583==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043583==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043583==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043583==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043583==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043583==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043583==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043583==    by 0x404D77: ft_prompt (main.c:141)
+==1043583==    by 0x404F4C: main (main.c:158)
+==1043583== 
+==1043583== 
+==1043583== HEAP SUMMARY:
+==1043583==     in use at exit: 6,924 bytes in 57 blocks
+==1043583==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043583== 
+==1043578== 
+==1043578== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043578== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043578==    <inherited from parent>
+==1043578== 
+==1043578== Open file descriptor 2: /dev/null
+==1043578==    <inherited from parent>
+==1043578== 
+==1043578== Open file descriptor 1:
+==1043578==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043578==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043578==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043578==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043578==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043578==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043578==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043578==    by 0x404D77: ft_prompt (main.c:141)
+==1043578==    by 0x404F4C: main (main.c:158)
+==1043578== 
+==1043578== Open file descriptor 0:
+==1043578==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043578==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043583== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043578==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043583==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043578==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043583==    by 0x404C6C: ft_init_data (main.c:84)
+==1043578==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043583==    by 0x404F19: main (main.c:154)
+==1043578==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043583== 
+==1043578==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043578==    by 0x404D77: ft_prompt (main.c:141)
+==1043578==    by 0x404F4C: main (main.c:158)
+==1043578== 
+==1043578== 
+==1043578== HEAP SUMMARY:
+==1043578==     in use at exit: 6,924 bytes in 57 blocks
+==1043578==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043578== 
+==1043583== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043583==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043583==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043583==    by 0x404C9F: ft_init_data (main.c:88)
+==1043583==    by 0x404F19: main (main.c:154)
+==1043583== 
+==1043583== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043583==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043583==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043583==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043583==    by 0x404C9F: ft_init_data (main.c:88)
+==1043583==    by 0x404F19: main (main.c:154)
+==1043583== 
+==1043583== LEAK SUMMARY:
+==1043583==    definitely lost: 0 bytes in 0 blocks
+==1043583==    indirectly lost: 0 bytes in 0 blocks
+==1043583==      possibly lost: 0 bytes in 0 blocks
+==1043583==    still reachable: 2,538 bytes in 53 blocks
+==1043583==         suppressed: 4,386 bytes in 4 blocks
+==1043583== 
+==1043583== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043583-- 
+--1043583-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043583== 
+==1043583== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043578== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043578==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043578==    by 0x404C6C: ft_init_data (main.c:84)
+==1043578==    by 0x404F19: main (main.c:154)
+==1043578== 
+==1043578== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043578==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043578==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043578==    by 0x404C9F: ft_init_data (main.c:88)
+==1043578==    by 0x404F19: main (main.c:154)
+==1043578== 
+==1043578== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043578==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043578==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043578==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043578==    by 0x404C9F: ft_init_data (main.c:88)
+==1043578==    by 0x404F19: main (main.c:154)
+==1043578== 
+==1043578== LEAK SUMMARY:
+==1043578==    definitely lost: 0 bytes in 0 blocks
+==1043578==    indirectly lost: 0 bytes in 0 blocks
+==1043578==      possibly lost: 0 bytes in 0 blocks
+==1043578==    still reachable: 2,538 bytes in 53 blocks
+==1043578==         suppressed: 4,386 bytes in 4 blocks
+==1043578== 
+==1043578== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043578-- 
+--1043578-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043578== 
+==1043578== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043579== 
+==1043579== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043579== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043579==    <inherited from parent>
+==1043579== 
+==1043579== Open file descriptor 2: /dev/null
+==1043579==    <inherited from parent>
+==1043579== 
+==1043579== Open file descriptor 1:
+==1043579==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043579==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043579==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043579==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043579==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043579==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043579==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043579==    by 0x404D77: ft_prompt (main.c:141)
+==1043579==    by 0x404F4C: main (main.c:158)
+==1043579== 
+==1043579== Open file descriptor 0:
+==1043579==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043579==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043579==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043579==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043579==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043579==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043579==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043579==    by 0x404D77: ft_prompt (main.c:141)
+==1043579==    by 0x404F4C: main (main.c:158)
+==1043579== 
+==1043579== 
+==1043579== HEAP SUMMARY:
+==1043579==     in use at exit: 6,924 bytes in 57 blocks
+==1043579==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043579== 
+==1043579== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043579==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043579==    by 0x404C6C: ft_init_data (main.c:84)
+==1043579==    by 0x404F19: main (main.c:154)
+==1043579== 
+==1043579== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043579==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043579==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043579==    by 0x404C9F: ft_init_data (main.c:88)
+==1043579==    by 0x404F19: main (main.c:154)
+==1043579== 
+==1043579== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043579==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043579==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043579==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043579==    by 0x404C9F: ft_init_data (main.c:88)
+==1043579==    by 0x404F19: main (main.c:154)
+==1043579== 
+==1043579== LEAK SUMMARY:
+==1043579==    definitely lost: 0 bytes in 0 blocks
+==1043579==    indirectly lost: 0 bytes in 0 blocks
+==1043579==      possibly lost: 0 bytes in 0 blocks
+==1043579==    still reachable: 2,538 bytes in 53 blocks
+==1043579==         suppressed: 4,386 bytes in 4 blocks
+==1043579== 
+==1043579== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043579-- 
+--1043579-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043579== 
+==1043579== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043582== 
+==1043582== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043582== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043582==    <inherited from parent>
+==1043582== 
+==1043582== Open file descriptor 2: /dev/null
+==1043582==    <inherited from parent>
+==1043582== 
+==1043582== Open file descriptor 1:
+==1043582==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043582==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043582==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043582==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043582==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043582==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043582==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043582==    by 0x404D77: ft_prompt (main.c:141)
+==1043582==    by 0x404F4C: main (main.c:158)
+==1043582== 
+==1043582== Open file descriptor 0:
+==1043582==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043582==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043582==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043582==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043582==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043582==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043582==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043582==    by 0x404D77: ft_prompt (main.c:141)
+==1043582==    by 0x404F4C: main (main.c:158)
+==1043582== 
+==1043582== 
+==1043582== HEAP SUMMARY:
+==1043582==     in use at exit: 6,924 bytes in 57 blocks
+==1043582==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043582== 
+==1043582== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043582==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043582==    by 0x404C6C: ft_init_data (main.c:84)
+==1043582==    by 0x404F19: main (main.c:154)
+==1043582== 
+==1043582== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043582==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043582==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043582==    by 0x404C9F: ft_init_data (main.c:88)
+==1043582==    by 0x404F19: main (main.c:154)
+==1043582== 
+==1043582== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043582==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043582==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043582==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043582==    by 0x404C9F: ft_init_data (main.c:88)
+==1043582==    by 0x404F19: main (main.c:154)
+==1043582== 
+==1043582== LEAK SUMMARY:
+==1043582==    definitely lost: 0 bytes in 0 blocks
+==1043582==    indirectly lost: 0 bytes in 0 blocks
+==1043582==      possibly lost: 0 bytes in 0 blocks
+==1043582==    still reachable: 2,538 bytes in 53 blocks
+==1043582==         suppressed: 4,386 bytes in 4 blocks
+==1043582== 
+==1043582== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043582-- 
+--1043582-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043582== 
+==1043582== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043580== 
+==1043580== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043580== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043580==    <inherited from parent>
+==1043580== 
+==1043580== Open file descriptor 2: /dev/null
+==1043580==    <inherited from parent>
+==1043580== 
+==1043580== Open file descriptor 1:
+==1043580==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043580==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043580==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043580==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043580==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043580==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043580==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043580==    by 0x404D77: ft_prompt (main.c:141)
+==1043580==    by 0x404F4C: main (main.c:158)
+==1043580== 
+==1043580== Open file descriptor 0:
+==1043580==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043580==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043580==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043580==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043580==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043580==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043580==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043580==    by 0x404D77: ft_prompt (main.c:141)
+==1043580==    by 0x404F4C: main (main.c:158)
+==1043580== 
+==1043580== 
+==1043580== HEAP SUMMARY:
+==1043580==     in use at exit: 6,924 bytes in 57 blocks
+==1043580==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043580== 
+==1043580== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043580==    by 0x404C6C: ft_init_data (main.c:84)
+==1043580==    by 0x404F19: main (main.c:154)
+==1043580== 
+==1043580== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043580==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043580==    by 0x404C9F: ft_init_data (main.c:88)
+==1043580==    by 0x404F19: main (main.c:154)
+==1043580== 
+==1043580== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043580==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043580==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043580==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043580==    by 0x404C9F: ft_init_data (main.c:88)
+==1043580==    by 0x404F19: main (main.c:154)
+==1043580== 
+==1043580== LEAK SUMMARY:
+==1043580==    definitely lost: 0 bytes in 0 blocks
+==1043580==    indirectly lost: 0 bytes in 0 blocks
+==1043580==      possibly lost: 0 bytes in 0 blocks
+==1043580==    still reachable: 2,538 bytes in 53 blocks
+==1043580==         suppressed: 4,386 bytes in 4 blocks
+==1043580== 
+==1043580== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043580-- 
+--1043580-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043580== 
+==1043580== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043581== 
+==1043581== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043581== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043581==    <inherited from parent>
+==1043581== 
+==1043581== Open file descriptor 2: /dev/null
+==1043581==    <inherited from parent>
+==1043581== 
+==1043581== Open file descriptor 1:
+==1043581==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043581==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043581==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043581==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043581==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043581==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043581==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043581==    by 0x404D77: ft_prompt (main.c:141)
+==1043581==    by 0x404F4C: main (main.c:158)
+==1043581== 
+==1043581== Open file descriptor 0:
+==1043581==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043581==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043581==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043581==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043581==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043581==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043581==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043581==    by 0x404D77: ft_prompt (main.c:141)
+==1043581==    by 0x404F4C: main (main.c:158)
+==1043581== 
+==1043581== 
+==1043581== HEAP SUMMARY:
+==1043581==     in use at exit: 6,924 bytes in 57 blocks
+==1043581==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043581== 
+==1043581== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043581==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043581==    by 0x404C6C: ft_init_data (main.c:84)
+==1043581==    by 0x404F19: main (main.c:154)
+==1043581== 
+==1043581== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043581==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043581==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043581==    by 0x404C9F: ft_init_data (main.c:88)
+==1043581==    by 0x404F19: main (main.c:154)
+==1043581== 
+==1043581== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043581==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043581==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043581==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043581==    by 0x404C9F: ft_init_data (main.c:88)
+==1043581==    by 0x404F19: main (main.c:154)
+==1043581== 
+==1043581== LEAK SUMMARY:
+==1043581==    definitely lost: 0 bytes in 0 blocks
+==1043581==    indirectly lost: 0 bytes in 0 blocks
+==1043581==      possibly lost: 0 bytes in 0 blocks
+==1043581==    still reachable: 2,538 bytes in 53 blocks
+==1043581==         suppressed: 4,386 bytes in 4 blocks
+==1043581== 
+==1043581== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043581-- 
+--1043581-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043581== 
+==1043581== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043585== 
+==1043585== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043585== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043585==    <inherited from parent>
+==1043585== 
+==1043585== Open file descriptor 2: /dev/null
+==1043585==    <inherited from parent>
+==1043585== 
+==1043585== Open file descriptor 1:
+==1043585==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043585==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043585==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043585==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043585==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043585==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043585==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043585==    by 0x404D77: ft_prompt (main.c:141)
+==1043585==    by 0x404F4C: main (main.c:158)
+==1043585== 
+==1043585== Open file descriptor 0:
+==1043585==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043585==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043585==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043585==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043585==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043585==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043585==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043585==    by 0x404D77: ft_prompt (main.c:141)
+==1043585==    by 0x404F4C: main (main.c:158)
+==1043585== 
+==1043585== 
+==1043585== HEAP SUMMARY:
+==1043585==     in use at exit: 6,924 bytes in 57 blocks
+==1043585==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043585== 
+==1043585== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043585==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043585==    by 0x404C6C: ft_init_data (main.c:84)
+==1043585==    by 0x404F19: main (main.c:154)
+==1043585== 
+==1043585== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043585==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043585==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043585==    by 0x404C9F: ft_init_data (main.c:88)
+==1043585==    by 0x404F19: main (main.c:154)
+==1043585== 
+==1043585== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043585==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043585==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043585==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043585==    by 0x404C9F: ft_init_data (main.c:88)
+==1043585==    by 0x404F19: main (main.c:154)
+==1043585== 
+==1043585== LEAK SUMMARY:
+==1043585==    definitely lost: 0 bytes in 0 blocks
+==1043585==    indirectly lost: 0 bytes in 0 blocks
+==1043585==      possibly lost: 0 bytes in 0 blocks
+==1043585==    still reachable: 2,538 bytes in 53 blocks
+==1043585==         suppressed: 4,386 bytes in 4 blocks
+==1043585== 
+==1043585== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043585-- 
+--1043585-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043585== 
+==1043585== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043584== 
+==1043584== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043584== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043584==    <inherited from parent>
+==1043584== 
+==1043584== Open file descriptor 2: /dev/null
+==1043584==    <inherited from parent>
+==1043584== 
+==1043584== Open file descriptor 1:
+==1043584==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043584==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043584==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043584==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043584==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043584==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043584==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043584==    by 0x404D77: ft_prompt (main.c:141)
+==1043584==    by 0x404F4C: main (main.c:158)
+==1043584== 
+==1043584== Open file descriptor 0:
+==1043584==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043584==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043584==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043584==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043584==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043584==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043584==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043584==    by 0x404D77: ft_prompt (main.c:141)
+==1043584==    by 0x404F4C: main (main.c:158)
+==1043584== 
+==1043584== 
+==1043584== HEAP SUMMARY:
+==1043584==     in use at exit: 6,924 bytes in 57 blocks
+==1043584==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043584== 
+==1043584== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043584==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043584==    by 0x404C6C: ft_init_data (main.c:84)
+==1043584==    by 0x404F19: main (main.c:154)
+==1043584== 
+==1043584== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043584==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043584==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043584==    by 0x404C9F: ft_init_data (main.c:88)
+==1043584==    by 0x404F19: main (main.c:154)
+==1043584== 
+==1043584== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043584==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043584==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043584==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043584==    by 0x404C9F: ft_init_data (main.c:88)
+==1043584==    by 0x404F19: main (main.c:154)
+==1043584== 
+==1043584== LEAK SUMMARY:
+==1043584==    definitely lost: 0 bytes in 0 blocks
+==1043584==    indirectly lost: 0 bytes in 0 blocks
+==1043584==      possibly lost: 0 bytes in 0 blocks
+==1043584==    still reachable: 2,538 bytes in 53 blocks
+==1043584==         suppressed: 4,386 bytes in 4 blocks
+==1043584== 
+==1043584== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043584-- 
+--1043584-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043584== 
+==1043584== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043586== 
+==1043586== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043586== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043586==    <inherited from parent>
+==1043586== 
+==1043586== Open file descriptor 2: /dev/null
+==1043586==    <inherited from parent>
+==1043586== 
+==1043586== Open file descriptor 1:
+==1043586==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043586==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043586==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043586==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043586==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043586==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043586==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043586==    by 0x404D77: ft_prompt (main.c:141)
+==1043586==    by 0x404F4C: main (main.c:158)
+==1043586== 
+==1043586== Open file descriptor 0:
+==1043586==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043586==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043586==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043586==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043586==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043586==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043586==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043586==    by 0x404D77: ft_prompt (main.c:141)
+==1043586==    by 0x404F4C: main (main.c:158)
+==1043586== 
+==1043586== 
+==1043586== HEAP SUMMARY:
+==1043586==     in use at exit: 6,924 bytes in 57 blocks
+==1043586==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043586== 
+==1043586== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043586==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043586==    by 0x404C6C: ft_init_data (main.c:84)
+==1043586==    by 0x404F19: main (main.c:154)
+==1043586== 
+==1043586== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043586==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043586==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043586==    by 0x404C9F: ft_init_data (main.c:88)
+==1043586==    by 0x404F19: main (main.c:154)
+==1043586== 
+==1043586== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043586==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043586==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043586==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043586==    by 0x404C9F: ft_init_data (main.c:88)
+==1043586==    by 0x404F19: main (main.c:154)
+==1043586== 
+==1043586== LEAK SUMMARY:
+==1043586==    definitely lost: 0 bytes in 0 blocks
+==1043586==    indirectly lost: 0 bytes in 0 blocks
+==1043586==      possibly lost: 0 bytes in 0 blocks
+==1043586==    still reachable: 2,538 bytes in 53 blocks
+==1043586==         suppressed: 4,386 bytes in 4 blocks
+==1043586== 
+==1043586== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043586-- 
+--1043586-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043586== 
+==1043586== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043589== 
+==1043589== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043589== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043589==    <inherited from parent>
+==1043589== 
+==1043589== Open file descriptor 2: /dev/null
+==1043589==    <inherited from parent>
+==1043589== 
+==1043589== Open file descriptor 1:
+==1043589==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043589==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043589==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043589==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043589==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043589==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043589==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043589==    by 0x404D77: ft_prompt (main.c:141)
+==1043589==    by 0x404F4C: main (main.c:158)
+==1043589== 
+==1043589== Open file descriptor 0:
+==1043589==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043589==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043589==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043589==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043589==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043589==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043589==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043589==    by 0x404D77: ft_prompt (main.c:141)
+==1043589==    by 0x404F4C: main (main.c:158)
+==1043589== 
+==1043589== 
+==1043589== HEAP SUMMARY:
+==1043589==     in use at exit: 6,924 bytes in 57 blocks
+==1043589==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043589== 
+==1043587== 
+==1043587== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043587== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043587==    <inherited from parent>
+==1043587== 
+==1043587== Open file descriptor 2: /dev/null
+==1043587==    <inherited from parent>
+==1043587== 
+==1043587== Open file descriptor 1:
+==1043587==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043587==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043587==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043587==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043587==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043587==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043587==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043587==    by 0x404D77: ft_prompt (main.c:141)
+==1043587==    by 0x404F4C: main (main.c:158)
+==1043587== 
+==1043587== Open file descriptor 0:
+==1043587==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043587==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043587==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043587==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043587==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043587==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043587==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043587==    by 0x404D77: ft_prompt (main.c:141)
+==1043587==    by 0x404F4C: main (main.c:158)
+==1043587== 
+==1043587== 
+==1043587== HEAP SUMMARY:
+==1043587==     in use at exit: 6,924 bytes in 57 blocks
+==1043587==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043587== 
+==1043587== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043587==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043587==    by 0x404C6C: ft_init_data (main.c:84)
+==1043587==    by 0x404F19: main (main.c:154)
+==1043587== 
+==1043587== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043587==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043587==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043587==    by 0x404C9F: ft_init_data (main.c:88)
+==1043587==    by 0x404F19: main (main.c:154)
+==1043587== 
+==1043587== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043587==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043587==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043587==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043587==    by 0x404C9F: ft_init_data (main.c:88)
+==1043587==    by 0x404F19: main (main.c:154)
+==1043587== 
+==1043587== LEAK SUMMARY:
+==1043587==    definitely lost: 0 bytes in 0 blocks
+==1043587==    indirectly lost: 0 bytes in 0 blocks
+==1043587==      possibly lost: 0 bytes in 0 blocks
+==1043587==    still reachable: 2,538 bytes in 53 blocks
+==1043587==         suppressed: 4,386 bytes in 4 blocks
+==1043587== 
+==1043587== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043587-- 
+--1043587-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043587== 
+==1043587== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043595== 
+==1043595== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043595== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043595==    <inherited from parent>
+==1043595== 
+==1043595== Open file descriptor 2: /dev/null
+==1043595==    <inherited from parent>
+==1043595== 
+==1043595== Open file descriptor 1:
+==1043595==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043595==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043595==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043595==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043595==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043595==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043595==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043595==    by 0x404D77: ft_prompt (main.c:141)
+==1043595==    by 0x404F4C: main (main.c:158)
+==1043595== 
+==1043595== Open file descriptor 0:
+==1043595==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043595==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043595==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043595==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043595==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043595==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043595==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043595==    by 0x404D77: ft_prompt (main.c:141)
+==1043595==    by 0x404F4C: main (main.c:158)
+==1043595== 
+==1043595== 
+==1043595== HEAP SUMMARY:
+==1043595==     in use at exit: 6,924 bytes in 57 blocks
+==1043595==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043595== 
+==1043588== 
+==1043588== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043588== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043588==    <inherited from parent>
+==1043588== 
+==1043588== Open file descriptor 2: /dev/null
+==1043588==    <inherited from parent>
+==1043588== 
+==1043588== Open file descriptor 1:
+==1043595== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043595==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043588==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043595==    by 0x404C6C: ft_init_data (main.c:84)
+==1043595==    by 0x404F19: main (main.c:154)
+==1043595== 
+==1043588==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043588==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043588==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043588==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043588==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043588==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043588==    by 0x404D77: ft_prompt (main.c:141)
+==1043588==    by 0x404F4C: main (main.c:158)
+==1043595== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043588== 
+==1043595==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043588== Open file descriptor 0:
+==1043595==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043588==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043595==    by 0x404C9F: ft_init_data (main.c:88)
+==1043588==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043595==    by 0x404F19: main (main.c:154)
+==1043588==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043595== 
+==1043588==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043588==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043588==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043588==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043588==    by 0x404D77: ft_prompt (main.c:141)
+==1043588==    by 0x404F4C: main (main.c:158)
+==1043588== 
+==1043588== 
+==1043595== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043595==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043595==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043588== HEAP SUMMARY:
+==1043588==     in use at exit: 6,924 bytes in 57 blocks
+==1043588==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043588== 
+==1043594== 
+==1043595==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043594== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043595==    by 0x404C9F: ft_init_data (main.c:88)
+==1043594== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043595==    by 0x404F19: main (main.c:154)
+==1043594==    <inherited from parent>
+==1043595== 
+==1043594== 
+==1043594== Open file descriptor 2: /dev/null
+==1043594==    <inherited from parent>
+==1043594== 
+==1043595== LEAK SUMMARY:
+==1043594== Open file descriptor 1:
+==1043595==    definitely lost: 0 bytes in 0 blocks
+==1043595==    indirectly lost: 0 bytes in 0 blocks
+==1043595==      possibly lost: 0 bytes in 0 blocks
+==1043595==    still reachable: 2,538 bytes in 53 blocks
+==1043595==         suppressed: 4,386 bytes in 4 blocks
+==1043595== 
+==1043595== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043595-- 
+--1043595-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043595== 
+==1043595== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043594==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043594==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043594==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043594==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043594==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043594==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043594==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043594==    by 0x404D77: ft_prompt (main.c:141)
+==1043594==    by 0x404F4C: main (main.c:158)
+==1043594== 
+==1043594== Open file descriptor 0:
+==1043594==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043594==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043594==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043594==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043594==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043594==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043594==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043594==    by 0x404D77: ft_prompt (main.c:141)
+==1043594==    by 0x404F4C: main (main.c:158)
+==1043594== 
+==1043594== 
+==1043594== HEAP SUMMARY:
+==1043594==     in use at exit: 6,924 bytes in 57 blocks
+==1043594==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043594== 
+==1043588== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043588==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043588==    by 0x404C6C: ft_init_data (main.c:84)
+==1043588==    by 0x404F19: main (main.c:154)
+==1043588== 
+==1043588== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043588==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043588==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043588==    by 0x404C9F: ft_init_data (main.c:88)
+==1043588==    by 0x404F19: main (main.c:154)
+==1043588== 
+==1043588== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043588==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043588==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043588==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043588==    by 0x404C9F: ft_init_data (main.c:88)
+==1043588==    by 0x404F19: main (main.c:154)
+==1043588== 
+==1043588== LEAK SUMMARY:
+==1043588==    definitely lost: 0 bytes in 0 blocks
+==1043588==    indirectly lost: 0 bytes in 0 blocks
+==1043588==      possibly lost: 0 bytes in 0 blocks
+==1043588==    still reachable: 2,538 bytes in 53 blocks
+==1043588==         suppressed: 4,386 bytes in 4 blocks
+==1043588== 
+==1043588== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043588-- 
+--1043588-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043588== 
+==1043588== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043594== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043594==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043594==    by 0x404C6C: ft_init_data (main.c:84)
+==1043594==    by 0x404F19: main (main.c:154)
+==1043594== 
+==1043594== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043594==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043594==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043594==    by 0x404C9F: ft_init_data (main.c:88)
+==1043594==    by 0x404F19: main (main.c:154)
+==1043594== 
+==1043594== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043594==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043594==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043594==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043594==    by 0x404C9F: ft_init_data (main.c:88)
+==1043594==    by 0x404F19: main (main.c:154)
+==1043594== 
+==1043594== LEAK SUMMARY:
+==1043594==    definitely lost: 0 bytes in 0 blocks
+==1043594==    indirectly lost: 0 bytes in 0 blocks
+==1043594==      possibly lost: 0 bytes in 0 blocks
+==1043594==    still reachable: 2,538 bytes in 53 blocks
+==1043594==         suppressed: 4,386 bytes in 4 blocks
+==1043594== 
+==1043594== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043594-- 
+--1043594-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043594== 
+==1043594== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043590== 
+==1043590== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043590== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043590==    <inherited from parent>
+==1043590== 
+==1043590== Open file descriptor 2: /dev/null
+==1043590==    <inherited from parent>
+==1043590== 
+==1043590== Open file descriptor 1:
+==1043590==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043590==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043590==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043590==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043590==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043590==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043590==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043590==    by 0x404D77: ft_prompt (main.c:141)
+==1043590==    by 0x404F4C: main (main.c:158)
+==1043590== 
+==1043590== Open file descriptor 0:
+==1043590==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043590==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043590==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043590==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043590==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043590==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043590==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043590==    by 0x404D77: ft_prompt (main.c:141)
+==1043590==    by 0x404F4C: main (main.c:158)
+==1043590== 
+==1043590== 
+==1043590== HEAP SUMMARY:
+==1043590==     in use at exit: 6,924 bytes in 57 blocks
+==1043590==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043590== 
+==1043590== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043590==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043590==    by 0x404C6C: ft_init_data (main.c:84)
+==1043590==    by 0x404F19: main (main.c:154)
+==1043590== 
+==1043590== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043590==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043590==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043590==    by 0x404C9F: ft_init_data (main.c:88)
+==1043590==    by 0x404F19: main (main.c:154)
+==1043590== 
+==1043590== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043590==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043590==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043590==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043590==    by 0x404C9F: ft_init_data (main.c:88)
+==1043590==    by 0x404F19: main (main.c:154)
+==1043590== 
+==1043590== LEAK SUMMARY:
+==1043590==    definitely lost: 0 bytes in 0 blocks
+==1043590==    indirectly lost: 0 bytes in 0 blocks
+==1043590==      possibly lost: 0 bytes in 0 blocks
+==1043590==    still reachable: 2,538 bytes in 53 blocks
+==1043590==         suppressed: 4,386 bytes in 4 blocks
+==1043590== 
+==1043590== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043590-- 
+--1043590-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043590== 
+==1043590== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043589== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043589==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043589==    by 0x404C6C: ft_init_data (main.c:84)
+==1043589==    by 0x404F19: main (main.c:154)
+==1043589== 
+==1043589== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043589==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043589==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043589==    by 0x404C9F: ft_init_data (main.c:88)
+==1043589==    by 0x404F19: main (main.c:154)
+==1043589== 
+==1043589== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043589==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043589==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043589==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043589==    by 0x404C9F: ft_init_data (main.c:88)
+==1043589==    by 0x404F19: main (main.c:154)
+==1043589== 
+==1043589== LEAK SUMMARY:
+==1043589==    definitely lost: 0 bytes in 0 blocks
+==1043589==    indirectly lost: 0 bytes in 0 blocks
+==1043589==      possibly lost: 0 bytes in 0 blocks
+==1043589==    still reachable: 2,538 bytes in 53 blocks
+==1043589==         suppressed: 4,386 bytes in 4 blocks
+==1043589== 
+==1043589== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043589-- 
+--1043589-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043589== 
+==1043589== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043604== 
+==1043604== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043604== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043604==    <inherited from parent>
+==1043604== 
+==1043604== Open file descriptor 2: /dev/null
+==1043604==    <inherited from parent>
+==1043604== 
+==1043604== Open file descriptor 1:
+==1043604==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043604==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043604==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043604==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043604==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043604==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043604==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043604==    by 0x404D77: ft_prompt (main.c:141)
+==1043604==    by 0x404F4C: main (main.c:158)
+==1043604== 
+==1043604== Open file descriptor 0:
+==1043604==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043604==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043604==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043604==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043604==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043604==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043604==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043604==    by 0x404D77: ft_prompt (main.c:141)
+==1043604==    by 0x404F4C: main (main.c:158)
+==1043604== 
+==1043604== 
+==1043604== HEAP SUMMARY:
+==1043604==     in use at exit: 6,924 bytes in 57 blocks
+==1043604==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043604== 
+==1043591== 
+==1043591== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043591== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043591==    <inherited from parent>
+==1043591== 
+==1043591== Open file descriptor 2: /dev/null
+==1043591==    <inherited from parent>
+==1043591== 
+==1043591== Open file descriptor 1:
+==1043591==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043591==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043591==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043591==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043591==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043591==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043591==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043591==    by 0x404D77: ft_prompt (main.c:141)
+==1043591==    by 0x404F4C: main (main.c:158)
+==1043591== 
+==1043591== Open file descriptor 0:
+==1043591==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043591==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043591==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043591==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043591==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043591==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043591==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043591==    by 0x404D77: ft_prompt (main.c:141)
+==1043591==    by 0x404F4C: main (main.c:158)
+==1043591== 
+==1043591== 
+==1043591== HEAP SUMMARY:
+==1043591==     in use at exit: 6,924 bytes in 57 blocks
+==1043591==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043591== 
+==1043604== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043604==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043604==    by 0x404C6C: ft_init_data (main.c:84)
+==1043604==    by 0x404F19: main (main.c:154)
+==1043604== 
+==1043591== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043604== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043591==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043604==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043591==    by 0x404C6C: ft_init_data (main.c:84)
+==1043604==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043591==    by 0x404F19: main (main.c:154)
+==1043604==    by 0x404C9F: ft_init_data (main.c:88)
+==1043591== 
+==1043604==    by 0x404F19: main (main.c:154)
+==1043604== 
+==1043591== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043604== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043591==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043604==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043591==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043604==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043591==    by 0x404C9F: ft_init_data (main.c:88)
+==1043604==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043591==    by 0x404F19: main (main.c:154)
+==1043604==    by 0x404C9F: ft_init_data (main.c:88)
+==1043591== 
+==1043604==    by 0x404F19: main (main.c:154)
+==1043604== 
+==1043604== LEAK SUMMARY:
+==1043604==    definitely lost: 0 bytes in 0 blocks
+==1043604==    indirectly lost: 0 bytes in 0 blocks
+==1043604==      possibly lost: 0 bytes in 0 blocks
+==1043591== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043604==    still reachable: 2,538 bytes in 53 blocks
+==1043591==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043604==         suppressed: 4,386 bytes in 4 blocks
+==1043591==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043604== 
+==1043591==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043604== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043591==    by 0x404C9F: ft_init_data (main.c:88)
+--1043604-- 
+==1043591==    by 0x404F19: main (main.c:154)
+==1043591== 
+--1043604-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043604== 
+==1043604== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043591== LEAK SUMMARY:
+==1043591==    definitely lost: 0 bytes in 0 blocks
+==1043591==    indirectly lost: 0 bytes in 0 blocks
+==1043591==      possibly lost: 0 bytes in 0 blocks
+==1043591==    still reachable: 2,538 bytes in 53 blocks
+==1043591==         suppressed: 4,386 bytes in 4 blocks
+==1043591== 
+==1043591== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043591-- 
+--1043591-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043591== 
+==1043591== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043601== 
+==1043601== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043601== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043601==    <inherited from parent>
+==1043601== 
+==1043601== Open file descriptor 2: /dev/null
+==1043601==    <inherited from parent>
+==1043601== 
+==1043601== Open file descriptor 1:
+==1043601==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043601==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043601==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043601==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043601==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043601==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043601==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043601==    by 0x404D77: ft_prompt (main.c:141)
+==1043601==    by 0x404F4C: main (main.c:158)
+==1043601== 
+==1043601== Open file descriptor 0:
+==1043601==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043601==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043601==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043601==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043601==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043601==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043601==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043601==    by 0x404D77: ft_prompt (main.c:141)
+==1043601==    by 0x404F4C: main (main.c:158)
+==1043601== 
+==1043601== 
+==1043601== HEAP SUMMARY:
+==1043601==     in use at exit: 6,924 bytes in 57 blocks
+==1043601==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043601== 
+==1043601== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043601==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043601==    by 0x404C6C: ft_init_data (main.c:84)
+==1043601==    by 0x404F19: main (main.c:154)
+==1043601== 
+==1043601== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043601==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043601==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043601==    by 0x404C9F: ft_init_data (main.c:88)
+==1043601==    by 0x404F19: main (main.c:154)
+==1043601== 
+==1043601== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043601==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043601==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043601==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043601==    by 0x404C9F: ft_init_data (main.c:88)
+==1043601==    by 0x404F19: main (main.c:154)
+==1043601== 
+==1043601== LEAK SUMMARY:
+==1043601==    definitely lost: 0 bytes in 0 blocks
+==1043601==    indirectly lost: 0 bytes in 0 blocks
+==1043601==      possibly lost: 0 bytes in 0 blocks
+==1043601==    still reachable: 2,538 bytes in 53 blocks
+==1043601==         suppressed: 4,386 bytes in 4 blocks
+==1043601== 
+==1043601== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043601-- 
+--1043601-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043601== 
+==1043601== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043599== 
+==1043599== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043599== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043599==    <inherited from parent>
+==1043599== 
+==1043599== Open file descriptor 2: /dev/null
+==1043599==    <inherited from parent>
+==1043599== 
+==1043599== Open file descriptor 1:
+==1043599==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043599==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043599==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043599==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043599==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043599==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043599==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043599==    by 0x404D77: ft_prompt (main.c:141)
+==1043599==    by 0x404F4C: main (main.c:158)
+==1043599== 
+==1043599== Open file descriptor 0:
+==1043599==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043599==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043599==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043599==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043599==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043599==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043599==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043599==    by 0x404D77: ft_prompt (main.c:141)
+==1043599==    by 0x404F4C: main (main.c:158)
+==1043599== 
+==1043599== 
+==1043599== HEAP SUMMARY:
+==1043599==     in use at exit: 6,924 bytes in 57 blocks
+==1043599==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043599== 
+==1043593== 
+==1043593== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043593== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043593==    <inherited from parent>
+==1043593== 
+==1043593== Open file descriptor 2: /dev/null
+==1043593==    <inherited from parent>
+==1043593== 
+==1043593== Open file descriptor 1:
+==1043593==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043593==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043593==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043593==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043593==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043593==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043593==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043593==    by 0x404D77: ft_prompt (main.c:141)
+==1043593==    by 0x404F4C: main (main.c:158)
+==1043593== 
+==1043593== Open file descriptor 0:
+==1043593==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043593==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043593==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043593==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043593==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043593==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043593==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043593==    by 0x404D77: ft_prompt (main.c:141)
+==1043593==    by 0x404F4C: main (main.c:158)
+==1043593== 
+==1043593== 
+==1043593== HEAP SUMMARY:
+==1043593==     in use at exit: 6,924 bytes in 57 blocks
+==1043593==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043593== 
+==1043599== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043599==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043599==    by 0x404C6C: ft_init_data (main.c:84)
+==1043599==    by 0x404F19: main (main.c:154)
+==1043599== 
+==1043599== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043599==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043599==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043599==    by 0x404C9F: ft_init_data (main.c:88)
+==1043599==    by 0x404F19: main (main.c:154)
+==1043599== 
+==1043599== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043599==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043599==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043599==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043599==    by 0x404C9F: ft_init_data (main.c:88)
+==1043599==    by 0x404F19: main (main.c:154)
+==1043599== 
+==1043599== LEAK SUMMARY:
+==1043599==    definitely lost: 0 bytes in 0 blocks
+==1043599==    indirectly lost: 0 bytes in 0 blocks
+==1043599==      possibly lost: 0 bytes in 0 blocks
+==1043599==    still reachable: 2,538 bytes in 53 blocks
+==1043599==         suppressed: 4,386 bytes in 4 blocks
+==1043599== 
+==1043599== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043599-- 
+--1043599-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043599== 
+==1043599== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043593== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043593==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043593==    by 0x404C6C: ft_init_data (main.c:84)
+==1043593==    by 0x404F19: main (main.c:154)
+==1043593== 
+==1043593== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043593==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043593==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043593==    by 0x404C9F: ft_init_data (main.c:88)
+==1043593==    by 0x404F19: main (main.c:154)
+==1043593== 
+==1043593== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043593==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043593==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043593==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043593==    by 0x404C9F: ft_init_data (main.c:88)
+==1043593==    by 0x404F19: main (main.c:154)
+==1043593== 
+==1043593== LEAK SUMMARY:
+==1043593==    definitely lost: 0 bytes in 0 blocks
+==1043593==    indirectly lost: 0 bytes in 0 blocks
+==1043593==      possibly lost: 0 bytes in 0 blocks
+==1043593==    still reachable: 2,538 bytes in 53 blocks
+==1043593==         suppressed: 4,386 bytes in 4 blocks
+==1043593== 
+==1043593== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043593-- 
+--1043593-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043593== 
+==1043593== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043603== 
+==1043603== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043603== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043603==    <inherited from parent>
+==1043603== 
+==1043603== Open file descriptor 2: /dev/null
+==1043603==    <inherited from parent>
+==1043603== 
+==1043603== Open file descriptor 1:
+==1043603==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043603==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043603==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043603==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043603==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043603==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043603==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043603==    by 0x404D77: ft_prompt (main.c:141)
+==1043603==    by 0x404F4C: main (main.c:158)
+==1043603== 
+==1043603== Open file descriptor 0:
+==1043603==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043603==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043603==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043603==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043603==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043603==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043603==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043603==    by 0x404D77: ft_prompt (main.c:141)
+==1043603==    by 0x404F4C: main (main.c:158)
+==1043603== 
+==1043603== 
+==1043603== HEAP SUMMARY:
+==1043603==     in use at exit: 6,924 bytes in 57 blocks
+==1043603==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043603== 
+==1043597== 
+==1043597== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043597== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043597==    <inherited from parent>
+==1043597== 
+==1043597== Open file descriptor 2: /dev/null
+==1043597==    <inherited from parent>
+==1043597== 
+==1043597== Open file descriptor 1:
+==1043597==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043597==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043597==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043597==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043597==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043597==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043597==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043597==    by 0x404D77: ft_prompt (main.c:141)
+==1043597==    by 0x404F4C: main (main.c:158)
+==1043597== 
+==1043597== Open file descriptor 0:
+==1043597==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043597==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043597==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043597==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043597==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043597==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043597==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043597==    by 0x404D77: ft_prompt (main.c:141)
+==1043597==    by 0x404F4C: main (main.c:158)
+==1043597== 
+==1043597== 
+==1043597== HEAP SUMMARY:
+==1043597==     in use at exit: 6,924 bytes in 57 blocks
+==1043597==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043597== 
+==1043596== 
+==1043596== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043596== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043596==    <inherited from parent>
+==1043596== 
+==1043596== Open file descriptor 2: /dev/null
+==1043596==    <inherited from parent>
+==1043596== 
+==1043596== Open file descriptor 1:
+==1043596==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043596==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043596==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043596==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043596==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043596==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043596==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043596==    by 0x404D77: ft_prompt (main.c:141)
+==1043596==    by 0x404F4C: main (main.c:158)
+==1043596== 
+==1043596== Open file descriptor 0:
+==1043596==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043596==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043596==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043596==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043596==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043596==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043596==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043596==    by 0x404D77: ft_prompt (main.c:141)
+==1043596==    by 0x404F4C: main (main.c:158)
+==1043596== 
+==1043596== 
+==1043596== HEAP SUMMARY:
+==1043596==     in use at exit: 6,924 bytes in 57 blocks
+==1043596==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043596== 
+==1043597== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043597==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043597==    by 0x404C6C: ft_init_data (main.c:84)
+==1043597==    by 0x404F19: main (main.c:154)
+==1043597== 
+==1043597== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043597==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043597==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043597==    by 0x404C9F: ft_init_data (main.c:88)
+==1043597==    by 0x404F19: main (main.c:154)
+==1043597== 
+==1043597== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043597==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043597==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043597==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043597==    by 0x404C9F: ft_init_data (main.c:88)
+==1043597==    by 0x404F19: main (main.c:154)
+==1043597== 
+==1043597== LEAK SUMMARY:
+==1043597==    definitely lost: 0 bytes in 0 blocks
+==1043597==    indirectly lost: 0 bytes in 0 blocks
+==1043597==      possibly lost: 0 bytes in 0 blocks
+==1043597==    still reachable: 2,538 bytes in 53 blocks
+==1043597==         suppressed: 4,386 bytes in 4 blocks
+==1043597== 
+==1043597== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043597-- 
+--1043597-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043597== 
+==1043597== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043596== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043596==    by 0x404C6C: ft_init_data (main.c:84)
+==1043596==    by 0x404F19: main (main.c:154)
+==1043596== 
+==1043596== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043596==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043596==    by 0x404C9F: ft_init_data (main.c:88)
+==1043596==    by 0x404F19: main (main.c:154)
+==1043596== 
+==1043596== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043596==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043596==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043596==    by 0x404C9F: ft_init_data (main.c:88)
+==1043596==    by 0x404F19: main (main.c:154)
+==1043596== 
+==1043596== LEAK SUMMARY:
+==1043596==    definitely lost: 0 bytes in 0 blocks
+==1043596==    indirectly lost: 0 bytes in 0 blocks
+==1043596==      possibly lost: 0 bytes in 0 blocks
+==1043596==    still reachable: 2,538 bytes in 53 blocks
+==1043596==         suppressed: 4,386 bytes in 4 blocks
+==1043596== 
+==1043596== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043596-- 
+--1043596-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043596== 
+==1043596== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043600== 
+==1043600== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043600== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043600==    <inherited from parent>
+==1043600== 
+==1043600== Open file descriptor 2: /dev/null
+==1043600==    <inherited from parent>
+==1043600== 
+==1043600== Open file descriptor 1:
+==1043600==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043600==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043600==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043600==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043600==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043600==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043600==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043600==    by 0x404D77: ft_prompt (main.c:141)
+==1043600==    by 0x404F4C: main (main.c:158)
+==1043600== 
+==1043600== Open file descriptor 0:
+==1043600==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043600==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043600==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043600==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043600==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043600==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043600==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043600==    by 0x404D77: ft_prompt (main.c:141)
+==1043600==    by 0x404F4C: main (main.c:158)
+==1043600== 
+==1043600== 
+==1043600== HEAP SUMMARY:
+==1043600==     in use at exit: 6,924 bytes in 57 blocks
+==1043600==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043600== 
+==1043600== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043600==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043600==    by 0x404C6C: ft_init_data (main.c:84)
+==1043600==    by 0x404F19: main (main.c:154)
+==1043600== 
+==1043600== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043600==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043600==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043600==    by 0x404C9F: ft_init_data (main.c:88)
+==1043600==    by 0x404F19: main (main.c:154)
+==1043600== 
+==1043600== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043600==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043600==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043600==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043600==    by 0x404C9F: ft_init_data (main.c:88)
+==1043600==    by 0x404F19: main (main.c:154)
+==1043600== 
+==1043600== LEAK SUMMARY:
+==1043600==    definitely lost: 0 bytes in 0 blocks
+==1043600==    indirectly lost: 0 bytes in 0 blocks
+==1043600==      possibly lost: 0 bytes in 0 blocks
+==1043600==    still reachable: 2,538 bytes in 53 blocks
+==1043600==         suppressed: 4,386 bytes in 4 blocks
+==1043600== 
+==1043600== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043600-- 
+--1043600-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043600== 
+==1043600== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043605== 
+==1043605== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043605== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043605==    <inherited from parent>
+==1043605== 
+==1043605== Open file descriptor 2: /dev/null
+==1043605==    <inherited from parent>
+==1043605== 
+==1043605== Open file descriptor 1:
+==1043605==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043605==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043605==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043605==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043605==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043605==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043605==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043605==    by 0x404D77: ft_prompt (main.c:141)
+==1043605==    by 0x404F4C: main (main.c:158)
+==1043605== 
+==1043605== Open file descriptor 0:
+==1043605==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043605==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043605==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043605==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043605==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043605==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043605==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043605==    by 0x404D77: ft_prompt (main.c:141)
+==1043605==    by 0x404F4C: main (main.c:158)
+==1043605== 
+==1043605== 
+==1043605== HEAP SUMMARY:
+==1043605==     in use at exit: 6,924 bytes in 57 blocks
+==1043605==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043605== 
+==1043605== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043605==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043605==    by 0x404C6C: ft_init_data (main.c:84)
+==1043605==    by 0x404F19: main (main.c:154)
+==1043605== 
+==1043605== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043605==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043605==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043605==    by 0x404C9F: ft_init_data (main.c:88)
+==1043605==    by 0x404F19: main (main.c:154)
+==1043605== 
+==1043605== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043605==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043605==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043605==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043605==    by 0x404C9F: ft_init_data (main.c:88)
+==1043605==    by 0x404F19: main (main.c:154)
+==1043605== 
+==1043605== LEAK SUMMARY:
+==1043605==    definitely lost: 0 bytes in 0 blocks
+==1043605==    indirectly lost: 0 bytes in 0 blocks
+==1043605==      possibly lost: 0 bytes in 0 blocks
+==1043605==    still reachable: 2,538 bytes in 53 blocks
+==1043605==         suppressed: 4,386 bytes in 4 blocks
+==1043605== 
+==1043605== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043605-- 
+--1043605-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043605== 
+==1043605== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043603== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043603==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043603==    by 0x404C6C: ft_init_data (main.c:84)
+==1043603==    by 0x404F19: main (main.c:154)
+==1043603== 
+==1043603== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043603==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043603==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043603==    by 0x404C9F: ft_init_data (main.c:88)
+==1043603==    by 0x404F19: main (main.c:154)
+==1043603== 
+==1043603== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043603==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043603==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043603==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043603==    by 0x404C9F: ft_init_data (main.c:88)
+==1043603==    by 0x404F19: main (main.c:154)
+==1043603== 
+==1043603== LEAK SUMMARY:
+==1043603==    definitely lost: 0 bytes in 0 blocks
+==1043603==    indirectly lost: 0 bytes in 0 blocks
+==1043603==      possibly lost: 0 bytes in 0 blocks
+==1043603==    still reachable: 2,538 bytes in 53 blocks
+==1043603==         suppressed: 4,386 bytes in 4 blocks
+==1043603== 
+==1043603== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043603-- 
+--1043603-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043603== 
+==1043603== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043602== 
+==1043602== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043602== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043602==    <inherited from parent>
+==1043602== 
+==1043602== Open file descriptor 2: /dev/null
+==1043602==    <inherited from parent>
+==1043602== 
+==1043602== Open file descriptor 1:
+==1043602==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043602==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043602==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043602==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043602==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043602==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043602==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043602==    by 0x404D77: ft_prompt (main.c:141)
+==1043602==    by 0x404F4C: main (main.c:158)
+==1043602== 
+==1043602== Open file descriptor 0:
+==1043602==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043602==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043602==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043602==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043602==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043602==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043602==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043602==    by 0x404D77: ft_prompt (main.c:141)
+==1043602==    by 0x404F4C: main (main.c:158)
+==1043602== 
+==1043602== 
+==1043602== HEAP SUMMARY:
+==1043602==     in use at exit: 6,924 bytes in 57 blocks
+==1043602==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043602== 
+==1043602== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043602==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043602==    by 0x404C6C: ft_init_data (main.c:84)
+==1043602==    by 0x404F19: main (main.c:154)
+==1043602== 
+==1043602== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043602==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043602==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043602==    by 0x404C9F: ft_init_data (main.c:88)
+==1043602==    by 0x404F19: main (main.c:154)
+==1043602== 
+==1043602== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043602==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043602==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043602==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043602==    by 0x404C9F: ft_init_data (main.c:88)
+==1043602==    by 0x404F19: main (main.c:154)
+==1043602== 
+==1043602== LEAK SUMMARY:
+==1043602==    definitely lost: 0 bytes in 0 blocks
+==1043602==    indirectly lost: 0 bytes in 0 blocks
+==1043602==      possibly lost: 0 bytes in 0 blocks
+==1043602==    still reachable: 2,538 bytes in 53 blocks
+==1043602==         suppressed: 4,386 bytes in 4 blocks
+==1043602== 
+==1043602== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043602-- 
+--1043602-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043602== 
+==1043602== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043592== 
+==1043592== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043592== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043592==    <inherited from parent>
+==1043592== 
+==1043592== Open file descriptor 2: /dev/null
+==1043592==    <inherited from parent>
+==1043592== 
+==1043592== Open file descriptor 1:
+==1043592==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043592==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043592==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043592==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043592==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043592==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043592==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043592==    by 0x404D77: ft_prompt (main.c:141)
+==1043592==    by 0x404F4C: main (main.c:158)
+==1043592== 
+==1043592== Open file descriptor 0:
+==1043592==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043592==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043592==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043592==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043592==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043592==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043592==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043592==    by 0x404D77: ft_prompt (main.c:141)
+==1043592==    by 0x404F4C: main (main.c:158)
+==1043592== 
+==1043592== 
+==1043592== HEAP SUMMARY:
+==1043592==     in use at exit: 6,924 bytes in 57 blocks
+==1043592==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043592== 
+==1043592== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043592==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043592==    by 0x404C6C: ft_init_data (main.c:84)
+==1043592==    by 0x404F19: main (main.c:154)
+==1043592== 
+==1043592== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043592==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043592==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043592==    by 0x404C9F: ft_init_data (main.c:88)
+==1043592==    by 0x404F19: main (main.c:154)
+==1043592== 
+==1043592== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043592==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043592==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043592==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043592==    by 0x404C9F: ft_init_data (main.c:88)
+==1043592==    by 0x404F19: main (main.c:154)
+==1043592== 
+==1043592== LEAK SUMMARY:
+==1043592==    definitely lost: 0 bytes in 0 blocks
+==1043592==    indirectly lost: 0 bytes in 0 blocks
+==1043592==      possibly lost: 0 bytes in 0 blocks
+==1043592==    still reachable: 2,538 bytes in 53 blocks
+==1043592==         suppressed: 4,386 bytes in 4 blocks
+==1043592== 
+==1043592== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043592-- 
+--1043592-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043592== 
+==1043592== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043608== 
+==1043608== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043608== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043608==    <inherited from parent>
+==1043608== 
+==1043608== Open file descriptor 2: /dev/null
+==1043608==    <inherited from parent>
+==1043608== 
+==1043608== Open file descriptor 1:
+==1043608==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043608==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043608==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043608==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043608==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043608==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043608==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043608==    by 0x404D77: ft_prompt (main.c:141)
+==1043608==    by 0x404F4C: main (main.c:158)
+==1043608== 
+==1043608== Open file descriptor 0:
+==1043608==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043608==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043608==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043608==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043608==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043608==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043608==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043608==    by 0x404D77: ft_prompt (main.c:141)
+==1043608==    by 0x404F4C: main (main.c:158)
+==1043608== 
+==1043608== 
+==1043608== HEAP SUMMARY:
+==1043608==     in use at exit: 6,924 bytes in 57 blocks
+==1043608==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043608== 
+==1043608== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043608==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043608==    by 0x404C6C: ft_init_data (main.c:84)
+==1043608==    by 0x404F19: main (main.c:154)
+==1043608== 
+==1043608== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043608==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043608==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043608==    by 0x404C9F: ft_init_data (main.c:88)
+==1043608==    by 0x404F19: main (main.c:154)
+==1043608== 
+==1043608== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043608==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043608==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043608==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043608==    by 0x404C9F: ft_init_data (main.c:88)
+==1043608==    by 0x404F19: main (main.c:154)
+==1043608== 
+==1043608== LEAK SUMMARY:
+==1043608==    definitely lost: 0 bytes in 0 blocks
+==1043608==    indirectly lost: 0 bytes in 0 blocks
+==1043608==      possibly lost: 0 bytes in 0 blocks
+==1043608==    still reachable: 2,538 bytes in 53 blocks
+==1043608==         suppressed: 4,386 bytes in 4 blocks
+==1043608== 
+==1043608== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043608-- 
+--1043608-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043608== 
+==1043608== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043607== 
+==1043607== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043607== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043607==    <inherited from parent>
+==1043607== 
+==1043607== Open file descriptor 2: /dev/null
+==1043607==    <inherited from parent>
+==1043607== 
+==1043607== Open file descriptor 1:
+==1043607==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043607==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043607==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043607==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043607==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043607==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043607==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043607==    by 0x404D77: ft_prompt (main.c:141)
+==1043607==    by 0x404F4C: main (main.c:158)
+==1043607== 
+==1043607== Open file descriptor 0:
+==1043607==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043607==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043607==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043607==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043607==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043607==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043607==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043607==    by 0x404D77: ft_prompt (main.c:141)
+==1043607==    by 0x404F4C: main (main.c:158)
+==1043607== 
+==1043607== 
+==1043607== HEAP SUMMARY:
+==1043607==     in use at exit: 6,924 bytes in 57 blocks
+==1043607==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043607== 
+==1043610== 
+==1043610== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043610== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043610==    <inherited from parent>
+==1043610== 
+==1043610== Open file descriptor 2: /dev/null
+==1043610==    <inherited from parent>
+==1043610== 
+==1043610== Open file descriptor 1:
+==1043610==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043610==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043610==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043610==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043610==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043610==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043610==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043610==    by 0x404D77: ft_prompt (main.c:141)
+==1043610==    by 0x404F4C: main (main.c:158)
+==1043610== 
+==1043610== Open file descriptor 0:
+==1043610==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043610==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043610==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043610==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043610==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043610==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043610==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043610==    by 0x404D77: ft_prompt (main.c:141)
+==1043610==    by 0x404F4C: main (main.c:158)
+==1043610== 
+==1043610== 
+==1043610== HEAP SUMMARY:
+==1043610==     in use at exit: 6,924 bytes in 57 blocks
+==1043610==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043610== 
+==1043607== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043607==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043607==    by 0x404C6C: ft_init_data (main.c:84)
+==1043607==    by 0x404F19: main (main.c:154)
+==1043607== 
+==1043607== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043607==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043607==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043607==    by 0x404C9F: ft_init_data (main.c:88)
+==1043607==    by 0x404F19: main (main.c:154)
+==1043607== 
+==1043607== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043607==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043607==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043607==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043607==    by 0x404C9F: ft_init_data (main.c:88)
+==1043607==    by 0x404F19: main (main.c:154)
+==1043607== 
+==1043607== LEAK SUMMARY:
+==1043607==    definitely lost: 0 bytes in 0 blocks
+==1043607==    indirectly lost: 0 bytes in 0 blocks
+==1043607==      possibly lost: 0 bytes in 0 blocks
+==1043607==    still reachable: 2,538 bytes in 53 blocks
+==1043607==         suppressed: 4,386 bytes in 4 blocks
+==1043607== 
+==1043607== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043607-- 
+--1043607-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043607== 
+==1043607== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043610== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043610==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043610==    by 0x404C6C: ft_init_data (main.c:84)
+==1043610==    by 0x404F19: main (main.c:154)
+==1043610== 
+==1043610== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043610==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043610==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043610==    by 0x404C9F: ft_init_data (main.c:88)
+==1043610==    by 0x404F19: main (main.c:154)
+==1043610== 
+==1043610== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043610==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043610==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043610==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043610==    by 0x404C9F: ft_init_data (main.c:88)
+==1043610==    by 0x404F19: main (main.c:154)
+==1043610== 
+==1043610== LEAK SUMMARY:
+==1043610==    definitely lost: 0 bytes in 0 blocks
+==1043610==    indirectly lost: 0 bytes in 0 blocks
+==1043610==      possibly lost: 0 bytes in 0 blocks
+==1043610==    still reachable: 2,538 bytes in 53 blocks
+==1043610==         suppressed: 4,386 bytes in 4 blocks
+==1043610== 
+==1043610== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043610-- 
+--1043610-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043610== 
+==1043610== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043614== 
+==1043614== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043614== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043614==    <inherited from parent>
+==1043614== 
+==1043614== Open file descriptor 2: /dev/null
+==1043614==    <inherited from parent>
+==1043614== 
+==1043614== Open file descriptor 1:
+==1043614==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043614==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043614==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043614==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043614==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043614==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043614==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043614==    by 0x404D77: ft_prompt (main.c:141)
+==1043614==    by 0x404F4C: main (main.c:158)
+==1043614== 
+==1043614== Open file descriptor 0:
+==1043614==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043614==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043614==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043614==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043614==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043614==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043614==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043614==    by 0x404D77: ft_prompt (main.c:141)
+==1043614==    by 0x404F4C: main (main.c:158)
+==1043614== 
+==1043614== 
+==1043614== HEAP SUMMARY:
+==1043614==     in use at exit: 6,924 bytes in 57 blocks
+==1043614==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043614== 
+==1043598== 
+==1043598== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043598== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043598==    <inherited from parent>
+==1043598== 
+==1043598== Open file descriptor 2: /dev/null
+==1043598==    <inherited from parent>
+==1043598== 
+==1043598== Open file descriptor 1:
+==1043598==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043598==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043598==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043598==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043598==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043598==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043598==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043598==    by 0x404D77: ft_prompt (main.c:141)
+==1043598==    by 0x404F4C: main (main.c:158)
+==1043598== 
+==1043598== Open file descriptor 0:
+==1043598==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043598==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043598==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043598==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043598==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043598==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043598==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043598==    by 0x404D77: ft_prompt (main.c:141)
+==1043598==    by 0x404F4C: main (main.c:158)
+==1043598== 
+==1043598== 
+==1043598== HEAP SUMMARY:
+==1043598==     in use at exit: 6,924 bytes in 57 blocks
+==1043598==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043598== 
+==1043614== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043614==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043614==    by 0x404C6C: ft_init_data (main.c:84)
+==1043614==    by 0x404F19: main (main.c:154)
+==1043614== 
+==1043614== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043614==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043614==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043614==    by 0x404C9F: ft_init_data (main.c:88)
+==1043614==    by 0x404F19: main (main.c:154)
+==1043614== 
+==1043614== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043614==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043614==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043614==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043614==    by 0x404C9F: ft_init_data (main.c:88)
+==1043614==    by 0x404F19: main (main.c:154)
+==1043614== 
+==1043614== LEAK SUMMARY:
+==1043614==    definitely lost: 0 bytes in 0 blocks
+==1043614==    indirectly lost: 0 bytes in 0 blocks
+==1043614==      possibly lost: 0 bytes in 0 blocks
+==1043614==    still reachable: 2,538 bytes in 53 blocks
+==1043614==         suppressed: 4,386 bytes in 4 blocks
+==1043614== 
+==1043614== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043614-- 
+--1043614-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043614== 
+==1043614== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043598== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043598==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043598==    by 0x404C6C: ft_init_data (main.c:84)
+==1043598==    by 0x404F19: main (main.c:154)
+==1043598== 
+==1043598== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043598==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043598==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043598==    by 0x404C9F: ft_init_data (main.c:88)
+==1043598==    by 0x404F19: main (main.c:154)
+==1043598== 
+==1043598== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043598==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043598==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043598==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043598==    by 0x404C9F: ft_init_data (main.c:88)
+==1043598==    by 0x404F19: main (main.c:154)
+==1043598== 
+==1043598== LEAK SUMMARY:
+==1043598==    definitely lost: 0 bytes in 0 blocks
+==1043598==    indirectly lost: 0 bytes in 0 blocks
+==1043598==      possibly lost: 0 bytes in 0 blocks
+==1043598==    still reachable: 2,538 bytes in 53 blocks
+==1043598==         suppressed: 4,386 bytes in 4 blocks
+==1043598== 
+==1043598== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043598-- 
+--1043598-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043598== 
+==1043598== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043616== 
+==1043616== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043616== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043616==    <inherited from parent>
+==1043616== 
+==1043616== Open file descriptor 2: /dev/null
+==1043616==    <inherited from parent>
+==1043616== 
+==1043616== Open file descriptor 1:
+==1043616==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043616==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043616==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043616==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043616==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043616==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043616==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043616==    by 0x404D77: ft_prompt (main.c:141)
+==1043616==    by 0x404F4C: main (main.c:158)
+==1043616== 
+==1043616== Open file descriptor 0:
+==1043616==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043616==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043616==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043616==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043616==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043616==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043616==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043616==    by 0x404D77: ft_prompt (main.c:141)
+==1043616==    by 0x404F4C: main (main.c:158)
+==1043616== 
+==1043616== 
+==1043616== HEAP SUMMARY:
+==1043616==     in use at exit: 6,924 bytes in 57 blocks
+==1043616==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043616== 
+==1043616== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043616==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043616==    by 0x404C6C: ft_init_data (main.c:84)
+==1043616==    by 0x404F19: main (main.c:154)
+==1043616== 
+==1043616== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043616==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043616==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043616==    by 0x404C9F: ft_init_data (main.c:88)
+==1043616==    by 0x404F19: main (main.c:154)
+==1043616== 
+==1043616== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043616==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043616==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043616==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043616==    by 0x404C9F: ft_init_data (main.c:88)
+==1043616==    by 0x404F19: main (main.c:154)
+==1043616== 
+==1043616== LEAK SUMMARY:
+==1043616==    definitely lost: 0 bytes in 0 blocks
+==1043616==    indirectly lost: 0 bytes in 0 blocks
+==1043616==      possibly lost: 0 bytes in 0 blocks
+==1043616==    still reachable: 2,538 bytes in 53 blocks
+==1043616==         suppressed: 4,386 bytes in 4 blocks
+==1043616== 
+==1043616== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043616-- 
+--1043616-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043616== 
+==1043616== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043606== 
+==1043606== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043606== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043606==    <inherited from parent>
+==1043606== 
+==1043606== Open file descriptor 2: /dev/null
+==1043606==    <inherited from parent>
+==1043606== 
+==1043606== Open file descriptor 1:
+==1043606==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043606==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043606==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043606==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043606==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043606==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043606==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043606==    by 0x404D77: ft_prompt (main.c:141)
+==1043606==    by 0x404F4C: main (main.c:158)
+==1043606== 
+==1043606== Open file descriptor 0:
+==1043606==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043606==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043606==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043606==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043606==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043606==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043606==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043606==    by 0x404D77: ft_prompt (main.c:141)
+==1043606==    by 0x404F4C: main (main.c:158)
+==1043606== 
+==1043606== 
+==1043606== HEAP SUMMARY:
+==1043606==     in use at exit: 6,924 bytes in 57 blocks
+==1043606==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043606== 
+==1043606== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043606==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043606==    by 0x404C6C: ft_init_data (main.c:84)
+==1043606==    by 0x404F19: main (main.c:154)
+==1043606== 
+==1043606== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043606==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043606==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043606==    by 0x404C9F: ft_init_data (main.c:88)
+==1043606==    by 0x404F19: main (main.c:154)
+==1043606== 
+==1043606== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043606==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043606==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043606==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043606==    by 0x404C9F: ft_init_data (main.c:88)
+==1043606==    by 0x404F19: main (main.c:154)
+==1043606== 
+==1043606== LEAK SUMMARY:
+==1043606==    definitely lost: 0 bytes in 0 blocks
+==1043606==    indirectly lost: 0 bytes in 0 blocks
+==1043606==      possibly lost: 0 bytes in 0 blocks
+==1043606==    still reachable: 2,538 bytes in 53 blocks
+==1043606==         suppressed: 4,386 bytes in 4 blocks
+==1043606== 
+==1043606== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043606-- 
+--1043606-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043606== 
+==1043606== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043609== 
+==1043609== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043609== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043609==    <inherited from parent>
+==1043609== 
+==1043609== Open file descriptor 2: /dev/null
+==1043609==    <inherited from parent>
+==1043609== 
+==1043609== Open file descriptor 1:
+==1043609==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043609==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043609==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043609==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043609==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043609==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043609==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043609==    by 0x404D77: ft_prompt (main.c:141)
+==1043609==    by 0x404F4C: main (main.c:158)
+==1043609== 
+==1043609== Open file descriptor 0:
+==1043609==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043609==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043609==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043609==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043609==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043609==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043609==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043609==    by 0x404D77: ft_prompt (main.c:141)
+==1043609==    by 0x404F4C: main (main.c:158)
+==1043609== 
+==1043609== 
+==1043609== HEAP SUMMARY:
+==1043609==     in use at exit: 6,924 bytes in 57 blocks
+==1043609==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043609== 
+==1043609== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043609==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043609==    by 0x404C6C: ft_init_data (main.c:84)
+==1043609==    by 0x404F19: main (main.c:154)
+==1043609== 
+==1043609== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043609==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043609==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043609==    by 0x404C9F: ft_init_data (main.c:88)
+==1043609==    by 0x404F19: main (main.c:154)
+==1043609== 
+==1043609== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043609==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043609==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043609==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043609==    by 0x404C9F: ft_init_data (main.c:88)
+==1043609==    by 0x404F19: main (main.c:154)
+==1043609== 
+==1043609== LEAK SUMMARY:
+==1043609==    definitely lost: 0 bytes in 0 blocks
+==1043609==    indirectly lost: 0 bytes in 0 blocks
+==1043609==      possibly lost: 0 bytes in 0 blocks
+==1043609==    still reachable: 2,538 bytes in 53 blocks
+==1043609==         suppressed: 4,386 bytes in 4 blocks
+==1043609== 
+==1043609== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043609-- 
+--1043609-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043609== 
+==1043609== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043617== 
+==1043617== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043617== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043617==    <inherited from parent>
+==1043617== 
+==1043617== Open file descriptor 2: /dev/null
+==1043617==    <inherited from parent>
+==1043617== 
+==1043617== Open file descriptor 1:
+==1043617==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043617==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043617==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043617==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043617==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043617==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043617==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043617==    by 0x404D77: ft_prompt (main.c:141)
+==1043617==    by 0x404F4C: main (main.c:158)
+==1043617== 
+==1043617== Open file descriptor 0:
+==1043617==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043617==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043617==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043617==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043617==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043617==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043617==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043617==    by 0x404D77: ft_prompt (main.c:141)
+==1043617==    by 0x404F4C: main (main.c:158)
+==1043617== 
+==1043617== 
+==1043617== HEAP SUMMARY:
+==1043617==     in use at exit: 6,924 bytes in 57 blocks
+==1043617==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043617== 
+==1043617== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043617==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043617==    by 0x404C6C: ft_init_data (main.c:84)
+==1043617==    by 0x404F19: main (main.c:154)
+==1043617== 
+==1043617== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043617==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043617==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043617==    by 0x404C9F: ft_init_data (main.c:88)
+==1043617==    by 0x404F19: main (main.c:154)
+==1043617== 
+==1043617== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043617==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043617==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043617==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043617==    by 0x404C9F: ft_init_data (main.c:88)
+==1043617==    by 0x404F19: main (main.c:154)
+==1043617== 
+==1043617== LEAK SUMMARY:
+==1043617==    definitely lost: 0 bytes in 0 blocks
+==1043617==    indirectly lost: 0 bytes in 0 blocks
+==1043617==      possibly lost: 0 bytes in 0 blocks
+==1043617==    still reachable: 2,538 bytes in 53 blocks
+==1043617==         suppressed: 4,386 bytes in 4 blocks
+==1043617== 
+==1043617== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043617-- 
+--1043617-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043617== 
+==1043617== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043612== 
+==1043612== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043612== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043612==    <inherited from parent>
+==1043612== 
+==1043612== Open file descriptor 2: /dev/null
+==1043612==    <inherited from parent>
+==1043612== 
+==1043612== Open file descriptor 1:
+==1043612==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043612==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043612==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043612==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043612==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043612==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043612==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043612==    by 0x404D77: ft_prompt (main.c:141)
+==1043612==    by 0x404F4C: main (main.c:158)
+==1043612== 
+==1043612== Open file descriptor 0:
+==1043612==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043612==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043612==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043612==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043612==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043612==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043612==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043612==    by 0x404D77: ft_prompt (main.c:141)
+==1043612==    by 0x404F4C: main (main.c:158)
+==1043612== 
+==1043612== 
+==1043612== HEAP SUMMARY:
+==1043612==     in use at exit: 6,924 bytes in 57 blocks
+==1043612==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043612== 
+==1043612== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043612==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043612==    by 0x404C6C: ft_init_data (main.c:84)
+==1043612==    by 0x404F19: main (main.c:154)
+==1043612== 
+==1043612== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043612==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043612==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043612==    by 0x404C9F: ft_init_data (main.c:88)
+==1043612==    by 0x404F19: main (main.c:154)
+==1043612== 
+==1043612== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043612==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043612==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043612==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043612==    by 0x404C9F: ft_init_data (main.c:88)
+==1043612==    by 0x404F19: main (main.c:154)
+==1043612== 
+==1043612== LEAK SUMMARY:
+==1043612==    definitely lost: 0 bytes in 0 blocks
+==1043612==    indirectly lost: 0 bytes in 0 blocks
+==1043612==      possibly lost: 0 bytes in 0 blocks
+==1043612==    still reachable: 2,538 bytes in 53 blocks
+==1043612==         suppressed: 4,386 bytes in 4 blocks
+==1043612== 
+==1043612== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043612-- 
+--1043612-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043612== 
+==1043612== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043611== 
+==1043611== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043611== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043611==    <inherited from parent>
+==1043611== 
+==1043611== Open file descriptor 2: /dev/null
+==1043611==    <inherited from parent>
+==1043611== 
+==1043611== Open file descriptor 1:
+==1043611==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043611==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043611==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043611==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043611==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043611==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043611==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043611==    by 0x404D77: ft_prompt (main.c:141)
+==1043611==    by 0x404F4C: main (main.c:158)
+==1043611== 
+==1043611== Open file descriptor 0:
+==1043611==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043611==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043611==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043611==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043611==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043611==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043611==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043611==    by 0x404D77: ft_prompt (main.c:141)
+==1043611==    by 0x404F4C: main (main.c:158)
+==1043611== 
+==1043611== 
+==1043611== HEAP SUMMARY:
+==1043611==     in use at exit: 6,924 bytes in 57 blocks
+==1043611==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043611== 
+==1043622== 
+==1043622== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043622== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043622==    <inherited from parent>
+==1043622== 
+==1043622== Open file descriptor 2: /dev/null
+==1043622==    <inherited from parent>
+==1043622== 
+==1043622== Open file descriptor 1:
+==1043622==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043622==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043622==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043622==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043622==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043622==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043622==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043622==    by 0x404D77: ft_prompt (main.c:141)
+==1043622==    by 0x404F4C: main (main.c:158)
+==1043622== 
+==1043622== Open file descriptor 0:
+==1043622==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043622==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043622==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043622==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043622==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043622==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043622==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043622==    by 0x404D77: ft_prompt (main.c:141)
+==1043622==    by 0x404F4C: main (main.c:158)
+==1043622== 
+==1043622== 
+==1043622== HEAP SUMMARY:
+==1043622==     in use at exit: 6,924 bytes in 57 blocks
+==1043622==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043622== 
+==1043611== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043611==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043611==    by 0x404C6C: ft_init_data (main.c:84)
+==1043611==    by 0x404F19: main (main.c:154)
+==1043611== 
+==1043611== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043611==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043611==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043611==    by 0x404C9F: ft_init_data (main.c:88)
+==1043611==    by 0x404F19: main (main.c:154)
+==1043611== 
+==1043611== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043611==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043611==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043611==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043611==    by 0x404C9F: ft_init_data (main.c:88)
+==1043611==    by 0x404F19: main (main.c:154)
+==1043611== 
+==1043611== LEAK SUMMARY:
+==1043611==    definitely lost: 0 bytes in 0 blocks
+==1043611==    indirectly lost: 0 bytes in 0 blocks
+==1043611==      possibly lost: 0 bytes in 0 blocks
+==1043611==    still reachable: 2,538 bytes in 53 blocks
+==1043611==         suppressed: 4,386 bytes in 4 blocks
+==1043611== 
+==1043611== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043611-- 
+--1043611-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043611== 
+==1043611== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043622== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043622==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043622==    by 0x404C6C: ft_init_data (main.c:84)
+==1043622==    by 0x404F19: main (main.c:154)
+==1043622== 
+==1043622== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043622==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043622==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043622==    by 0x404C9F: ft_init_data (main.c:88)
+==1043622==    by 0x404F19: main (main.c:154)
+==1043622== 
+==1043622== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043622==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043622==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043622==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043622==    by 0x404C9F: ft_init_data (main.c:88)
+==1043622==    by 0x404F19: main (main.c:154)
+==1043622== 
+==1043622== LEAK SUMMARY:
+==1043622==    definitely lost: 0 bytes in 0 blocks
+==1043622==    indirectly lost: 0 bytes in 0 blocks
+==1043622==      possibly lost: 0 bytes in 0 blocks
+==1043622==    still reachable: 2,538 bytes in 53 blocks
+==1043622==         suppressed: 4,386 bytes in 4 blocks
+==1043622== 
+==1043622== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043622-- 
+--1043622-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043622== 
+==1043622== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043619== 
+==1043619== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043619== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043619==    <inherited from parent>
+==1043619== 
+==1043619== Open file descriptor 2: /dev/null
+==1043619==    <inherited from parent>
+==1043619== 
+==1043619== Open file descriptor 1:
+==1043619==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043619==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043619==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043619==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043619==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043615== 
+==1043619==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043615== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043619==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043615== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043619==    by 0x404D77: ft_prompt (main.c:141)
+==1043615==    <inherited from parent>
+==1043619==    by 0x404F4C: main (main.c:158)
+==1043615== 
+==1043619== 
+==1043615== Open file descriptor 2: /dev/null
+==1043619== Open file descriptor 0:
+==1043615==    <inherited from parent>
+==1043615== 
+==1043619==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043615== Open file descriptor 1:
+==1043619==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043619==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043619==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043619==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043619==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043619==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043619==    by 0x404D77: ft_prompt (main.c:141)
+==1043619==    by 0x404F4C: main (main.c:158)
+==1043619== 
+==1043619== 
+==1043615==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043619== HEAP SUMMARY:
+==1043619==     in use at exit: 6,924 bytes in 57 blocks
+==1043619==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043619== 
+==1043615==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043615==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043615==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043615==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043615==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043615==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043615==    by 0x404D77: ft_prompt (main.c:141)
+==1043615==    by 0x404F4C: main (main.c:158)
+==1043615== 
+==1043615== Open file descriptor 0:
+==1043615==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043615==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043615==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043615==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043615==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043615==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043615==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043615==    by 0x404D77: ft_prompt (main.c:141)
+==1043615==    by 0x404F4C: main (main.c:158)
+==1043615== 
+==1043615== 
+==1043615== HEAP SUMMARY:
+==1043615==     in use at exit: 6,924 bytes in 57 blocks
+==1043615==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043615== 
+==1043619== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043619==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043615== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043619==    by 0x404C6C: ft_init_data (main.c:84)
+==1043615==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043619==    by 0x404F19: main (main.c:154)
+==1043619== 
+==1043615==    by 0x404C6C: ft_init_data (main.c:84)
+==1043615==    by 0x404F19: main (main.c:154)
+==1043615== 
+==1043619== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043619==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043615== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043619==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043615==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043619==    by 0x404C9F: ft_init_data (main.c:88)
+==1043615==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043619==    by 0x404F19: main (main.c:154)
+==1043615==    by 0x404C9F: ft_init_data (main.c:88)
+==1043619== 
+==1043615==    by 0x404F19: main (main.c:154)
+==1043615== 
+==1043619== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043615== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043619==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043615==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043619==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043615==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043619==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043615==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043619==    by 0x404C9F: ft_init_data (main.c:88)
+==1043615==    by 0x404C9F: ft_init_data (main.c:88)
+==1043619==    by 0x404F19: main (main.c:154)
+==1043615==    by 0x404F19: main (main.c:154)
+==1043619== 
+==1043615== 
+==1043619== LEAK SUMMARY:
+==1043615== LEAK SUMMARY:
+==1043619==    definitely lost: 0 bytes in 0 blocks
+==1043615==    definitely lost: 0 bytes in 0 blocks
+==1043619==    indirectly lost: 0 bytes in 0 blocks
+==1043615==    indirectly lost: 0 bytes in 0 blocks
+==1043619==      possibly lost: 0 bytes in 0 blocks
+==1043615==      possibly lost: 0 bytes in 0 blocks
+==1043619==    still reachable: 2,538 bytes in 53 blocks
+==1043615==    still reachable: 2,538 bytes in 53 blocks
+==1043619==         suppressed: 4,386 bytes in 4 blocks
+==1043615==         suppressed: 4,386 bytes in 4 blocks
+==1043619== 
+==1043615== 
+==1043619== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043615== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043619-- 
+--1043615-- 
+--1043619-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+--1043615-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043619== 
+==1043615== 
+==1043619== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043615== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043618== 
+==1043618== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043618== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043618==    <inherited from parent>
+==1043618== 
+==1043618== Open file descriptor 2: /dev/null
+==1043618==    <inherited from parent>
+==1043618== 
+==1043618== Open file descriptor 1:
+==1043618==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043618==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043618==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043618==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043618==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043618==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043618==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043618==    by 0x404D77: ft_prompt (main.c:141)
+==1043618==    by 0x404F4C: main (main.c:158)
+==1043618== 
+==1043618== Open file descriptor 0:
+==1043618==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043618==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043618==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043618==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043618==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043618==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043618==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043618==    by 0x404D77: ft_prompt (main.c:141)
+==1043618==    by 0x404F4C: main (main.c:158)
+==1043618== 
+==1043618== 
+==1043618== HEAP SUMMARY:
+==1043618==     in use at exit: 6,924 bytes in 57 blocks
+==1043618==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043618== 
+==1043618== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043618==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043618==    by 0x404C6C: ft_init_data (main.c:84)
+==1043618==    by 0x404F19: main (main.c:154)
+==1043618== 
+==1043618== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043618==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043618==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043618==    by 0x404C9F: ft_init_data (main.c:88)
+==1043618==    by 0x404F19: main (main.c:154)
+==1043618== 
+==1043618== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043618==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043618==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043618==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043618==    by 0x404C9F: ft_init_data (main.c:88)
+==1043618==    by 0x404F19: main (main.c:154)
+==1043618== 
+==1043618== LEAK SUMMARY:
+==1043618==    definitely lost: 0 bytes in 0 blocks
+==1043618==    indirectly lost: 0 bytes in 0 blocks
+==1043618==      possibly lost: 0 bytes in 0 blocks
+==1043618==    still reachable: 2,538 bytes in 53 blocks
+==1043618==         suppressed: 4,386 bytes in 4 blocks
+==1043618== 
+==1043618== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043618-- 
+--1043618-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043618== 
+==1043618== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043613== 
+==1043613== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043613== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043613==    <inherited from parent>
+==1043613== 
+==1043613== Open file descriptor 2: /dev/null
+==1043613==    <inherited from parent>
+==1043613== 
+==1043613== Open file descriptor 1:
+==1043613==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043613==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043613==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043613==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043613==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043613==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043613==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043613==    by 0x404D77: ft_prompt (main.c:141)
+==1043613==    by 0x404F4C: main (main.c:158)
+==1043613== 
+==1043613== Open file descriptor 0:
+==1043613==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043613==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043613==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043613==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043613==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043613==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043613==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043613==    by 0x404D77: ft_prompt (main.c:141)
+==1043613==    by 0x404F4C: main (main.c:158)
+==1043613== 
+==1043613== 
+==1043613== HEAP SUMMARY:
+==1043613==     in use at exit: 6,924 bytes in 57 blocks
+==1043613==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043613== 
+==1043613== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043613==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043613==    by 0x404C6C: ft_init_data (main.c:84)
+==1043613==    by 0x404F19: main (main.c:154)
+==1043613== 
+==1043613== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043613==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043613==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043613==    by 0x404C9F: ft_init_data (main.c:88)
+==1043613==    by 0x404F19: main (main.c:154)
+==1043613== 
+==1043613== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043613==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043613==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043613==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043613==    by 0x404C9F: ft_init_data (main.c:88)
+==1043613==    by 0x404F19: main (main.c:154)
+==1043613== 
+==1043613== LEAK SUMMARY:
+==1043613==    definitely lost: 0 bytes in 0 blocks
+==1043613==    indirectly lost: 0 bytes in 0 blocks
+==1043613==      possibly lost: 0 bytes in 0 blocks
+==1043613==    still reachable: 2,538 bytes in 53 blocks
+==1043613==         suppressed: 4,386 bytes in 4 blocks
+==1043613== 
+==1043613== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043613-- 
+--1043613-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043613== 
+==1043613== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043625== 
+==1043625== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043625== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043625==    <inherited from parent>
+==1043625== 
+==1043625== Open file descriptor 2: /dev/null
+==1043625==    <inherited from parent>
+==1043625== 
+==1043625== Open file descriptor 1:
+==1043625==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043625==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043625==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043625==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043625==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043625==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043625==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043625==    by 0x404D77: ft_prompt (main.c:141)
+==1043625==    by 0x404F4C: main (main.c:158)
+==1043625== 
+==1043625== Open file descriptor 0:
+==1043625==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043625==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043625==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043625==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043625==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043625==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043625==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043625==    by 0x404D77: ft_prompt (main.c:141)
+==1043625==    by 0x404F4C: main (main.c:158)
+==1043625== 
+==1043625== 
+==1043625== HEAP SUMMARY:
+==1043625==     in use at exit: 6,924 bytes in 57 blocks
+==1043625==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043625== 
+==1043625== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043625==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043625==    by 0x404C6C: ft_init_data (main.c:84)
+==1043625==    by 0x404F19: main (main.c:154)
+==1043625== 
+==1043625== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043625==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043625==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043625==    by 0x404C9F: ft_init_data (main.c:88)
+==1043625==    by 0x404F19: main (main.c:154)
+==1043625== 
+==1043625== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043625==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043625==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043625==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043625==    by 0x404C9F: ft_init_data (main.c:88)
+==1043625==    by 0x404F19: main (main.c:154)
+==1043625== 
+==1043625== LEAK SUMMARY:
+==1043625==    definitely lost: 0 bytes in 0 blocks
+==1043625==    indirectly lost: 0 bytes in 0 blocks
+==1043625==      possibly lost: 0 bytes in 0 blocks
+==1043625==    still reachable: 2,538 bytes in 53 blocks
+==1043625==         suppressed: 4,386 bytes in 4 blocks
+==1043625== 
+==1043625== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043625-- 
+--1043625-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043625== 
+==1043625== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043624== 
+==1043624== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043624== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043624==    <inherited from parent>
+==1043624== 
+==1043624== Open file descriptor 2: /dev/null
+==1043624==    <inherited from parent>
+==1043624== 
+==1043624== Open file descriptor 1:
+==1043624==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043624==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043624==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043624==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043624==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043624==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043624==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043624==    by 0x404D77: ft_prompt (main.c:141)
+==1043624==    by 0x404F4C: main (main.c:158)
+==1043624== 
+==1043624== Open file descriptor 0:
+==1043624==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043624==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043624==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043624==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043624==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043624==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043624==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043624==    by 0x404D77: ft_prompt (main.c:141)
+==1043624==    by 0x404F4C: main (main.c:158)
+==1043624== 
+==1043624== 
+==1043624== HEAP SUMMARY:
+==1043624==     in use at exit: 6,924 bytes in 57 blocks
+==1043624==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043624== 
+==1043624== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043624==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043624==    by 0x404C6C: ft_init_data (main.c:84)
+==1043624==    by 0x404F19: main (main.c:154)
+==1043624== 
+==1043624== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043624==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043624==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043624==    by 0x404C9F: ft_init_data (main.c:88)
+==1043624==    by 0x404F19: main (main.c:154)
+==1043624== 
+==1043624== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043624==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043624==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043624==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043624==    by 0x404C9F: ft_init_data (main.c:88)
+==1043624==    by 0x404F19: main (main.c:154)
+==1043624== 
+==1043624== LEAK SUMMARY:
+==1043624==    definitely lost: 0 bytes in 0 blocks
+==1043624==    indirectly lost: 0 bytes in 0 blocks
+==1043624==      possibly lost: 0 bytes in 0 blocks
+==1043624==    still reachable: 2,538 bytes in 53 blocks
+==1043624==         suppressed: 4,386 bytes in 4 blocks
+==1043624== 
+==1043624== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043624-- 
+--1043624-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043624== 
+==1043624== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043626== 
+==1043626== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043626== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043626==    <inherited from parent>
+==1043626== 
+==1043626== Open file descriptor 2: /dev/null
+==1043626==    <inherited from parent>
+==1043626== 
+==1043626== Open file descriptor 1:
+==1043626==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043626==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043626==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043626==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043626==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043626==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043626==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043626==    by 0x404D77: ft_prompt (main.c:141)
+==1043626==    by 0x404F4C: main (main.c:158)
+==1043626== 
+==1043626== Open file descriptor 0:
+==1043626==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043626==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043626==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043626==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043626==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043626==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043626==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043626==    by 0x404D77: ft_prompt (main.c:141)
+==1043626==    by 0x404F4C: main (main.c:158)
+==1043626== 
+==1043626== 
+==1043626== HEAP SUMMARY:
+==1043626==     in use at exit: 6,924 bytes in 57 blocks
+==1043626==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043626== 
+==1043626== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043626==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043626==    by 0x404C6C: ft_init_data (main.c:84)
+==1043626==    by 0x404F19: main (main.c:154)
+==1043626== 
+==1043626== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043626==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043626==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043626==    by 0x404C9F: ft_init_data (main.c:88)
+==1043626==    by 0x404F19: main (main.c:154)
+==1043626== 
+==1043626== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043626==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043626==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043626==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043626==    by 0x404C9F: ft_init_data (main.c:88)
+==1043626==    by 0x404F19: main (main.c:154)
+==1043626== 
+==1043626== LEAK SUMMARY:
+==1043626==    definitely lost: 0 bytes in 0 blocks
+==1043626==    indirectly lost: 0 bytes in 0 blocks
+==1043626==      possibly lost: 0 bytes in 0 blocks
+==1043626==    still reachable: 2,538 bytes in 53 blocks
+==1043626==         suppressed: 4,386 bytes in 4 blocks
+==1043626== 
+==1043626== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043626-- 
+--1043626-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043626== 
+==1043626== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043620== 
+==1043620== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043620== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043620==    <inherited from parent>
+==1043620== 
+==1043620== Open file descriptor 2: /dev/null
+==1043620==    <inherited from parent>
+==1043620== 
+==1043620== Open file descriptor 1:
+==1043620==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043620==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043620==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043620==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043620==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043620==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043620==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043620==    by 0x404D77: ft_prompt (main.c:141)
+==1043620==    by 0x404F4C: main (main.c:158)
+==1043620== 
+==1043620== Open file descriptor 0:
+==1043620==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043620==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043620==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043620==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043620==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043620==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043620==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043620==    by 0x404D77: ft_prompt (main.c:141)
+==1043620==    by 0x404F4C: main (main.c:158)
+==1043620== 
+==1043620== 
+==1043620== HEAP SUMMARY:
+==1043620==     in use at exit: 6,924 bytes in 57 blocks
+==1043620==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043620== 
+==1043620== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043620==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043620==    by 0x404C6C: ft_init_data (main.c:84)
+==1043620==    by 0x404F19: main (main.c:154)
+==1043620== 
+==1043620== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043620==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043620==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043620==    by 0x404C9F: ft_init_data (main.c:88)
+==1043620==    by 0x404F19: main (main.c:154)
+==1043620== 
+==1043620== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043620==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043620==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043620==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043620==    by 0x404C9F: ft_init_data (main.c:88)
+==1043620==    by 0x404F19: main (main.c:154)
+==1043620== 
+==1043620== LEAK SUMMARY:
+==1043620==    definitely lost: 0 bytes in 0 blocks
+==1043620==    indirectly lost: 0 bytes in 0 blocks
+==1043620==      possibly lost: 0 bytes in 0 blocks
+==1043620==    still reachable: 2,538 bytes in 53 blocks
+==1043620==         suppressed: 4,386 bytes in 4 blocks
+==1043620== 
+==1043620== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043620-- 
+--1043620-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043620== 
+==1043620== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043621== 
+==1043621== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043621== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043621==    <inherited from parent>
+==1043621== 
+==1043621== Open file descriptor 2: /dev/null
+==1043621==    <inherited from parent>
+==1043621== 
+==1043621== Open file descriptor 1:
+==1043621==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043621==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043621==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043621==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043621==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043621==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043621==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043621==    by 0x404D77: ft_prompt (main.c:141)
+==1043621==    by 0x404F4C: main (main.c:158)
+==1043621== 
+==1043621== Open file descriptor 0:
+==1043621==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043621==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043621==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043621==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043621==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043621==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043621==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043621==    by 0x404D77: ft_prompt (main.c:141)
+==1043621==    by 0x404F4C: main (main.c:158)
+==1043621== 
+==1043621== 
+==1043621== HEAP SUMMARY:
+==1043621==     in use at exit: 6,924 bytes in 57 blocks
+==1043621==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043621== 
+==1043621== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043621==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043621==    by 0x404C6C: ft_init_data (main.c:84)
+==1043621==    by 0x404F19: main (main.c:154)
+==1043621== 
+==1043621== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043621==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043621==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043621==    by 0x404C9F: ft_init_data (main.c:88)
+==1043621==    by 0x404F19: main (main.c:154)
+==1043621== 
+==1043621== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043621==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043621==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043621==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043621==    by 0x404C9F: ft_init_data (main.c:88)
+==1043621==    by 0x404F19: main (main.c:154)
+==1043621== 
+==1043621== LEAK SUMMARY:
+==1043621==    definitely lost: 0 bytes in 0 blocks
+==1043621==    indirectly lost: 0 bytes in 0 blocks
+==1043621==      possibly lost: 0 bytes in 0 blocks
+==1043621==    still reachable: 2,538 bytes in 53 blocks
+==1043621==         suppressed: 4,386 bytes in 4 blocks
+==1043621== 
+==1043621== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043621-- 
+--1043621-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043621== 
+==1043621== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043623== 
+==1043623== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043623== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043623==    <inherited from parent>
+==1043623== 
+==1043623== Open file descriptor 2: /dev/null
+==1043623==    <inherited from parent>
+==1043623== 
+==1043623== Open file descriptor 1:
+==1043623==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043623==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043623==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043623==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043623==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043623==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043623==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043623==    by 0x404D77: ft_prompt (main.c:141)
+==1043623==    by 0x404F4C: main (main.c:158)
+==1043623== 
+==1043623== Open file descriptor 0:
+==1043623==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043623==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043623==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043623==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043623==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043623==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043623==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043623==    by 0x404D77: ft_prompt (main.c:141)
+==1043623==    by 0x404F4C: main (main.c:158)
+==1043623== 
+==1043623== 
+==1043623== HEAP SUMMARY:
+==1043623==     in use at exit: 6,924 bytes in 57 blocks
+==1043623==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043623== 
+==1043623== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043623==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043623==    by 0x404C6C: ft_init_data (main.c:84)
+==1043623==    by 0x404F19: main (main.c:154)
+==1043623== 
+==1043623== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043623==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043623==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043623==    by 0x404C9F: ft_init_data (main.c:88)
+==1043623==    by 0x404F19: main (main.c:154)
+==1043623== 
+==1043623== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043623==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043623==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043623==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043623==    by 0x404C9F: ft_init_data (main.c:88)
+==1043623==    by 0x404F19: main (main.c:154)
+==1043623== 
+==1043623== LEAK SUMMARY:
+==1043623==    definitely lost: 0 bytes in 0 blocks
+==1043623==    indirectly lost: 0 bytes in 0 blocks
+==1043623==      possibly lost: 0 bytes in 0 blocks
+==1043623==    still reachable: 2,538 bytes in 53 blocks
+==1043623==         suppressed: 4,386 bytes in 4 blocks
+==1043623== 
+==1043623== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043623-- 
+--1043623-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043623== 
+==1043623== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043627== 
+==1043627== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043627== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043627==    <inherited from parent>
+==1043627== 
+==1043627== Open file descriptor 2: /dev/null
+==1043627==    <inherited from parent>
+==1043627== 
+==1043627== Open file descriptor 1:
+==1043627==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043627==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043627==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043627==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043627==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043627==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043627==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043627==    by 0x404D77: ft_prompt (main.c:141)
+==1043627==    by 0x404F4C: main (main.c:158)
+==1043627== 
+==1043627== Open file descriptor 0:
+==1043627==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043627==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043627==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043627==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043627==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043627==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043627==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043627==    by 0x404D77: ft_prompt (main.c:141)
+==1043627==    by 0x404F4C: main (main.c:158)
+==1043627== 
+==1043627== 
+==1043627== HEAP SUMMARY:
+==1043627==     in use at exit: 6,924 bytes in 57 blocks
+==1043627==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043627== 
+==1043627== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043627==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043627==    by 0x404C6C: ft_init_data (main.c:84)
+==1043627==    by 0x404F19: main (main.c:154)
+==1043627== 
+==1043627== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043627==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043627==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043627==    by 0x404C9F: ft_init_data (main.c:88)
+==1043627==    by 0x404F19: main (main.c:154)
+==1043627== 
+==1043627== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043627==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043627==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043627==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043627==    by 0x404C9F: ft_init_data (main.c:88)
+==1043627==    by 0x404F19: main (main.c:154)
+==1043627== 
+==1043627== LEAK SUMMARY:
+==1043627==    definitely lost: 0 bytes in 0 blocks
+==1043627==    indirectly lost: 0 bytes in 0 blocks
+==1043627==      possibly lost: 0 bytes in 0 blocks
+==1043627==    still reachable: 2,538 bytes in 53 blocks
+==1043627==         suppressed: 4,386 bytes in 4 blocks
+==1043627== 
+==1043627== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043627-- 
+--1043627-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043627== 
+==1043627== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043628== 
+==1043628== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043628== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043628==    <inherited from parent>
+==1043628== 
+==1043628== Open file descriptor 2: /dev/null
+==1043628==    <inherited from parent>
+==1043628== 
+==1043628== Open file descriptor 1:
+==1043628==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043628==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043628==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043628==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043628==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043628==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043628==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043628==    by 0x404D77: ft_prompt (main.c:141)
+==1043628==    by 0x404F4C: main (main.c:158)
+==1043628== 
+==1043628== Open file descriptor 0:
+==1043628==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043628==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043628==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043628==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043628==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043628==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043628==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043628==    by 0x404D77: ft_prompt (main.c:141)
+==1043628==    by 0x404F4C: main (main.c:158)
+==1043628== 
+==1043628== 
+==1043628== HEAP SUMMARY:
+==1043628==     in use at exit: 6,924 bytes in 57 blocks
+==1043628==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043628== 
+==1043628== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043628==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043628==    by 0x404C6C: ft_init_data (main.c:84)
+==1043628==    by 0x404F19: main (main.c:154)
+==1043628== 
+==1043628== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043628==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043628==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043628==    by 0x404C9F: ft_init_data (main.c:88)
+==1043628==    by 0x404F19: main (main.c:154)
+==1043628== 
+==1043628== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043628==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043628==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043628==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043628==    by 0x404C9F: ft_init_data (main.c:88)
+==1043628==    by 0x404F19: main (main.c:154)
+==1043628== 
+==1043628== LEAK SUMMARY:
+==1043628==    definitely lost: 0 bytes in 0 blocks
+==1043628==    indirectly lost: 0 bytes in 0 blocks
+==1043628==      possibly lost: 0 bytes in 0 blocks
+==1043628==    still reachable: 2,538 bytes in 53 blocks
+==1043628==         suppressed: 4,386 bytes in 4 blocks
+==1043628== 
+==1043628== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043628-- 
+--1043628-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043628== 
+==1043628== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043630== 
+==1043630== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043630== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043630==    <inherited from parent>
+==1043630== 
+==1043630== Open file descriptor 2: /dev/null
+==1043630==    <inherited from parent>
+==1043630== 
+==1043630== Open file descriptor 1: /dev/null
+==1043630==    <inherited from parent>
+==1043630== 
+==1043630== Open file descriptor 0:
+==1043630==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043630==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043630==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043630==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043630==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043630==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043630==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043630==    by 0x404D77: ft_prompt (main.c:141)
+==1043630==    by 0x404F4C: main (main.c:158)
+==1043630== 
+==1043630== 
+==1043630== HEAP SUMMARY:
+==1043630==     in use at exit: 6,924 bytes in 57 blocks
+==1043630==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043630== 
+==1043630== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043630==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043630==    by 0x404C6C: ft_init_data (main.c:84)
+==1043630==    by 0x404F19: main (main.c:154)
+==1043630== 
+==1043630== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043630==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043630==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043630==    by 0x404C9F: ft_init_data (main.c:88)
+==1043630==    by 0x404F19: main (main.c:154)
+==1043630== 
+==1043630== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043630==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043630==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043630==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043630==    by 0x404C9F: ft_init_data (main.c:88)
+==1043630==    by 0x404F19: main (main.c:154)
+==1043630== 
+==1043630== LEAK SUMMARY:
+==1043630==    definitely lost: 0 bytes in 0 blocks
+==1043630==    indirectly lost: 0 bytes in 0 blocks
+==1043630==      possibly lost: 0 bytes in 0 blocks
+==1043630==    still reachable: 2,538 bytes in 53 blocks
+==1043630==         suppressed: 4,386 bytes in 4 blocks
+==1043630== 
+==1043630== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043630-- 
+--1043630-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043630== 
+==1043630== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043629== 
+==1043629== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043629== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043629==    <inherited from parent>
+==1043629== 
+==1043629== Open file descriptor 2: /dev/null
+==1043629==    <inherited from parent>
+==1043629== 
+==1043629== Open file descriptor 1:
+==1043629==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043629==    by 0x406511: ft_handle_pipes (ft_handle_pipes.c:50)
+==1043629==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043629==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043629==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043629==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043629==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043629==    by 0x404D77: ft_prompt (main.c:141)
+==1043629==    by 0x404F4C: main (main.c:158)
+==1043629== 
+==1043629== Open file descriptor 0:
+==1043629==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1043629==    by 0x4064B7: ft_handle_pipes (ft_handle_pipes.c:42)
+==1043629==    by 0x4060B3: ft_exec_child (ft_exec_pipeline.c:39)
+==1043629==    by 0x40603D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1043629==    by 0x405EF0: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1043629==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1043629==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1043629==    by 0x404D77: ft_prompt (main.c:141)
+==1043629==    by 0x404F4C: main (main.c:158)
+==1043629== 
+==1043629== 
+==1043629== HEAP SUMMARY:
+==1043629==     in use at exit: 6,924 bytes in 57 blocks
+==1043629==   total heap usage: 430 allocs, 373 frees, 21,021 bytes allocated
+==1043629== 
+==1043629== 48 bytes in 1 blocks are still reachable in loss record 3 of 7
+==1043629==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043629==    by 0x404C6C: ft_init_data (main.c:84)
+==1043629==    by 0x404F19: main (main.c:154)
+==1043629== 
+==1043629== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1043629==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043629==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043629==    by 0x404C9F: ft_init_data (main.c:88)
+==1043629==    by 0x404F19: main (main.c:154)
+==1043629== 
+==1043629== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1043629==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1043629==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043629==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1043629==    by 0x404C9F: ft_init_data (main.c:88)
+==1043629==    by 0x404F19: main (main.c:154)
+==1043629== 
+==1043629== LEAK SUMMARY:
+==1043629==    definitely lost: 0 bytes in 0 blocks
+==1043629==    indirectly lost: 0 bytes in 0 blocks
+==1043629==      possibly lost: 0 bytes in 0 blocks
+==1043629==    still reachable: 2,538 bytes in 53 blocks
+==1043629==         suppressed: 4,386 bytes in 4 blocks
+==1043629== 
+==1043629== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1043629-- 
+--1043629-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,386 bytes in 4 blocks
+==1043629== 
+==1043629== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1043574== 
+==1043574== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1043574== Open file descriptor 3: /tmp/tmp.Lwk8Fadgko/tmp_valgrind_out
+==1043574==    <inherited from parent>
+==1043574== 
+==1043574== Open file descriptor 2: /dev/null
+==1043574==    <inherited from parent>
+==1043574== 
+==1043574== Open file descriptor 1: /dev/null
+==1043574==    <inherited from parent>
+==1043574== 
+==1043574== Open file descriptor 0:
+==1043574==    <inherited from parent>
+==1043574== 
+==1043574== 
+==1043574== HEAP SUMMARY:
+==1043574==     in use at exit: 4,016 bytes in 1 blocks
+==1043574==   total heap usage: 396 allocs, 395 frees, 20,425 bytes allocated
+==1043574== 
+==1043574== LEAK SUMMARY:
+==1043574==    definitely lost: 0 bytes in 0 blocks
+==1043574==    indirectly lost: 0 bytes in 0 blocks
+==1043574==      possibly lost: 0 bytes in 0 blocks
+==1043574==    still reachable: 0 bytes in 0 blocks
+==1043574==         suppressed: 4,016 bytes in 1 blocks
+==1043574== 
+==1043574== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--1043574-- 
+--1043574-- used_suppression:      1 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==1043574== 
+==1043574== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
