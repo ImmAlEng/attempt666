@@ -1,0 +1,137 @@
+==1210594== Memcheck, a memory error detector
+==1210594== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1210594== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1210594== Command: /home/amkhuder/desktop/minishell/minishell
+==1210594== Parent PID: 1210593
+==1210594== 
+==1210596== 
+==1210596== FILE DESCRIPTORS: 3 open (2 std) at exit.
+==1210596== Open file descriptor 3: /tmp/tmp.vMAOQ9Fgir/tmp_valgrind_out
+==1210596==    <inherited from parent>
+==1210596== 
+==1210596== Open file descriptor 2: /dev/null
+==1210596==    <inherited from parent>
+==1210596== 
+==1210596== Open file descriptor 1: /dev/null
+==1210596==    <inherited from parent>
+==1210596== 
+==1210596== 
+==1210596== HEAP SUMMARY:
+==1210596==     in use at exit: 6,632 bytes in 57 blocks
+==1210596==   total heap usage: 80 allocs, 23 frees, 11,347 bytes allocated
+==1210596== 
+==1210596== 48 bytes in 1 blocks are still reachable in loss record 4 of 7
+==1210596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1210596==    by 0x404C6C: ft_init_data (main.c:84)
+==1210596==    by 0x404F19: main (main.c:154)
+==1210596== 
+==1210596== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1210596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1210596==    by 0x409A61: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1210596==    by 0x404C9F: ft_init_data (main.c:88)
+==1210596==    by 0x404F19: main (main.c:154)
+==1210596== 
+==1210596== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1210596==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1210596==    by 0x408EF9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1210596==    by 0x409AA4: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1210596==    by 0x404C9F: ft_init_data (main.c:88)
+==1210596==    by 0x404F19: main (main.c:154)
+==1210596== 
+==1210596== LEAK SUMMARY:
+==1210596==    definitely lost: 0 bytes in 0 blocks
+==1210596==    indirectly lost: 0 bytes in 0 blocks
+==1210596==      possibly lost: 0 bytes in 0 blocks
+==1210596==    still reachable: 2,538 bytes in 53 blocks
+==1210596==         suppressed: 4,094 bytes in 4 blocks
+==1210596== 
+==1210596== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1210596-- 
+--1210596-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,094 bytes in 4 blocks
+==1210596== 
+==1210596== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1210595== 
+==1210595== FILE DESCRIPTORS: 3 open (2 std) at exit.
+==1210595== Open file descriptor 3: /tmp/tmp.vMAOQ9Fgir/tmp_valgrind_out
+==1210595==    <inherited from parent>
+==1210595== 
+==1210595== Open file descriptor 2: /dev/null
+==1210595==    <inherited from parent>
+==1210595== 
+==1210595== Open file descriptor 1:
+==1210595==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1210595==    by 0x40563B: ft_exec_builtin (ft_exec_builtin.c:22)
+==1210595==    by 0x4060E9: ft_exec_child (ft_exec_pipeline.c:42)
+==1210595==    by 0x40604D: ft_run_pipeline (ft_exec_pipeline.c:65)
+==1210595==    by 0x405F00: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==1210595==    by 0x40507C: ft_cmds_distro (ft_cmds_distro.c:45)
+==1210595==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1210595==    by 0x404D77: ft_prompt (main.c:141)
+==1210595==    by 0x404F4C: main (main.c:158)
+==1210595== 
+==1210595== 
+==1210595== HEAP SUMMARY:
+==1210595==     in use at exit: 6,632 bytes in 57 blocks
+==1210595==   total heap usage: 80 allocs, 23 frees, 11,347 bytes allocated
+==1210595== 
+==1210595== 48 bytes in 1 blocks are still reachable in loss record 4 of 7
+==1210595==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1210595==    by 0x404C6C: ft_init_data (main.c:84)
+==1210595==    by 0x404F19: main (main.c:154)
+==1210595== 
+==1210595== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1210595==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1210595==    by 0x409A61: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1210595==    by 0x404C9F: ft_init_data (main.c:88)
+==1210595==    by 0x404F19: main (main.c:154)
+==1210595== 
+==1210595== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1210595==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1210595==    by 0x408EF9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1210595==    by 0x409AA4: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1210595==    by 0x404C9F: ft_init_data (main.c:88)
+==1210595==    by 0x404F19: main (main.c:154)
+==1210595== 
+==1210595== LEAK SUMMARY:
+==1210595==    definitely lost: 0 bytes in 0 blocks
+==1210595==    indirectly lost: 0 bytes in 0 blocks
+==1210595==      possibly lost: 0 bytes in 0 blocks
+==1210595==    still reachable: 2,538 bytes in 53 blocks
+==1210595==         suppressed: 4,094 bytes in 4 blocks
+==1210595== 
+==1210595== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1210595-- 
+--1210595-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,094 bytes in 4 blocks
+==1210595== 
+==1210595== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1210594== 
+==1210594== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1210594== Open file descriptor 3: /tmp/tmp.vMAOQ9Fgir/tmp_valgrind_out
+==1210594==    <inherited from parent>
+==1210594== 
+==1210594== Open file descriptor 2: /dev/null
+==1210594==    <inherited from parent>
+==1210594== 
+==1210594== Open file descriptor 1: /dev/null
+==1210594==    <inherited from parent>
+==1210594== 
+==1210594== Open file descriptor 0:
+==1210594==    <inherited from parent>
+==1210594== 
+==1210594== 
+==1210594== HEAP SUMMARY:
+==1210594==     in use at exit: 4,016 bytes in 1 blocks
+==1210594==   total heap usage: 81 allocs, 80 frees, 11,467 bytes allocated
+==1210594== 
+==1210594== LEAK SUMMARY:
+==1210594==    definitely lost: 0 bytes in 0 blocks
+==1210594==    indirectly lost: 0 bytes in 0 blocks
+==1210594==      possibly lost: 0 bytes in 0 blocks
+==1210594==    still reachable: 0 bytes in 0 blocks
+==1210594==         suppressed: 4,016 bytes in 1 blocks
+==1210594== 
+==1210594== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--1210594-- 
+--1210594-- used_suppression:      1 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==1210594== 
+==1210594== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
