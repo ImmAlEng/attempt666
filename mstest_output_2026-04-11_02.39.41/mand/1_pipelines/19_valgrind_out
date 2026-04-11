@@ -1,0 +1,64 @@
+==893213== Memcheck, a memory error detector
+==893213== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==893213== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==893213== Command: /bin/cat -e
+==893213== Parent PID: 893196
+==893213== 
+==893220== Invalid size valu==893196== 
+==893196== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==893196== Open file descriptor 7:
+==893196==    <inherited from parent>
+==893196== 
+==893196== Open file descriptor 6:
+==893196==    <inherited from parent>
+==893196== 
+==893196== Open file descriptor 5:
+==893196==    <inherited from parent>
+==893196== 
+==893196== Open file descriptor 4:
+==893196==    <inherited from parent>
+==893196== 
+==893196== Open file descriptor 3:
+==893196==    <inherited from parent>
+==893196== 
+==893196== Open file descriptor 2: /dev/null
+==893196==    <inherited from parent>
+==893196== 
+==893196== Open file descriptor 1: /dev/null
+==893196==    <inherited from parent>
+==893196== 
+==893196== Open file descriptor 0:
+==893196==    <inherited from parent>
+==893196== 
+==893196== 
+==893196== HEAP SUMMARY:
+==893196==     in use at exit: 4,016 bytes in 1 blocks
+==893196==   total heap usage: 221 allocs, 220 frees, 14,833 bytes allocated
+==893196== 
+==893196== LEAK SUMMARY:
+==893196==    definitely lost: 0 bytes in 0 blocks
+==893196==    indirectly lost: 0 bytes in 0 blocks
+==893196==      possibly lost: 0 bytes in 0 blocks
+==893196==    still reachable: 0 bytes in 0 blocks
+==893196==         suppressed: 4,016 bytes in 1 blocks
+==893196== 
+==893196== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--893196-- 
+--893196-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==893196== 
+==893196== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+: 1310739 alignment value: 4096 (size should be a multiple of alignment)
+==893222==    at 0x485BDF3: aligned_alloc (vg_replace_malloc.c:2391)
+==893222==    by 0x400719D: alignalloc (alignalloc.h:98)
+==893222==    by 0x400719D: xalignalloc (xalignalloc.c:29)
+==893222==    by 0x40028EA: main (cat.c:799)
+==893222== 
+==893222== 
+==893222== 1 errors in context 2 of 7:
+==893222== Invalid size value: 262145 alignment value: 4096 (size should be a multiple of alignment)
+==893222==    at 0x485BDF3: aligned_alloc (vg_replace_malloc.c:2391)
+==893222==    by 0x400719D: alignalloc (alignalloc.h:98)
+==893222==    by 0x400719D: xalignalloc (xalignalloc.c:29)
+==893222==    by 0x40028C4: main (cat.c:771)
+==893222== 
+==893222== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 0 from 0)

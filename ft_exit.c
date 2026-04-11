@@ -1,10 +1,35 @@
 #include "minishell.h"
 
+static bool	ft_exit_parse_number(char *s, long long *n)
+{
+	char	*end;
+
+	if (!s || !n)
+		return (false);
+	while (ft_isspace((unsigned char)*s))
+		s++;
+	if (!*s)
+		return (false);
+	errno = 0;
+	*n = strtoll(s, &end, 10);
+	if (s == end || errno == ERANGE)
+		return (false);
+	while (ft_isspace((unsigned char)*end))
+		end++;
+	if (*end)
+		return (false);
+	return (true);
+}
+
+static int	ft_exit_code(long long n)
+{
+	return ((int)(n % 256 + 256) % 256);
+}
+
 int	ft_exit(t_data *data, int cmd_i)
 {
 	char	**argv;
-	long	code;
-	int		i;
+	long long	n;
 
 	argv = data->cmds[cmd_i]->argv;
 	write(1, "exit\n", 5);
@@ -13,25 +38,11 @@ int	ft_exit(t_data *data, int cmd_i)
 		data->quit = true;
 		return (g_exit_status);
 	}
-	i = 0;
-	while (argv[1][i])
-	{
-		if (!ft_isdigit((unsigned char)argv[1][i])
-			&& !(i == 0 && (argv[1][0] == '-' || argv[1][0] == '+')))
-			return (ft_err_with_arg("exit: ", "numeric argument required"),
-				data->quit = true, 2);
-		i++;
-	}
+	if (!ft_exit_parse_number(argv[1], &n))
+		return (ft_err_with_arg("exit: ", "numeric argument required"),
+			data->quit = true, 2);
 	if (argv[2])
 		return (ft_err_with_arg("exit: ", "too many arguments"), 1);
-	code = 0;
-	i = 0;
-	if (argv[1][i] == '+' || argv[1][i] == '-')
-		i++;
-	while (argv[1][i])
-		code = code * 10 + (argv[1][i++] - '0');
-	if (argv[1][0] == '-')
-		code = -code;
 	data->quit = true;
-	return ((int)(code % 256 + 256) % 256);
+	return (ft_exit_code(n));
 }

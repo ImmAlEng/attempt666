@@ -43,22 +43,46 @@ static bool	ft_expand_helper(t_expand *e, char *q, t_data *data,
 	return (true);
 }
 
-static bool	ft_expand_cmd(t_data *data, t_dlist *tokens)
+static bool	ft_had_quotes(const char *s)
+{
+	if (!s)
+		return (false);
+	while (*s)
+	{
+		if (*s == '\'' || *s == '"')
+			return (true);
+		s++;
+	}
+	return (false);
+}
+
+static bool	ft_expand_cmd(t_data *data, t_dlist **tokens)
 {
 	t_expand	e;
 	char		q;
+	bool		had_quotes;
+	t_dlist		*tok;
+	t_dlist		*next;
 
-	while (tokens != NULL)
+	tok = *tokens;
+	while (tok)
 	{
-		e.str = (char *)tokens->content;
+		e.str = (char *)tok->content;
+		had_quotes = ft_had_quotes(e.str);
 		e.start = e.str;
 		ft_is_quoted(0, &q, true);
 		while (*e.start)
 		{
-			if (!ft_expand_helper(&e, &q, data, &tokens))
+			if (!ft_expand_helper(&e, &q, data, &tok))
 				return (false);
 		}
-		tokens = tokens->next;
+		next = tok->next;
+		if (!had_quotes && !*(char *)tok->content)
+		{
+			ft_dlst_unwrap(tokens, tok);
+			ft_dlstdelone(tok, free);
+		}
+		tok = next;
 	}
 	return (true);
 }
@@ -91,7 +115,7 @@ bool	ft_expander(t_data *data)
 	while (i < data->n_cmds)
 	{
 		rdir_note = (t_dlist *)data->cmds[i]->redirs;
-		if (!ft_expand_cmd(data, data->cmds[i]->tokens))
+		if (!ft_expand_cmd(data, &data->cmds[i]->tokens))
 			return (false);
 		while (rdir_note)
 		{

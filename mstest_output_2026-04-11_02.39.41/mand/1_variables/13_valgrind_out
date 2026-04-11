@@ -1,0 +1,61 @@
+==907341== Memcheck, a memory error detector
+==907341== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==907341== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==907341== Command: /home/immanuel/Desktop/msmsms/minishell
+==907341== Parent PID: 907340
+==907341== 
+==907341== 
+==907341== FILE DESCRIPTORS: 8 open (6 inherited) at exit.
+==907341== Open file descriptor 7:
+==907341==    <inherited from parent>
+==907341== 
+==907341== Open file descriptor 6:
+==907341==    <inherited from parent>
+==907341== 
+==907341== Open file descriptor 5:
+==907341==    <inherited from parent>
+==907341== 
+==907341== Open file descriptor 4:
+==907341==    <inherited from parent>
+==907341== 
+==907341== Open file descriptor 3:
+==907341==    <inherited from parent>
+==907341== 
+==907341== Open file descriptor 2: /dev/null
+==907341==    <inherited from parent>
+==907341== 
+==907341== Open file descriptor 1: /dev/null
+==907341==    at 0x49FD7AB: dup2 (dup2.c:29)
+==907341==    by 0x4004FDF: ft_exec_builtin (ft_exec_builtin.c:18)
+==907341==    by 0x4004BDB: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==907341==    by 0x4004C4E: ft_cmds_distro (ft_cmds_distro.c:46)
+==907341==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==907341==    by 0x4004957: ft_prompt (main.c:135)
+==907341==    by 0x4004A22: main (main.c:152)
+==907341== 
+==907341== Open file descriptor 0:
+==907341==    at 0x49FD7AB: dup2 (dup2.c:29)
+==907341==    by 0x4004FF3: ft_exec_builtin (ft_exec_builtin.c:18)
+==907341==    by 0x4004BDB: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==907341==    by 0x4004C4E: ft_cmds_distro (ft_cmds_distro.c:46)
+==907341==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==907341==    by 0x4004957: ft_prompt (main.c:135)
+==907341==    by 0x4004A22: main (main.c:152)
+==907341== 
+==907341== 
+==907341== HEAP SUMMARY:
+==907341==     in use at exit: 4,016 bytes in 1 blocks
+==907341==   total heap usage: 90 allocs, 89 frees, 11,390 bytes allocated
+==907341== 
+==907341== LEAK SUMMARY:
+==907341==    definitely lost: 0 bytes in 0 blocks
+==907341==    indirectly lost: 0 bytes in 0 blocks
+==907341==      possibly lost: 0 bytes in 0 blocks
+==907341==    still reachable: 0 bytes in 0 blocks
+==907341==         suppressed: 4,016 bytes in 1 blocks
+==907341== 
+==907341== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--907341-- 
+--907341-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==907341== 
+==907341== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)

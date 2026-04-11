@@ -1,0 +1,4 @@
+export LD_PRELOAD="/home/immanuel/42_minishell_tester/utils/libintercept/libintercept.so"
+export OLDPWD
+export PWD="/tmp/tmp.p400pK0a4N"
+export SHLVL="1"

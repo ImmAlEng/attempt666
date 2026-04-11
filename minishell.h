@@ -169,6 +169,7 @@ int					ft_var_present(t_data *data, char *argv);
 bool				ft_modify_var(t_data *data, char *argv, int env_i);
 bool				ft_add_var(t_data *data, char *argv);
 char				**ft_actual_export(t_data *data, char *argv);
+bool				ft_update_underscore(t_data *data, t_cmd *cmd);
 
 /*		cd			*/
 int					ft_cd(t_data *data, int cmd_i);

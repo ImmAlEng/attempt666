@@ -1,0 +1,62 @@
+==902969== Memcheck, a memory error detector
+==902969== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==902969== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==902969== Command: /bin/rm -f out
+==902969== Parent PID: 902962
+==902969== 
+==902969== 
+==902969== FI==902962== 
+==902962== FILE DESCRIPTORS: 8 open (6 inherited) at exit.
+==902962== Open file descriptor 7:
+==902962==    <inherited from parent>
+==902962== 
+==902962== Open file descriptor 6:
+==902962==    <inherited from parent>
+==902962== 
+==902962== Open file descriptor 5:
+==902962==    <inherited from parent>
+==902962== 
+==902962== Open file descriptor 4:
+==902962==    <inherited from parent>
+==902962== 
+==902962== Open file descriptor 3:
+==902962==    <inherited from parent>
+==902962== 
+==902962== Open file descriptor 2: /dev/null
+==902962==    <inherited from parent>
+==902962== 
+==902962== Open file descriptor 1: /dev/null
+==902962==    at 0x49FD7AB: dup2 (dup2.c:29)
+==902962==    by 0x4004AE8: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==902962==    by 0x4004BB5: ft_exec_one_cmd (ft_cmds_distro.c:32)
+==902962==    by 0x4004C4E: ft_cmds_distro (ft_cmds_distro.c:46)
+==902962==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==902962==    by 0x4004957: ft_prompt (main.c:135)
+==902962==    by 0x4004A22: main (main.c:152)
+==902962== 
+==902962== Open file descriptor 0:
+==902962==    at 0x49FD7AB: dup2 (dup2.c:29)
+==902962==    by 0x4004AFC: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==902962==    by 0x4004BB5: ft_exec_one_cmd (ft_cmds_distro.c:32)
+==902962==    by 0x4004C4E: ft_cmds_distro (ft_cmds_distro.c:46)
+==902962==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==902962==    by 0x4004957: ft_prompt (main.c:135)
+==902962==    by 0x4004A22: main (main.c:152)
+==902962== 
+==902962== 
+==902962== HEAP SUMMARY:
+==902962==     in use at exit: 4,016 bytes in 1 blocks
+==902962==   total heap usage: 77 allocs, 76 frees, 10,985 bytes allocated
+==902962== 
+==902962== LEAK SUMMARY:
+==902962==    definitely lost: 0 bytes in 0 blocks
+==902962==    indirectly lost: 0 bytes in 0 blocks
+==902962==      possibly lost: 0 bytes in 0 blocks
+==902962==    still reachable: 0 bytes in 0 blocks
+==902962==         suppressed: 4,016 bytes in 1 blocks
+==902962== 
+==902962== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--902962-- 
+--902962-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==902962== 
+==902962== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)

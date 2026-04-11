@@ -1,0 +1,359 @@
+==896551== Memcheck, a memory error detector
+==896551== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==896551== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==896551== Command: /home/immanuel/Desktop/msmsms/minishell
+==896551== Parent PID: 896550
+==896551== 
+==896558== 
+==896558== FILE DESCRIPTORS: 8 open (7 inherited) at exit.
+==896558== Open file descriptor 7:
+==896558==    <inherited from parent>
+==896558== 
+==896558== Open file descriptor 6:
+==896558==    <inherited from parent>
+==896558== 
+==896558== Open file descriptor 5:
+==896558==    <inherited from parent>
+==896558== 
+==896558== Open file descriptor 4:
+==896558==    <inherited from parent>
+==896558== 
+==896558== Open file descriptor 3:
+==896558==    <inherited from parent>
+==896558== 
+==896558== Open file descriptor 2: /dev/null
+==896558==    <inherited from parent>
+==896558== 
+==896558== Open file descriptor 1: /dev/null
+==896558==    <inherited from parent>
+==896558== 
+==896558== Open file descriptor 0:
+==896558==    at 0x49FD7AB: dup2 (dup2.c:29)
+==896558==    by 0x4005E4E: ft_handle_pipes (ft_handle_pipes.c:42)
+==896558==    by 0x400597C: ft_exec_child (ft_exec_pipeline.c:29)
+==896558==    by 0x4005B62: ft_run_pipeline (ft_exec_pipeline.c:52)
+==896558==    by 0x40058E4: ft_exec_pipeline (ft_exec_pipeline.c:17)
+==896558==    by 0x4004C40: ft_cmds_distro (ft_cmds_distro.c:45)
+==896558==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 
+==896558== HEAP SUMMARY:
+==896558==     in use at exit: 6,667 bytes in 66 blocks
+==896558==   total heap usage: 79 allocs, 13 frees, 10,957 bytes allocated
+==896558== 
+==896558== 9 bytes in 2 blocks are still reachable in loss record 1 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x4008851: ft_substr (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x4002E0F: ft_add_token (ft_pipeline.c:19)
+==896558==    by 0x40031DB: ft_tokenize (ft_pipeline.c:81)
+==896558==    by 0x4004851: ft_process_prompt_line (main.c:107)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 24 bytes in 1 blocks are still reachable in loss record 4 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x400845A: ft_calloc (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x40015F2: ft_cmds_create (ft_cmds_init.c:86)
+==896558==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 32 bytes in 2 blocks are still reachable in loss record 5 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x400845A: ft_calloc (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x40041D1: ft_conv_token_argv_one (ft_convert_tokens.c:12)
+==896558==    by 0x40042C2: ft_conv_token_argv (ft_convert_tokens.c:36)
+==896558==    by 0x4004392: ft_direct_token_pointers (ft_convert_tokens.c:61)
+==896558==    by 0x40048D3: ft_process_prompt_line (main.c:115)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 44 bytes in 2 blocks are still reachable in loss record 6 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x4003799: ft_remove_char_at_str (ft_remove_quotes.c:15)
+==896558==    by 0x4003923: ft_remove_quotes (ft_remove_quotes.c:43)
+==896558==    by 0x4001B79: ft_expand_helper (ft_expander.c:27)
+==896558==    by 0x4001E23: ft_expand_redir (ft_expander.c:102)
+==896558==    by 0x4001EED: ft_expander (ft_expander.c:123)
+==896558==    by 0x40048B9: ft_process_prompt_line (main.c:113)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 48 bytes in 1 blocks are still reachable in loss record 7 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x4004724: ft_init_data (main.c:78)
+==896558==    by 0x40049F3: main (main.c:148)
+==896558== 
+==896558== 48 bytes in 2 blocks are still reachable in loss record 8 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x400948C: ft_dlstnew (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x4003605: ft_redir_attach (ft_redir_init.c:82)
+==896558==    by 0x4003702: ft_redir_init (ft_redir_init.c:107)
+==896558==    by 0x40016F0: ft_cmds_create (ft_cmds_init.c:101)
+==896558==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 64 bytes in 2 blocks are still reachable in loss record 10 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x400325D: ft_redir_new (ft_redir_init.c:14)
+==896558==    by 0x400345D: ft_redir_attach (ft_redir_init.c:67)
+==896558==    by 0x4003702: ft_redir_init (ft_redir_init.c:107)
+==896558==    by 0x40016F0: ft_cmds_create (ft_cmds_init.c:101)
+==896558==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 96 bytes in 4 blocks are still reachable in loss record 11 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x400948C: ft_dlstnew (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x4002E47: ft_add_token (ft_pipeline.c:22)
+==896558==    by 0x40031DB: ft_tokenize (ft_pipeline.c:81)
+==896558==    by 0x4004851: ft_process_prompt_line (main.c:107)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 120 bytes in 1 blocks are still reachable in loss record 12 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x4976D95: getdelim (iogetdelim.c:65)
+==896558==    by 0x486D456: readline (in /home/immanuel/42_minishell_tester/utils/libintercept/libintercept.so)
+==896558==    by 0x400492E: ft_prompt (main.c:129)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 160 bytes in 2 blocks are still reachable in loss record 13 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x4001358: ft_cmd_new (ft_cmds_init.c:21)
+==896558==    by 0x4001635: ft_cmds_create (ft_cmds_init.c:92)
+==896558==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896558==    by 0x4004957: ft_prompt (main.c:135)
+==896558==    by 0x4004A22: main (main.c:152)
+==896558== 
+==896558== 344 bytes in 1 blocks are still reachable in loss record 14 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x4008F6E: ft_arrdup (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x4004753: ft_init_data (main.c:82)
+==896558==    by 0x40049F3: main (main.c:148)
+==896558== 
+==896558== 1,565 bytes in 42 blocks are still reachable in loss record 15 of 16
+==896558==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896558==    by 0x4008628: ft_strdup (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x4008FBD: ft_arrdup (in /home/immanuel/Desktop/msmsms/minishell)
+==896558==    by 0x4004753: ft_init_data (main.c:82)
+==896558==    by 0x40049F3: main (main.c:148)
+==896558== 
+==896558== LEAK SUMMARY:
+==896558==    definitely lost: 0 bytes in 0 blocks
+==896558==    indirectly lost: 0 bytes in 0 blocks
+==896558==      possibly lost: 0 bytes in 0 blocks
+==896558==    still reachable: 2,554 bytes in 62 blocks
+==896558==         suppressed: 4,113 bytes in 4 blocks
+==896558== 
+==896558== ERROR SUMMARY: 20 errors from 20 contexts (suppressed: 4 from 4)
+--896558-- 
+--896558-- used_suppression:      4 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,113 bytes in 4 blocks
+==896558== 
+==896558== ERROR SUMMARY: 20 errors from 20 contexts (suppressed: 4 from 4)
+==896557== 
+==896557== FILE DESCRIPTORS: 8 open (6 inherited) at exit.
+==896557== Open file descriptor 7:
+==896557==    <inherited from parent>
+==896557== 
+==896557== Open file descriptor 6:
+==896557==    <inherited from parent>
+==896557== 
+==896557== Open file descriptor 5:
+==896557==    <inherited from parent>
+==896557== 
+==896557== Open file descriptor 4:
+==896557==    <inherited from parent>
+==896557== 
+==896557== Open file descriptor 3:
+==896557==    <inherited from parent>
+==896557== 
+==896557== Open file descriptor 2: /dev/null
+==896557==    <inherited from parent>
+==896557== 
+==896557== Open file descriptor 1:
+==896557==    at 0x49FD7AB: dup2 (dup2.c:29)
+==896557==    by 0x4004FDF: ft_exec_builtin (ft_exec_builtin.c:18)
+==896557==    by 0x40059AD: ft_exec_child (ft_exec_pipeline.c:31)
+==896557==    by 0x4005B62: ft_run_pipeline (ft_exec_pipeline.c:52)
+==896557==    by 0x40058E4: ft_exec_pipeline (ft_exec_pipeline.c:17)
+==896557==    by 0x4004C40: ft_cmds_distro (ft_cmds_distro.c:45)
+==896557==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== Open file descriptor 0:
+==896557==    at 0x49FD7AB: dup2 (dup2.c:29)
+==896557==    by 0x4004FF3: ft_exec_builtin (ft_exec_builtin.c:18)
+==896557==    by 0x40059AD: ft_exec_child (ft_exec_pipeline.c:31)
+==896557==    by 0x4005B62: ft_run_pipeline (ft_exec_pipeline.c:52)
+==896557==    by 0x40058E4: ft_exec_pipeline (ft_exec_pipeline.c:17)
+==896557==    by 0x4004C40: ft_cmds_distro (ft_cmds_distro.c:45)
+==896557==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 
+==896557== HEAP SUMMARY:
+==896557==     in use at exit: 6,667 bytes in 66 blocks
+==896557==   total heap usage: 79 allocs, 13 frees, 10,957 bytes allocated
+==896557== 
+==896557== 9 bytes in 2 blocks are still reachable in loss record 1 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x4008851: ft_substr (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x4002E0F: ft_add_token (ft_pipeline.c:19)
+==896557==    by 0x40031DB: ft_tokenize (ft_pipeline.c:81)
+==896557==    by 0x4004851: ft_process_prompt_line (main.c:107)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 24 bytes in 1 blocks are still reachable in loss record 4 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x400845A: ft_calloc (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x40015F2: ft_cmds_create (ft_cmds_init.c:86)
+==896557==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 32 bytes in 2 blocks are still reachable in loss record 5 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x400845A: ft_calloc (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x40041D1: ft_conv_token_argv_one (ft_convert_tokens.c:12)
+==896557==    by 0x40042C2: ft_conv_token_argv (ft_convert_tokens.c:36)
+==896557==    by 0x4004392: ft_direct_token_pointers (ft_convert_tokens.c:61)
+==896557==    by 0x40048D3: ft_process_prompt_line (main.c:115)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 44 bytes in 2 blocks are still reachable in loss record 6 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x4003799: ft_remove_char_at_str (ft_remove_quotes.c:15)
+==896557==    by 0x4003923: ft_remove_quotes (ft_remove_quotes.c:43)
+==896557==    by 0x4001B79: ft_expand_helper (ft_expander.c:27)
+==896557==    by 0x4001E23: ft_expand_redir (ft_expander.c:102)
+==896557==    by 0x4001EED: ft_expander (ft_expander.c:123)
+==896557==    by 0x40048B9: ft_process_prompt_line (main.c:113)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 48 bytes in 1 blocks are still reachable in loss record 7 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x4004724: ft_init_data (main.c:78)
+==896557==    by 0x40049F3: main (main.c:148)
+==896557== 
+==896557== 48 bytes in 2 blocks are still reachable in loss record 8 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x400948C: ft_dlstnew (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x4003605: ft_redir_attach (ft_redir_init.c:82)
+==896557==    by 0x4003702: ft_redir_init (ft_redir_init.c:107)
+==896557==    by 0x40016F0: ft_cmds_create (ft_cmds_init.c:101)
+==896557==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 64 bytes in 2 blocks are still reachable in loss record 10 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x400325D: ft_redir_new (ft_redir_init.c:14)
+==896557==    by 0x400345D: ft_redir_attach (ft_redir_init.c:67)
+==896557==    by 0x4003702: ft_redir_init (ft_redir_init.c:107)
+==896557==    by 0x40016F0: ft_cmds_create (ft_cmds_init.c:101)
+==896557==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 96 bytes in 4 blocks are still reachable in loss record 11 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x400948C: ft_dlstnew (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x4002E47: ft_add_token (ft_pipeline.c:22)
+==896557==    by 0x40031DB: ft_tokenize (ft_pipeline.c:81)
+==896557==    by 0x4004851: ft_process_prompt_line (main.c:107)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 120 bytes in 1 blocks are still reachable in loss record 12 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x4976D95: getdelim (iogetdelim.c:65)
+==896557==    by 0x486D456: readline (in /home/immanuel/42_minishell_tester/utils/libintercept/libintercept.so)
+==896557==    by 0x400492E: ft_prompt (main.c:129)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 160 bytes in 2 blocks are still reachable in loss record 13 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x4001358: ft_cmd_new (ft_cmds_init.c:21)
+==896557==    by 0x4001635: ft_cmds_create (ft_cmds_init.c:92)
+==896557==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==896557==    by 0x4004957: ft_prompt (main.c:135)
+==896557==    by 0x4004A22: main (main.c:152)
+==896557== 
+==896557== 344 bytes in 1 blocks are still reachable in loss record 14 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x4008F6E: ft_arrdup (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x4004753: ft_init_data (main.c:82)
+==896557==    by 0x40049F3: main (main.c:148)
+==896557== 
+==896557== 1,565 bytes in 42 blocks are still reachable in loss record 15 of 16
+==896557==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==896557==    by 0x4008628: ft_strdup (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x4008FBD: ft_arrdup (in /home/immanuel/Desktop/msmsms/minishell)
+==896557==    by 0x4004753: ft_init_data (main.c:82)
+==896557==    by 0x40049F3: main (main.c:148)
+==896557== 
+==896557== LEAK SUMMARY:
+==896557==    definitely lost: 0 bytes in 0 blocks
+==896557==    indirectly lost: 0 bytes in 0 blocks
+==896557==      possibly lost: 0 bytes in 0 blocks
+==896557==    still reachable: 2,554 bytes in 62 blocks
+==896557==         suppressed: 4,113 bytes in 4 blocks
+==896557== 
+==896557== ERROR SUMMARY: 20 errors from 20 contexts (suppressed: 4 from 4)
+--896557-- 
+--896557-- used_suppression:      4 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,113 bytes in 4 blocks
+==896557== 
+==896557== ERROR SUMMARY: 20 errors from 20 contexts (suppressed: 4 from 4)
+==896551== 
+==896551== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==896551== Open file descriptor 7:
+==896551==    <inherited from parent>
+==896551== 
+==896551== Open file descriptor 6:
+==896551==    <inherited from parent>
+==896551== 
+==896551== Open file descriptor 5:
+==896551==    <inherited from parent>
+==896551== 
+==896551== Open file descriptor 4:
+==896551==    <inherited from parent>
+==896551== 
+==896551== Open file descriptor 3:
+==896551==    <inherited from parent>
+==896551== 
+==896551== Open file descriptor 2: /dev/null
+==896551==    <inherited from parent>
+==896551== 
+==896551== Open file descriptor 1: /dev/null
+==896551==    <inherited from parent>
+==896551== 
+==896551== Open file descriptor 0:
+==896551==    <inherited from parent>
+==896551== 
+==896551== 
+==896551== HEAP SUMMARY:
+==896551==     in use at exit: 4,016 bytes in 1 blocks
+==896551==   total heap usage: 78 allocs, 77 frees, 11,055 bytes allocated
+==896551== 
+==896551== LEAK SUMMARY:
+==896551==    definitely lost: 0 bytes in 0 blocks
+==896551==    indirectly lost: 0 bytes in 0 blocks
+==896551==      possibly lost: 0 bytes in 0 blocks
+==896551==    still reachable: 0 bytes in 0 blocks
+==896551==         suppressed: 4,016 bytes in 1 blocks
+==896551== 
+==896551== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--896551-- 
+--896551-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==896551== 
+==896551== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)

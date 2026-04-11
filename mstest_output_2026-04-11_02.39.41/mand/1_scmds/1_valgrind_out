@@ -1,0 +1,87 @@
+==903530== Memcheck, a memory error detector
+==903530== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==903530== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==903530== Command: /bin/ls
+==903530== Parent PID: 903524
+==903530== 
+==903530== 
+==903530== FILE DESC==903524== 
+==903524== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==903524== Open file descriptor 7:
+==903524==    <inherited from parent>
+==903524== 
+==903524== Open file descriptor 6:
+==903524==    <inherited from parent>
+==903524== 
+==903524== Open file descriptor 5:
+==903524==    <inherited from parent>
+==903524== 
+==903524== Open file descriptor 4:
+==903524==    <inherited from parent>
+==903524== 
+==903524== Open file descriptor 3:
+==903524==    <inherited from parent>
+==903524== 
+==903524== Open file descriptor 2: /dev/null
+==903524==    <inherited from parent>
+==903524== 
+==903524== Open file descriptor 1: /dev/null
+==903524==    <inherited from parent>
+==903524== 
+==903524== Open file descriptor 0:
+==903524==    <inherited from parent>
+==903524== 
+==903524== 
+==903524== HEAP SUMMARY:
+==903524==     in use at exit: 4,016 bytes in 1 blocks
+==903524==   total heap usage: 58 allocs, 57 frees, 10,497 bytes allocated
+==903524== 
+==903524== LEAK SUMMARY:
+==903524==    definitely lost: 0 bytes in 0 blocks
+==903524==    indirectly lost: 0 bytes in 0 blocks
+==903524==      possibly lost: 0 bytes in 0 blocks
+==903524==    still reachable: 0 bytes in 0 blocks
+==903524==         suppressed: 4,016 bytes in 1 blocks
+==903524== 
+==903524== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--903524-- 
+--903524-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==903524== 
+==903524== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+ by 0x400D7DB: print_dir (ls.c:3091)
+==903530==    by 0x4003B77: main (ls.c:1813)
+==903530== 
+==903530== 56 bytes in 1 blocks are still reachable in loss record 3 of 6
+==903530==    at 0x48707A8: malloc (vg_replace_malloc.c:446)
+==903530==    by 0x401B659: xmalloc (xmalloc.c:49)
+==903530==    by 0x401B659: xmemdup (xmalloc.c:312)
+==903530==    by 0x401992B: clone_quoting_options (quotearg.c:116)
+==903530==    by 0x40037BF: decode_switches (ls.c:2354)
+==903530==    by 0x40037BF: main (ls.c:1672)
+==903530== 
+==903530== 56 bytes in 1 blocks are still reachable in loss record 4 of 6
+==903530==    at 0x48707A8: malloc (vg_replace_malloc.c:446)
+==903530==    by 0x401B659: xmalloc (xmalloc.c:49)
+==903530==    by 0x401B659: xmemdup (xmalloc.c:312)
+==903530==    by 0x401992B: clone_quoting_options (quotearg.c:116)
+==903530==    by 0x4003829: decode_switches (ls.c:2363)
+==903530==    by 0x4003829: main (ls.c:1672)
+==903530== 
+==903530== 128 bytes in 1 blocks are still reachable in loss record 5 of 6
+==903530==    at 0x48707A8: malloc (vg_replace_malloc.c:446)
+==903530==    by 0x401A64A: tzalloc (time_rz.c:101)
+==903530==    by 0x4003A34: main (ls.c:1720)
+==903530== 
+==903530== 20,800 bytes in 1 blocks are still reachable in loss record 6 of 6
+==903530==    at 0x48707A8: malloc (vg_replace_malloc.c:446)
+==903530==    by 0x401B2AD: xmalloc (xmalloc.c:49)
+==903530==    by 0x4003AE8: main (ls.c:1749)
+==903530== 
+==903530== LEAK SUMMARY:
+==903530==    definitely lost: 0 bytes in 0 blocks
+==903530==    indirectly lost: 0 bytes in 0 blocks
+==903530==      possibly lost: 0 bytes in 0 blocks
+==903530==    still reachable: 21,078 bytes in 6 blocks
+==903530==         suppressed: 0 bytes in 0 blocks
+==903530== 
+==903530== ERROR SUMMARY: 12 errors from 12 contexts (suppressed: 0 from 0)

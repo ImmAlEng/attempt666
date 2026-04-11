@@ -1,0 +1,50 @@
+==907888== Memcheck, a memory error detector
+==907888== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==907888== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==907888== Command: /bin/echo $\ 
+==907888== Parent PID: 907881
+==907888== 
+==907888== 
+==907888== FIL==907881== 
+==907881== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==907881== Open file descriptor 7:
+==907881==    <inherited from parent>
+==907881== 
+==907881== Open file descriptor 6:
+==907881==    <inherited from parent>
+==907881== 
+==907881== Open file descriptor 5:
+==907881==    <inherited from parent>
+==907881== 
+==907881== Open file descriptor 4:
+==907881==    <inherited from parent>
+==907881== 
+==907881== Open file descriptor 3:
+==907881==    <inherited from parent>
+==907881== 
+==907881== Open file descriptor 2: /dev/null
+==907881==    <inherited from parent>
+==907881== 
+==907881== Open file descriptor 1: /dev/null
+==907881==    <inherited from parent>
+==907881== 
+==907881== Open file descriptor 0:
+==907881==    <inherited from parent>
+==907881== 
+==907881== 
+==907881== HEAP SUMMARY:
+==907881==     in use at exit: 4,016 bytes in 1 blocks
+==907881==   total heap usage: 62 allocs, 61 frees, 10,560 bytes allocated
+==907881== 
+==907881== LEAK SUMMARY:
+==907881==    definitely lost: 0 bytes in 0 blocks
+==907881==    indirectly lost: 0 bytes in 0 blocks
+==907881==      possibly lost: 0 bytes in 0 blocks
+==907881==    still reachable: 0 bytes in 0 blocks
+==907881==         suppressed: 4,016 bytes in 1 blocks
+==907881== 
+==907881== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--907881-- 
+--907881-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==907881== 
+==907881== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)

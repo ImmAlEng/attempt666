@@ -13,9 +13,30 @@ int	ft_exec_pipeline(t_data *data)
 	i = -1;
 	path = NULL;
 	if (ft_create_pipes(data))
+	{
 		if (!ft_run_pipeline(data, i, &status, path))
+		{
+			ft_update_underscore(data, data->cmds[data->n_cmds - 1]);
 			return (data->cmds[data->n_cmds - 1]->exit_status);
+		}
+	}
 	return (1);
+}
+
+static void	ft_exec_child(t_data *data, int i, char *path)
+{
+	ft_reset_signals();
+	ft_handle_pipes(data, i);
+	if (data->cmds[i]->is_builtin)
+		exit(ft_exec_builtin(data, i));
+	if (!ft_handle_redirs(data->cmds[i]))
+		exit(1);
+	if (!data->cmds[i]->cmd)
+		exit(0);
+	path = ft_find_binary(data, i);
+	execve(path, data->cmds[i]->argv, data->env);
+	perror("execve");
+	exit(1);
 }
 
 int	ft_run_pipeline(t_data *data, int i, int *status, char *path)
@@ -28,18 +49,7 @@ int	ft_run_pipeline(t_data *data, int i, int *status, char *path)
 		if (data->cmds[i]->pid == -1)
 			return (perror("fork"), data->cmds[i]->exit_status);
 		if (data->cmds[i]->pid == 0)
-		{
-			ft_reset_signals();
-			ft_handle_pipes(data, i);
-			if (data->cmds[i]->is_builtin)
-				exit(ft_exec_builtin(data, i));
-			if (!ft_handle_redirs(data->cmds[i]))
-				exit(1);
-			path = ft_find_binary(data, i);
-			execve(path, data->cmds[i]->argv, data->env);
-			perror("execve");
-			exit(1);
-		}
+			ft_exec_child(data, i, path);
 	}
 	ft_close_heredoc(data);
 	ft_close_pipes(data);

@@ -1,0 +1,61 @@
+==882334== Memcheck, a memory error detector
+==882334== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==882334== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==882334== Command: /home/immanuel/Desktop/msmsms/minishell
+==882334== Parent PID: 882333
+==882334== 
+==882334== 
+==882334== FILE DESCRIPTORS: 8 open (6 inherited) at exit.
+==882334== Open file descriptor 7:
+==882334==    <inherited from parent>
+==882334== 
+==882334== Open file descriptor 6:
+==882334==    <inherited from parent>
+==882334== 
+==882334== Open file descriptor 5:
+==882334==    <inherited from parent>
+==882334== 
+==882334== Open file descriptor 4:
+==882334==    <inherited from parent>
+==882334== 
+==882334== Open file descriptor 3:
+==882334==    <inherited from parent>
+==882334== 
+==882334== Open file descriptor 2: /dev/null
+==882334==    <inherited from parent>
+==882334== 
+==882334== Open file descriptor 1: /dev/null
+==882334==    at 0x49FD7AB: dup2 (dup2.c:29)
+==882334==    by 0x4004FDF: ft_exec_builtin (ft_exec_builtin.c:18)
+==882334==    by 0x4004BDB: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==882334==    by 0x4004C4E: ft_cmds_distro (ft_cmds_distro.c:46)
+==882334==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==882334==    by 0x4004957: ft_prompt (main.c:135)
+==882334==    by 0x4004A22: main (main.c:152)
+==882334== 
+==882334== Open file descriptor 0:
+==882334==    at 0x49FD7AB: dup2 (dup2.c:29)
+==882334==    by 0x4004FF3: ft_exec_builtin (ft_exec_builtin.c:18)
+==882334==    by 0x4004BDB: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==882334==    by 0x4004C4E: ft_cmds_distro (ft_cmds_distro.c:46)
+==882334==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==882334==    by 0x4004957: ft_prompt (main.c:135)
+==882334==    by 0x4004A22: main (main.c:152)
+==882334== 
+==882334== 
+==882334== HEAP SUMMARY:
+==882334==     in use at exit: 4,016 bytes in 1 blocks
+==882334==   total heap usage: 60 allocs, 59 frees, 10,571 bytes allocated
+==882334== 
+==882334== LEAK SUMMARY:
+==882334==    definitely lost: 0 bytes in 0 blocks
+==882334==    indirectly lost: 0 bytes in 0 blocks
+==882334==      possibly lost: 0 bytes in 0 blocks
+==882334==    still reachable: 0 bytes in 0 blocks
+==882334==         suppressed: 4,016 bytes in 1 blocks
+==882334== 
+==882334== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--882334-- 
+--882334-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==882334== 
+==882334== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)

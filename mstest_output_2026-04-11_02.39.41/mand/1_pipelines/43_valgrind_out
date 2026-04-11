@@ -1,0 +1,1142 @@
+==895603== Memcheck, a memory error detector
+==895603== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==895603== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==895603== Command: /bin/awk $1\ ~\ /^d/\ {print\ $9}
+==895603== Parent P==895602== 
+==895602== ==8956==895596== 
+==895596== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==895596== Open file descriptor 7:
+==895596==    <inherited from parent>
+==895596== 
+==895596== Open file descriptor 6:
+==895596==    <inherited from parent>
+==895596== 
+==895596== Open file descriptor 5:
+==895596==    <inherited from parent>
+==895596== 
+==895596== Open file descriptor 4:
+==895596==    <inherited from parent>
+==895596== 
+==895596== Open file descriptor 3:
+==895596==    <inherited from parent>
+==895596== 
+==895596== Open file descriptor 2: /dev/null
+==895596==    <inherited from parent>
+==895596== 
+==895596== Open file descriptor 1: /dev/null
+==895596==    <inherited from parent>
+==895596== 
+==895596== Open file descriptor 0:
+==895596==    <inherited from parent>
+==895596== 
+==895596== 
+==895596== HEAP SUMMARY:
+==895596==     in use at exit: 4,016 bytes in 1 blocks
+==895596==   total heap usage: 70 allocs, 69 frees, 10,856 bytes allocated
+==895596== 
+==895596== LEAK SUMMARY:
+==895596==    definitely lost: 0 bytes in 0 blocks
+==895596==    indirectly lost: 0 bytes in 0 blocks
+==895596==      possibly lost: 0 bytes in 0 blocks
+==895596==    still reachable: 0 bytes in 0 blocks
+==895596==         suppressed: 4,016 bytes in 1 blocks
+==895596== 
+==895596== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--895596-- 
+--895596-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==895596== 
+==895596== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+03==    by 0x40086C9: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x40086C9: main (main.c:255)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 2 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x40086E6: UnknownInlinedFun (main.c:1488)
+==895603==    by 0x40086E6: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x40086E6: main (main.c:255)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 3 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4008703: UnknownInlinedFun (main.c:1489)
+==895603==    by 0x4008703: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x4008703: main (main.c:255)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 4 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4008720: UnknownInlinedFun (main.c:1490)
+==895603==    by 0x4008720: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x4008720: main (main.c:255)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 5 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x400873D: UnknownInlinedFun (main.c:1491)
+==895603==    by 0x400873D: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x400873D: main (main.c:255)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 6 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x400875A: UnknownInlinedFun (main.c:1492)
+==895603==    by 0x400875A: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x400875A: main (main.c:255)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 7 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x400877E: UnknownInlinedFun (main.c:1493)
+==895603==    by 0x400877E: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x400877E: main (main.c:255)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 8 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4008821: main (main.c:279)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 9 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4008F54: UnknownInlinedFun (field.c:112)
+==895603==    by 0x4008F54: main (main.c:411)
+==895603== 
+==895603== 1 bytes in 1 blocks are still reachable in loss record 10 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x404D7C4: update_ERRNO_int.part.0 (eval.c:1036)
+==895603==    by 0x40661F9: UnknownInlinedFun (eval.c:1026)
+==895603==    by 0x40661F9: nextfile.constprop.0 (io.c:516)
+==895603==    by 0x4047824: r_interpret (interpret.h:1417)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 2 bytes in 1 blocks are still reachable in loss record 11 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4008675: UnknownInlinedFun (main.c:1484)
+==895603==    by 0x4008675: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x4008675: main (main.c:255)
+==895603== 
+==895603== 2 bytes in 1 blocks are still reachable in loss record 12 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4008690: UnknownInlinedFun (main.c:1485)
+==895603==    by 0x4008690: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x4008690: main (main.c:255)
+==895603== 
+==895603== 2 bytes in 1 blocks are still reachable in loss record 13 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x40086AC: UnknownInlinedFun (main.c:1486)
+==895603==    by 0x40086AC: UnknownInlinedFun (main.c:1857)
+==895603==    by 0x40086AC: main (main.c:255)
+==895603== 
+==895603== 2 bytes in 1 blocks are still reachable in loss record 14 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x403E38F: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x403E38F: set_OFS (eval.c:839)
+==895603==    by 0x4008D54: UnknownInlinedFun (main.c:881)
+==895603==    by 0x4008D54: main (main.c:404)
+==895603== 
+==895603== 2 bytes in 1 blocks are still reachable in loss record 15 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4066236: nextfile.constprop.0 (io.c:519)
+==895603==    by 0x4047824: r_interpret (interpret.h:1417)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 2 bytes in 1 blocks are still reachable in loss record 16 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4064536: UnknownInlinedFun (io.c:4495)
+==895603==    by 0x4064536: get_a_record (io.c:3993)
+==895603==    by 0x4064F13: inrec (io.c:586)
+==895603==    by 0x404891E: r_interpret (interpret.h:1453)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 2 bytes in 1 blocks are still reachable in loss record 17 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4064D27: get_a_record (io.c:4162)
+==895603==    by 0x4064F13: inrec (io.c:586)
+==895603==    by 0x404891E: r_interpret (interpret.h:1453)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 3 bytes in 1 blocks are still reachable in loss record 18 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AE5: update_PROCINFO_str.part.0 (field.c:1629)
+==895603==    by 0x4009A48: UnknownInlinedFun (main.c:1080)
+==895603==    by 0x4009A48: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009A48: main (main.c:404)
+==895603== 
+==895603== 3 bytes in 1 blocks are still reachable in loss record 19 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AFE: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x4009A48: UnknownInlinedFun (main.c:1080)
+==895603==    by 0x4009A48: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009A48: main (main.c:404)
+==895603== 
+==895603== 3 bytes in 1 blocks are still reachable in loss record 20 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x401238E: yylex (awkgram.y:3678)
+==895603==    by 0x40151E2: yyparse (awkgram.c:1879)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 3 bytes in 1 blocks are still reachable in loss record 21 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x408BC4B: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x408BC4B: make_regexp (re.c:99)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 4 bytes in 1 blocks are still reachable in loss record 22 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x4009977: UnknownInlinedFun (main.c:1063)
+==895603==    by 0x4009977: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009977: main (main.c:404)
+==895603== 
+==895603== 4 bytes in 1 blocks are still reachable in loss record 23 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x40099AE: UnknownInlinedFun (main.c:1069)
+==895603==    by 0x40099AE: UnknownInlinedFun (main.c:886)
+==895603==    by 0x40099AE: main (main.c:404)
+==895603== 
+==895603== 4 bytes in 1 blocks are still reachable in loss record 24 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x40099E8: UnknownInlinedFun (main.c:1075)
+==895603==    by 0x40099E8: UnknownInlinedFun (main.c:886)
+==895603==    by 0x40099E8: main (main.c:404)
+==895603== 
+==895603== 4 bytes in 1 blocks are still reachable in loss record 25 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AE5: update_PROCINFO_str.part.0 (field.c:1629)
+==895603==    by 0x4009AE3: UnknownInlinedFun (main.c:1095)
+==895603==    by 0x4009AE3: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009AE3: main (main.c:404)
+==895603== 
+==895603== 4 bytes in 1 blocks are still reachable in loss record 26 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400938E: UnknownInlinedFun (main.c:774)
+==895603==    by 0x400938E: main (main.c:471)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 27 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x4009991: UnknownInlinedFun (main.c:1066)
+==895603==    by 0x4009991: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009991: main (main.c:404)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 28 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x40099CB: UnknownInlinedFun (main.c:1072)
+==895603==    by 0x40099CB: UnknownInlinedFun (main.c:886)
+==895603==    by 0x40099CB: main (main.c:404)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 29 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x4009A05: UnknownInlinedFun (main.c:1078)
+==895603==    by 0x4009A05: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009A05: main (main.c:404)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 30 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4009B3E: UnknownInlinedFun (main.c:996)
+==895603==    by 0x4009B3E: UnknownInlinedFun (main.c:1101)
+==895603==    by 0x4009B3E: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009B3E: main (main.c:404)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 31 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400A3E5: UnknownInlinedFun (main.c:1004)
+==895603==    by 0x400A3E5: UnknownInlinedFun (main.c:1101)
+==895603==    by 0x400A3E5: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400A3E5: main (main.c:404)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 32 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4009355: UnknownInlinedFun (main.c:772)
+==895603==    by 0x4009355: main (main.c:471)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 33 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x4009364: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x4009364: UnknownInlinedFun (main.c:772)
+==895603==    by 0x4009364: main (main.c:471)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 34 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4009EE8: UnknownInlinedFun (main.c:799)
+==895603==    by 0x4009EE8: main (main.c:471)
+==895603== 
+==895603== 5 bytes in 1 blocks are still reachable in loss record 35 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x4009EF7: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x4009EF7: UnknownInlinedFun (main.c:799)
+==895603==    by 0x4009EF7: main (main.c:471)
+==895603== 
+==895603== 6 bytes in 1 blocks are still reachable in loss record 36 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AFE: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x4009867: UnknownInlinedFun (main.c:1029)
+==895603==    by 0x4009867: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009867: main (main.c:404)
+==895603== 
+==895603== 6 bytes in 1 blocks are still reachable in loss record 37 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AFE: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x400988D: UnknownInlinedFun (main.c:1031)
+==895603==    by 0x400988D: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400988D: main (main.c:404)
+==895603== 
+==895603== 6 bytes in 1 blocks are possibly lost in loss record 38 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400A60D: UnknownInlinedFun (symbol.c:682)
+==895603==    by 0x400A60D: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A60D: main (main.c:500)
+==895603== 
+==895603== 6 bytes in 1 blocks are possibly lost in loss record 39 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x404D77B: UnknownInlinedFun (eval.c:1029)
+==895603==    by 0x404D77B: update_ERRNO_int.part.0 (eval.c:1029)
+==895603==    by 0x40661F9: UnknownInlinedFun (eval.c:1026)
+==895603==    by 0x40661F9: nextfile.constprop.0 (io.c:516)
+==895603==    by 0x4047824: r_interpret (interpret.h:1417)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 7 bytes in 1 blocks are still reachable in loss record 40 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x408A998: init_the_tables.lto_priv.0 (symbol.c:79)
+==895603==    by 0x40089DF: UnknownInlinedFun (symbol.c:90)
+==895603==    by 0x40089DF: main (main.c:288)
+==895603== 
+==895603== 7 bytes in 1 blocks are still reachable in loss record 41 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x408A9A7: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x408A9A7: init_the_tables.lto_priv.0 (symbol.c:79)
+==895603==    by 0x40089DF: UnknownInlinedFun (symbol.c:90)
+==895603==    by 0x40089DF: main (main.c:288)
+==895603== 
+==895603== 7 bytes in 1 blocks are still reachable in loss record 42 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x400995D: UnknownInlinedFun (main.c:1054)
+==895603==    by 0x400995D: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400995D: main (main.c:404)
+==895603== 
+==895603== 7 bytes in 1 blocks are possibly lost in loss record 43 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400A5D9: UnknownInlinedFun (symbol.c:680)
+==895603==    by 0x400A5D9: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A5D9: main (main.c:500)
+==895603== 
+==895603== 8 bytes in 1 blocks are still reachable in loss record 44 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x408A971: init_the_tables.lto_priv.0 (symbol.c:78)
+==895603==    by 0x40089DF: UnknownInlinedFun (symbol.c:90)
+==895603==    by 0x40089DF: main (main.c:288)
+==895603== 
+==895603== 8 bytes in 1 blocks are still reachable in loss record 45 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x408A980: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x408A980: init_the_tables.lto_priv.0 (symbol.c:78)
+==895603==    by 0x40089DF: UnknownInlinedFun (symbol.c:90)
+==895603==    by 0x40089DF: main (main.c:288)
+==895603== 
+==895603== 8 bytes in 1 blocks are still reachable in loss record 46 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AE5: update_PROCINFO_str.part.0 (field.c:1629)
+==895603==    by 0x4009867: UnknownInlinedFun (main.c:1029)
+==895603==    by 0x4009867: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009867: main (main.c:404)
+==895603== 
+==895603== 8 bytes in 1 blocks are still reachable in loss record 47 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4009594: UnknownInlinedFun (main.c:938)
+==895603==    by 0x4009594: UnknownInlinedFun (main.c:887)
+==895603==    by 0x4009594: main (main.c:404)
+==895603== 
+==895603== 8 bytes in 1 blocks are still reachable in loss record 48 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x40095A3: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x40095A3: UnknownInlinedFun (main.c:938)
+==895603==    by 0x40095A3: UnknownInlinedFun (main.c:887)
+==895603==    by 0x40095A3: main (main.c:404)
+==895603== 
+==895603== 8 bytes in 1 blocks are still reachable in loss record 49 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4069905: path_environ (main.c:899)
+==895603==    by 0x4009714: UnknownInlinedFun (main.c:972)
+==895603==    by 0x4009714: UnknownInlinedFun (main.c:887)
+==895603==    by 0x4009714: main (main.c:404)
+==895603== 
+==895603== 8 bytes in 1 blocks are still reachable in loss record 50 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x409837E: UnknownInlinedFun (minrx.c:1862)
+==895603==    by 0x409837E: compile.constprop.0 (minrx.c:1945)
+==895603==    by 0x409A393: minrx_regncomp (minrx.c:2504)
+==895603==    by 0x408B217: make_regexp (re.c:356)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 8 bytes in 1 blocks are possibly lost in loss record 51 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400A627: UnknownInlinedFun (symbol.c:683)
+==895603==    by 0x400A627: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A627: main (main.c:500)
+==895603== 
+==895603== 9 bytes in 1 blocks are still reachable in loss record 52 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x400983E: UnknownInlinedFun (main.c:1027)
+==895603==    by 0x400983E: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400983E: main (main.c:404)
+==895603== 
+==895603== 9 bytes in 1 blocks are still reachable in loss record 53 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x400984D: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x400984D: UnknownInlinedFun (main.c:1027)
+==895603==    by 0x400984D: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400984D: main (main.c:404)
+==895603== 
+==895603== 9 bytes in 1 blocks are still reachable in loss record 54 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AE5: update_PROCINFO_str.part.0 (field.c:1629)
+==895603==    by 0x400987A: UnknownInlinedFun (main.c:1030)
+==895603==    by 0x400987A: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400987A: main (main.c:404)
+==895603== 
+==895603== 9 bytes in 1 blocks are still reachable in loss record 55 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AE5: update_PROCINFO_str.part.0 (field.c:1629)
+==895603==    by 0x400988D: UnknownInlinedFun (main.c:1031)
+==895603==    by 0x400988D: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400988D: main (main.c:404)
+==895603== 
+==895603== 9 bytes in 1 blocks are still reachable in loss record 56 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x4009907: UnknownInlinedFun (main.c:1038)
+==895603==    by 0x4009907: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009907: main (main.c:404)
+==895603== 
+==895603== 9 bytes in 1 blocks are still reachable in loss record 57 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x400991B: UnknownInlinedFun (main.c:1039)
+==895603==    by 0x400991B: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400991B: main (main.c:404)
+==895603== 
+==895603== 10 bytes in 1 blocks are still reachable in loss record 58 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x400992F: UnknownInlinedFun (main.c:1043)
+==895603==    by 0x400992F: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400992F: main (main.c:404)
+==895603== 
+==895603== 10 bytes in 1 blocks are still reachable in loss record 59 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x4009943: UnknownInlinedFun (main.c:1044)
+==895603==    by 0x4009943: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009943: main (main.c:404)
+==895603== 
+==895603== 10 bytes in 1 blocks are still reachable in loss record 60 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AFE: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x4009AE3: UnknownInlinedFun (main.c:1095)
+==895603==    by 0x4009AE3: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009AE3: main (main.c:404)
+==895603== 
+==895603== 11 bytes in 1 blocks are still reachable in loss record 61 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4069905: path_environ (main.c:899)
+==895603==    by 0x4009727: UnknownInlinedFun (main.c:973)
+==895603==    by 0x4009727: UnknownInlinedFun (main.c:887)
+==895603==    by 0x4009727: main (main.c:404)
+==895603== 
+==895603== 12 bytes in 1 blocks are still reachable in loss record 62 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AE5: update_PROCINFO_str.part.0 (field.c:1629)
+==895603==    by 0x40098F3: UnknownInlinedFun (main.c:1037)
+==895603==    by 0x40098F3: UnknownInlinedFun (main.c:886)
+==895603==    by 0x40098F3: main (main.c:404)
+==895603== 
+==895603== 12 bytes in 1 blocks are possibly lost in loss record 63 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400A512: UnknownInlinedFun (symbol.c:664)
+==895603==    by 0x400A512: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A512: main (main.c:500)
+==895603== 
+==895603== 12 bytes in 1 blocks are possibly lost in loss record 64 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x400A58E: UnknownInlinedFun (symbol.c:676)
+==895603==    by 0x400A58E: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A58E: main (main.c:500)
+==895603== 
+==895603== 13 bytes in 1 blocks are still reachable in loss record 65 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AE5: update_PROCINFO_str.part.0 (field.c:1629)
+==895603==    by 0x40098C1: UnknownInlinedFun (main.c:1035)
+==895603==    by 0x40098C1: UnknownInlinedFun (main.c:886)
+==895603==    by 0x40098C1: main (main.c:404)
+==895603== 
+==895603== 13 bytes in 1 blocks are still reachable in loss record 66 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AFE: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x40098F3: UnknownInlinedFun (main.c:1037)
+==895603==    by 0x40098F3: UnknownInlinedFun (main.c:886)
+==895603==    by 0x40098F3: main (main.c:404)
+==895603== 
+==895603== 14 bytes in 1 blocks are still reachable in loss record 67 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4069967: path_environ (main.c:914)
+==895603==    by 0x4009727: UnknownInlinedFun (main.c:973)
+==895603==    by 0x4009727: UnknownInlinedFun (main.c:887)
+==895603==    by 0x4009727: main (main.c:404)
+==895603== 
+==895603== 15 bytes in 1 blocks are still reachable in loss record 68 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AFE: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x40098C1: UnknownInlinedFun (main.c:1035)
+==895603==    by 0x40098C1: UnknownInlinedFun (main.c:886)
+==895603==    by 0x40098C1: main (main.c:404)
+==895603== 
+==895603== 15 bytes in 1 blocks are possibly lost in loss record 69 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4064057: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4064057: in_PROCINFO.lto_priv.0 (io.c:4447)
+==895603==    by 0x4064506: UnknownInlinedFun (io.c:4492)
+==895603==    by 0x4064506: get_a_record (io.c:3993)
+==895603==    by 0x4064F13: inrec (io.c:586)
+==895603==    by 0x404891E: r_interpret (interpret.h:1453)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 16 bytes in 1 blocks are still reachable in loss record 70 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x408B699: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x408B699: make_regexp (re.c:371)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 16 bytes in 1 blocks are still reachable in loss record 71 of 122
+==895603==    at 0x498BE4F: realloc (vg_replace_malloc.c:1801)
+==895603==    by 0x4055F96: UnknownInlinedFun (awk.h:2189)
+==895603==    by 0x4055F96: grow_fields_arr.lto_priv.0 (field.c:135)
+==895603==    by 0x4056168: set_field.lto_priv.0 (field.c:156)
+==895603==    by 0x4056507: def_parse_field (field.c:631)
+==895603==    by 0x405D42B: get_field (field.c:1070)
+==895603==    by 0x4044500: r_get_field (eval.c:1245)
+==895603==    by 0x4046A8E: r_interpret (interpret.h:474)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 17 bytes in 1 blocks are still reachable in loss record 72 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4069967: path_environ (main.c:914)
+==895603==    by 0x4009714: UnknownInlinedFun (main.c:972)
+==895603==    by 0x4009714: UnknownInlinedFun (main.c:887)
+==895603==    by 0x4009714: main (main.c:404)
+==895603== 
+==895603== 21 bytes in 1 blocks are still reachable in loss record 73 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x401011B: do_add_srcfile.lto_priv.0 (awkgram.y:2828)
+==895603==    by 0x400920A: main (main.c:464)
+==895603== 
+==895603== 21 bytes in 3 blocks are still reachable in loss record 74 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x405E66B: update_PROCINFO_num.part.0 (field.c:1642)
+==895603==    by 0x4009AA8: UnknownInlinedFun (main.c:1085)
+==895603==    by 0x4009AA8: UnknownInlinedFun (main.c:1086)
+==895603==    by 0x4009AA8: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009AA8: main (main.c:404)
+==895603== 
+==895603== 24 bytes in 1 blocks are still reachable in loss record 75 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x400CA90: emalloc_real.lto_priv.1 (awk.h:2153)
+==895603==    by 0x406BD02: UnknownInlinedFun (main.c:1504)
+==895603==    by 0x406BD02: parse_args (main.c:1562)
+==895603==    by 0x4008A0C: main (main.c:295)
+==895603== 
+==895603== 24 bytes in 1 blocks are still reachable in loss record 76 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4059AFE: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x400987A: UnknownInlinedFun (main.c:1030)
+==895603==    by 0x400987A: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400987A: main (main.c:404)
+==895603== 
+==895603== 24 bytes in 1 blocks are still reachable in loss record 77 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x401A53F: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x401A53F: parse_program (awkgram.y:2804)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 30 bytes in 2 blocks are still reachable in loss record 78 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x406BD47: UnknownInlinedFun (main.c:1506)
+==895603==    by 0x406BD47: parse_args (main.c:1562)
+==895603==    by 0x4008A0C: main (main.c:295)
+==895603== 
+==895603== 30 bytes in 2 blocks are still reachable in loss record 79 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4009BE9: UnknownInlinedFun (main.c:999)
+==895603==    by 0x4009BE9: UnknownInlinedFun (main.c:1101)
+==895603==    by 0x4009BE9: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009BE9: main (main.c:404)
+==895603== 
+==895603== 32 bytes in 1 blocks are still reachable in loss record 80 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x403E617: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x403E617: fmt_index (eval.c:913)
+==895603==    by 0x403EAA6: set_CONVFMT (eval.c:956)
+==895603==    by 0x4008D54: UnknownInlinedFun (main.c:881)
+==895603==    by 0x4008D54: main (main.c:404)
+==895603== 
+==895603== 40 bytes in 1 blocks are still reachable in loss record 81 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x409F9E9: charset_add_char.part.0.lto_priv.0 (charset.c:8888)
+==895603==    by 0x409843F: UnknownInlinedFun (charset.c:8881)
+==895603==    by 0x409843F: UnknownInlinedFun (minrx.c:921)
+==895603==    by 0x409843F: UnknownInlinedFun (minrx.c:1869)
+==895603==    by 0x409843F: compile.constprop.0 (minrx.c:1945)
+==895603==    by 0x409A393: minrx_regncomp (minrx.c:2504)
+==895603==    by 0x408B217: make_regexp (re.c:356)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 46 bytes in 11 blocks are still reachable in loss record 82 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4008D35: UnknownInlinedFun (main.c:875)
+==895603==    by 0x4008D35: main (main.c:404)
+==895603== 
+==895603== 60 bytes in 1 blocks are still reachable in loss record 83 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x400B704: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x400B704: tokexpand (awkgram.y:3288)
+==895603==    by 0x401A924: parse_program (awkgram.y:2789)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 64 bytes in 1 blocks are still reachable in loss record 84 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x40983CC: UnknownInlinedFun (charset.c:8861)
+==895603==    by 0x40983CC: UnknownInlinedFun (minrx.c:877)
+==895603==    by 0x40983CC: UnknownInlinedFun (minrx.c:1864)
+==895603==    by 0x40983CC: compile.constprop.0 (minrx.c:1945)
+==895603==    by 0x409A393: minrx_regncomp (minrx.c:2504)
+==895603==    by 0x408B217: make_regexp (re.c:356)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 77 bytes in 11 blocks are possibly lost in loss record 85 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x400A392: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x400A392: UnknownInlinedFun (awkgram.y:6578)
+==895603==    by 0x400A392: main (main.c:492)
+==895603== 
+==895603== 80 bytes in 1 blocks are still reachable in loss record 86 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x408F933: UnknownInlinedFun (charset.c:8962)
+==895603==    by 0x408F933: charset_add_range.lto_priv.0 (charset.c:8951)
+==895603==    by 0x408FC65: charset_finalize (charset.c:8805)
+==895603==    by 0x4098C7C: UnknownInlinedFun (charset.c:9400)
+==895603==    by 0x4098C7C: UnknownInlinedFun (minrx.c:1099)
+==895603==    by 0x4098C7C: UnknownInlinedFun (minrx.c:1887)
+==895603==    by 0x4098C7C: compile.constprop.0 (minrx.c:1948)
+==895603==    by 0x409A393: minrx_regncomp (minrx.c:2504)
+==895603==    by 0x408B217: make_regexp (re.c:356)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 96 bytes in 1 blocks are still reachable in loss record 87 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4098121: compile.constprop.0 (minrx.c:1933)
+==895603==    by 0x409A393: minrx_regncomp (minrx.c:2504)
+==895603==    by 0x408B217: make_regexp (re.c:356)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 104 bytes in 1 blocks are still reachable in loss record 88 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4082FB4: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4082FB4: grow_table (str_array.c:682)
+==895603==    by 0x4083CA8: str_lookup.lto_priv.0 (str_array.c:150)
+==895603==    by 0x408A689: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x408A689: install.lto_priv.0 (symbol.c:431)
+==895603==    by 0x408A980: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x408A980: init_the_tables.lto_priv.0 (symbol.c:78)
+==895603==    by 0x40089DF: UnknownInlinedFun (symbol.c:90)
+==895603==    by 0x40089DF: main (main.c:288)
+==895603== 
+==895603== 104 bytes in 1 blocks are still reachable in loss record 89 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4082FB4: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4082FB4: grow_table (str_array.c:682)
+==895603==    by 0x4083CA8: str_lookup.lto_priv.0 (str_array.c:150)
+==895603==    by 0x408A689: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x408A689: install.lto_priv.0 (symbol.c:431)
+==895603==    by 0x4008DB3: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x4008DB3: UnknownInlinedFun (main.c:873)
+==895603==    by 0x4008DB3: main (main.c:404)
+==895603== 
+==895603== 104 bytes in 1 blocks are still reachable in loss record 90 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4082FB4: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4082FB4: grow_table (str_array.c:682)
+==895603==    by 0x4083CA8: str_lookup.lto_priv.0 (str_array.c:150)
+==895603==    by 0x4059B14: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x4059B14: update_PROCINFO_str.part.0 (field.c:1630)
+==895603==    by 0x4009867: UnknownInlinedFun (main.c:1029)
+==895603==    by 0x4009867: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009867: main (main.c:404)
+==895603== 
+==895603== 104 bytes in 1 blocks are still reachable in loss record 91 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4082FB4: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4082FB4: grow_table (str_array.c:682)
+==895603==    by 0x4083CA8: str_lookup.lto_priv.0 (str_array.c:150)
+==895603==    by 0x40096AB: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x40096AB: UnknownInlinedFun (main.c:957)
+==895603==    by 0x40096AB: UnknownInlinedFun (main.c:887)
+==895603==    by 0x40096AB: main (main.c:404)
+==895603== 
+==895603== 104 bytes in 1 blocks are still reachable in loss record 92 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4082FB4: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4082FB4: grow_table (str_array.c:682)
+==895603==    by 0x4083CA8: str_lookup.lto_priv.0 (str_array.c:150)
+==895603==    by 0x408A689: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x408A689: install.lto_priv.0 (symbol.c:431)
+==895603==    by 0x400A392: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x400A392: UnknownInlinedFun (awkgram.y:6578)
+==895603==    by 0x400A392: main (main.c:492)
+==895603== 
+==895603== 104 bytes in 1 blocks are possibly lost in loss record 93 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4082FB4: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4082FB4: grow_table (str_array.c:682)
+==895603==    by 0x4083CA8: str_lookup.lto_priv.0 (str_array.c:150)
+==895603==    by 0x400A6FF: UnknownInlinedFun (symbol.c:702)
+==895603==    by 0x400A6FF: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A6FF: main (main.c:500)
+==895603== 
+==895603== 136 bytes in 1 blocks are still reachable in loss record 94 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x408B1AD: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x408B1AD: make_regexp (re.c:279)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 151 bytes in 24 blocks are still reachable in loss record 95 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x406B999: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x406B999: estrdup (main.c:1459)
+==895603==    by 0x4008DA0: UnknownInlinedFun (main.c:873)
+==895603==    by 0x4008DA0: main (main.c:404)
+==895603== 
+==895603== 151 bytes in 24 blocks are still reachable in loss record 96 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x4008DB3: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x4008DB3: UnknownInlinedFun (main.c:873)
+==895603==    by 0x4008DB3: main (main.c:404)
+==895603== 
+==895603== 201 bytes in 31 blocks are still reachable in loss record 97 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x408A652: install.lto_priv.0 (symbol.c:400)
+==895603==    by 0x400A392: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x400A392: UnknownInlinedFun (awkgram.y:6578)
+==895603==    by 0x400A392: main (main.c:492)
+==895603== 
+==895603== 256 bytes in 1 blocks are still reachable in loss record 98 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4025A42: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4025A42: cint_lookup.lto_priv.0 (cint_array.c:249)
+==895603==    by 0x4009BF9: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:1000)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:1101)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009BF9: main (main.c:404)
+==895603== 
+==895603== 256 bytes in 1 blocks are still reachable in loss record 99 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4032942: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4032942: tree_lookup.lto_priv.0 (cint_array.c:773)
+==895603==    by 0x4009BF9: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:1000)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:1101)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009BF9: main (main.c:404)
+==895603== 
+==895603== 256 bytes in 1 blocks are still reachable in loss record 100 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4032BCA: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4032BCA: UnknownInlinedFun (cint_array.c:1064)
+==895603==    by 0x4032BCA: tree_lookup.lto_priv.0 (cint_array.c:797)
+==895603==    by 0x4009BF9: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:1000)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:1101)
+==895603==    by 0x4009BF9: UnknownInlinedFun (main.c:886)
+==895603==    by 0x4009BF9: main (main.c:404)
+==895603== 
+==895603== 256 bytes in 1 blocks are still reachable in loss record 101 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4025A42: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4025A42: cint_lookup.lto_priv.0 (cint_array.c:249)
+==895603==    by 0x406974F: assoc_set.lto_priv.2 (awk.h:2217)
+==895603==    by 0x40093A4: UnknownInlinedFun (main.c:776)
+==895603==    by 0x40093A4: main (main.c:471)
+==895603== 
+==895603== 256 bytes in 1 blocks are still reachable in loss record 102 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4032942: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4032942: tree_lookup.lto_priv.0 (cint_array.c:773)
+==895603==    by 0x406974F: assoc_set.lto_priv.2 (awk.h:2217)
+==895603==    by 0x40093A4: UnknownInlinedFun (main.c:776)
+==895603==    by 0x40093A4: main (main.c:471)
+==895603== 
+==895603== 256 bytes in 1 blocks are still reachable in loss record 103 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x4032BCA: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x4032BCA: UnknownInlinedFun (cint_array.c:1064)
+==895603==    by 0x4032BCA: tree_lookup.lto_priv.0 (cint_array.c:797)
+==895603==    by 0x406974F: assoc_set.lto_priv.2 (awk.h:2217)
+==895603==    by 0x40093A4: UnknownInlinedFun (main.c:776)
+==895603==    by 0x40093A4: main (main.c:471)
+==895603== 
+==895603== 296 bytes in 1 blocks are still reachable in loss record 104 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x40100FF: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x40100FF: do_add_srcfile.lto_priv.0 (awkgram.y:2827)
+==895603==    by 0x400920A: main (main.c:464)
+==895603== 
+==895603== 344 bytes in 1 blocks are still reachable in loss record 105 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4097F1D: compile.constprop.0 (minrx.c:1895)
+==895603==    by 0x409A393: minrx_regncomp (minrx.c:2504)
+==895603==    by 0x408B217: make_regexp (re.c:356)
+==895603==    by 0x401BB66: make_regnode (awkgram.y:5300)
+==895603==    by 0x401664D: yyparse (awkgram.y:585)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 471 bytes in 72 blocks are possibly lost in loss record 106 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400A835: UnknownInlinedFun (symbol.c:701)
+==895603==    by 0x400A835: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A835: main (main.c:500)
+==895603== 
+==895603== 512 bytes in 1 blocks are still reachable in loss record 107 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x405D076: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x405D076: set_record (field.c:310)
+==895603==    by 0x4064FB9: inrec (io.c:591)
+==895603==    by 0x404891E: r_interpret (interpret.h:1453)
+==895603==    by 0x400A920: main (main.c:533)
+==895603== 
+==895603== 560 bytes in 43 blocks are still reachable in loss record 108 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x4009673: UnknownInlinedFun (main.c:954)
+==895603==    by 0x4009673: UnknownInlinedFun (main.c:887)
+==895603==    by 0x4009673: main (main.c:404)
+==895603== 
+==895603== 576 bytes in 1 blocks are still reachable in loss record 109 of 122
+==895603==    at 0x498BC13: calloc (vg_replace_malloc.c:1675)
+==895603==    by 0x408A15A: UnknownInlinedFun (awk.h:2171)
+==895603==    by 0x408A15A: new_context (symbol.c:871)
+==895603==    by 0x40089F2: main (main.c:293)
+==895603== 
+==895603== 1,036 bytes in 43 blocks are still reachable in loss record 110 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4076324: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4076324: make_str_node (node.c:421)
+==895603==    by 0x400968C: UnknownInlinedFun (main.c:955)
+==895603==    by 0x400968C: UnknownInlinedFun (main.c:887)
+==895603==    by 0x400968C: main (main.c:404)
+==895603== 
+==895603== 2,048 bytes in 1 blocks are still reachable in loss record 111 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x400CA90: emalloc_real.lto_priv.1 (awk.h:2153)
+==895603==    by 0x4009258: UnknownInlinedFun (eval.c:1897)
+==895603==    by 0x4009258: main (main.c:469)
+==895603== 
+==895603== 4,800 bytes in 1 blocks are still reachable in loss record 112 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x4083CEA: str_lookup.lto_priv.0 (str_array.c:214)
+==895603==    by 0x408A689: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x408A689: install.lto_priv.0 (symbol.c:431)
+==895603==    by 0x408A980: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x408A980: init_the_tables.lto_priv.0 (symbol.c:78)
+==895603==    by 0x40089DF: UnknownInlinedFun (symbol.c:90)
+==895603==    by 0x40089DF: main (main.c:288)
+==895603== 
+==895603== 4,800 bytes in 1 blocks are possibly lost in loss record 113 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x4083CEA: str_lookup.lto_priv.0 (str_array.c:214)
+==895603==    by 0x408A689: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x408A689: install.lto_priv.0 (symbol.c:431)
+==895603==    by 0x400A392: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x400A392: UnknownInlinedFun (awkgram.y:6578)
+==895603==    by 0x400A392: main (main.c:492)
+==895603== 
+==895603== 4,800 bytes in 1 blocks are possibly lost in loss record 114 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x4083CEA: str_lookup.lto_priv.0 (str_array.c:214)
+==895603==    by 0x400A6FF: UnknownInlinedFun (symbol.c:702)
+==895603==    by 0x400A6FF: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A6FF: main (main.c:500)
+==895603== 
+==895603== 5,048 bytes in 1 blocks are still reachable in loss record 115 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x408A06D: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x408A06D: bcalloc (symbol.c:850)
+==895603==    by 0x4019B4F: parse_program (awkgram.y:2764)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 5,048 bytes in 1 blocks are still reachable in loss record 116 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x408A06D: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x408A06D: bcalloc (symbol.c:850)
+==895603==    by 0x401A431: parse_program (awkgram.y:2772)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 5,048 bytes in 1 blocks are still reachable in loss record 117 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x408A06D: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x408A06D: bcalloc (symbol.c:850)
+==895603==    by 0x401BF10: append_rule.isra.0 (awkgram.y:5783)
+==895603==    by 0x4017D20: yyparse (awkgram.y:272)
+==895603==    by 0x4019C2A: parse_program (awkgram.y:2791)
+==895603==    by 0x4009F41: main (main.c:484)
+==895603== 
+==895603== 11,200 bytes in 1 blocks are still reachable in loss record 118 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x40764F6: make_str_node (node.c:405)
+==895603==    by 0x4008821: main (main.c:279)
+==895603== 
+==895603== 11,200 bytes in 1 blocks are still reachable in loss record 119 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x407622B: UnknownInlinedFun (awk.h:2203)
+==895603==    by 0x407622B: r_make_number.lto_priv.0 (node.c:368)
+==895603==    by 0x405E679: update_PROCINFO_num.part.0 (field.c:1643)
+==895603==    by 0x400995D: UnknownInlinedFun (main.c:1054)
+==895603==    by 0x400995D: UnknownInlinedFun (main.c:886)
+==895603==    by 0x400995D: main (main.c:404)
+==895603== 
+==895603== 11,200 bytes in 1 blocks are still reachable in loss record 120 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x40764F6: make_str_node (node.c:405)
+==895603==    by 0x400968C: UnknownInlinedFun (main.c:955)
+==895603==    by 0x400968C: UnknownInlinedFun (main.c:887)
+==895603==    by 0x400968C: main (main.c:404)
+==895603== 
+==895603== 11,200 bytes in 1 blocks are possibly lost in loss record 121 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x407622B: UnknownInlinedFun (awk.h:2203)
+==895603==    by 0x407622B: r_make_number.lto_priv.0 (node.c:368)
+==895603==    by 0x400E656: new_array_element (array.c:1525)
+==895603==    by 0x4083C6F: str_lookup.lto_priv.0 (str_array.c:220)
+==895603==    by 0x408A689: UnknownInlinedFun (awk.h:2217)
+==895603==    by 0x408A689: install.lto_priv.0 (symbol.c:431)
+==895603==    by 0x400A392: UnknownInlinedFun (symbol.c:174)
+==895603==    by 0x400A392: UnknownInlinedFun (awkgram.y:6578)
+==895603==    by 0x400A392: main (main.c:492)
+==895603== 
+==895603== 11,200 bytes in 1 blocks are possibly lost in loss record 122 of 122
+==895603==    at 0x49847A8: malloc (vg_replace_malloc.c:446)
+==895603==    by 0x4075CE7: UnknownInlinedFun (awk.h:2153)
+==895603==    by 0x4075CE7: more_blocks (node.c:1193)
+==895603==    by 0x407622B: UnknownInlinedFun (awk.h:2203)
+==895603==    by 0x407622B: r_make_number.lto_priv.0 (node.c:368)
+==895603==    by 0x400E656: new_array_element (array.c:1525)
+==895603==    by 0x4083C6F: str_lookup.lto_priv.0 (str_array.c:220)
+==895603==    by 0x400A6FF: UnknownInlinedFun (symbol.c:702)
+==895603==    by 0x400A6FF: UnknownInlinedFun (symbol.c:645)
+==895603==    by 0x400A6FF: main (main.c:500)
+==895603== 
+==895603== LEAK SUMMARY:
+==895603==    definitely lost: 0 bytes in 0 blocks
+==895603==    indirectly lost: 0 bytes in 0 blocks
+==895603==      possibly lost: 32,718 bytes in 95 blocks
+==895603==    still reachable: 62,604 bytes in 282 blocks
+==895603==         suppressed: 0 bytes in 0 blocks
+==895603== 
+==895603== ERROR SUMMARY: 130 errors from 130 contexts (suppressed: 0 from 0)

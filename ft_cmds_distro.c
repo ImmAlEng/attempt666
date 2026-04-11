@@ -22,23 +22,28 @@ static int	ft_exec_redirs_only(t_cmd *cmd)
 	return (exit_status);
 }
 
+static int	ft_exec_one_cmd(t_data *data)
+{
+	int	status;
+
+	if (data->cmds[0]->has_heredoc)
+		ft_exec_heredoc(data, 0);
+	if (!data->cmds[0]->cmd)
+		return (ft_exec_redirs_only(data->cmds[0]));
+	if (data->cmds[0]->is_builtin)
+		status = ft_exec_builtin(data, 0);
+	else
+		status = ft_exec_external(data);
+	ft_update_underscore(data, data->cmds[0]);
+	return (status);
+}
+
 int	ft_cmds_distro(t_data *data)
 {
 	ft_cmds_check(data);
 	if (data->n_cmds > 1)
 		return (ft_exec_pipeline(data));
-	else
-	{
-		if (data->cmds[0]->has_heredoc)
-			ft_exec_heredoc(data, 0);
-		if (!data->cmds[0]->cmd)
-			return (ft_exec_redirs_only(data->cmds[0]));
-		if (data->cmds[0]->is_builtin)
-			return (ft_exec_builtin(data, 0));
-		else
-			return (ft_exec_external(data));
-	}
-	return (1);
+	return (ft_exec_one_cmd(data));
 }
 
 void	ft_cmds_check(t_data *data)

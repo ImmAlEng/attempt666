@@ -1,0 +1,70 @@
+==911938== Memcheck, a memory error detector
+==911938== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==911938== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==911938== Command: /bin/expr 1 + 1
+==911938== Parent PID: 911926
+==911938== 
+==911938== 
+==911938== F==911926== 
+==911926== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==911926== Open file descriptor 7:
+==911926==    <inherited from parent>
+==911926== 
+==911926== Open file descriptor 6:
+==911926==    <inherited from parent>
+==911926== 
+==911926== Open file descriptor 5:
+==911926==    <inherited from parent>
+==911926== 
+==911926== Open file descriptor 4:
+==911926==    <inherited from parent>
+==911926== 
+==911926== Open file descriptor 3:
+==911926==    <inherited from parent>
+==911926== 
+==911926== Open file descriptor 2: /dev/null
+==911926==    <inherited from parent>
+==911926== 
+==911926== Open file descriptor 1: /dev/null
+==911926==    <inherited from parent>
+==911926== 
+==911926== Open file descriptor 0:
+==911926==    <inherited from parent>
+==911926== 
+==911926== 
+==911926== HEAP SUMMARY:
+==911926==     in use at exit: 4,016 bytes in 1 blocks
+==911926==   total heap usage: 95 allocs, 94 frees, 11,071 bytes allocated
+==911926== 
+==911926== LEAK SUMMARY:
+==911926==    definitely lost: 0 bytes in 0 blocks
+==911926==    indirectly lost: 0 bytes in 0 blocks
+==911926==      possibly lost: 0 bytes in 0 blocks
+==911926==    still reachable: 0 bytes in 0 blocks
+==911926==         suppressed: 4,016 bytes in 1 blocks
+==911926== 
+==911926== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--911926-- 
+--911926-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==911926== 
+==911926== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+r_value (expr.c:365)
+==911938==    by 0x4003C28: eval7 (expr.c:672)
+==911938==    by 0x4003C28: eval6 (expr.c:754)
+==911938==    by 0x4003C28: eval6 (expr.c:678)
+==911938==    by 0x400400C: eval5 (expr.c:770)
+==911938==    by 0x400410C: eval4 (expr.c:801)
+==911938==    by 0x40042DC: eval3 (expr.c:840)
+==911938==    by 0x4004441: eval2 (expr.c:870)
+==911938==    by 0x4004858: eval1 (expr.c:949)
+==911938==    by 0x40049B8: eval (expr.c:980)
+==911938==    by 0x4002584: main (expr.c:339)
+==911938== 
+==911938== LEAK SUMMARY:
+==911938==    definitely lost: 0 bytes in 0 blocks
+==911938==    indirectly lost: 0 bytes in 0 blocks
+==911938==      possibly lost: 0 bytes in 0 blocks
+==911938==    still reachable: 40 bytes in 2 blocks
+==911938==         suppressed: 0 bytes in 0 blocks
+==911938== 
+==911938== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 0 from 0)

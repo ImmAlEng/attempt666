@@ -16,23 +16,24 @@ int	ft_actual_export_print(char **env)
 {
 	int	i;
 	int	j;
-	int	eq_fl;
+	int	has_eq;
 
 	i = -1;
 	while (env[++i])
 	{
-		eq_fl = 0;
+		has_eq = 0;
 		write(1, "declare -x ", 11);
 		j = -1;
 		while (env[i][++j])
 		{
 			write(1, &env[i][j], 1);
-			if ((env[i][j] == '=' && eq_fl == 0) || env[i][j + 1] == '\0')
-			{
+			if (env[i][j] == '=' && has_eq == 0)
 				write(1, "\"", 1);
-				eq_fl = 1;
-			}
+			if (env[i][j] == '=')
+				has_eq = 1;
 		}
+		if (has_eq)
+			write(1, "\"", 1);
 		write(1, "\n", 1);
 	}
 	return (0);

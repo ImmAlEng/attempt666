@@ -38,7 +38,9 @@ bool	ft_cmds_valid(t_data *data)
 	while (temp->next)
 	{
 		if (ft_is_operator((char *)temp->content)
-			&& ft_is_operator((char *)temp->next->content))
+			&& ft_is_operator((char *)temp->next->content)
+			&& !(ft_is_pipe((char *)temp->content)
+				&& ft_is_redir((char *)temp->next->content)))
 			return (false);
 		temp = temp->next;
 	}

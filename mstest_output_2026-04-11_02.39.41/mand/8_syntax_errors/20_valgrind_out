@@ -1,0 +1,172 @@
+==918996== Memcheck, a memory error detector
+==918996== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==918996== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==918996== Command: /home/immanuel/Desktop/msmsms/minishell
+==918996== Parent PID: 918995
+==918996== 
+==919002== 
+==919002== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==919002== Open file descriptor 7:
+==919002==    <inherited from parent>
+==919002== 
+==919002== Open file descriptor 6:
+==919002==    <inherited from parent>
+==919002== 
+==919002== Open file descriptor 5:
+==919002==    <inherited from parent>
+==919002== 
+==919002== Open file descriptor 4:
+==919002==    <inherited from parent>
+==919002== 
+==919002== Open file descriptor 3:
+==919002==    <inherited from parent>
+==919002== 
+==919002== Open file descriptor 2: /dev/null
+==919002==    <inherited from parent>
+==919002== 
+==919002== Open file descriptor 1: /dev/null
+==919002==    <inherited from parent>
+==919002== 
+==919002== Open file descriptor 0:
+==919002==    <inherited from parent>
+==919002== 
+==919002== 
+==919002== HEAP SUMMARY:
+==919002==     in use at exit: 6,279 bytes in 55 blocks
+==919002==   total heap usage: 71 allocs, 16 frees, 10,712 bytes allocated
+==919002== 
+==919002== 3 bytes in 1 blocks are still reachable in loss record 2 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x4008851: ft_substr (in /home/immanuel/Desktop/msmsms/minishell)
+==919002==    by 0x4002E0F: ft_add_token (ft_pipeline.c:19)
+==919002==    by 0x40031DB: ft_tokenize (ft_pipeline.c:81)
+==919002==    by 0x4004851: ft_process_prompt_line (main.c:107)
+==919002==    by 0x4004957: ft_prompt (main.c:135)
+==919002==    by 0x4004A22: main (main.c:152)
+==919002== 
+==919002== 8 bytes in 1 blocks are still reachable in loss record 3 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x40057BE: ft_get_path_exec (ft_exec_external.c:88)
+==919002==    by 0x4005629: ft_find_binary (ft_exec_external.c:60)
+==919002==    by 0x4005376: ft_exec_external (ft_exec_external.c:17)
+==919002==    by 0x4004BEC: ft_exec_one_cmd (ft_cmds_distro.c:36)
+==919002==    by 0x4004C4E: ft_cmds_distro (ft_cmds_distro.c:46)
+==919002==    by 0x40048ED: ft_process_prompt_line (main.c:117)
+==919002==    by 0x4004957: ft_prompt (main.c:135)
+==919002==    by 0x4004A22: main (main.c:152)
+==919002== 
+==919002== 16 bytes in 1 blocks are still reachable in loss record 5 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x400845A: ft_calloc (in /home/immanuel/Desktop/msmsms/minishell)
+==919002==    by 0x40015F2: ft_cmds_create (ft_cmds_init.c:86)
+==919002==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==919002==    by 0x4004957: ft_prompt (main.c:135)
+==919002==    by 0x4004A22: main (main.c:152)
+==919002== 
+==919002== 16 bytes in 1 blocks are still reachable in loss record 6 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x400845A: ft_calloc (in /home/immanuel/Desktop/msmsms/minishell)
+==919002==    by 0x40041D1: ft_conv_token_argv_one (ft_convert_tokens.c:12)
+==919002==    by 0x40042C2: ft_conv_token_argv (ft_convert_tokens.c:36)
+==919002==    by 0x4004392: ft_direct_token_pointers (ft_convert_tokens.c:61)
+==919002==    by 0x40048D3: ft_process_prompt_line (main.c:115)
+==919002==    by 0x4004957: ft_prompt (main.c:135)
+==919002==    by 0x4004A22: main (main.c:152)
+==919002== 
+==919002== 24 bytes in 1 blocks are still reachable in loss record 8 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x400948C: ft_dlstnew (in /home/immanuel/Desktop/msmsms/minishell)
+==919002==    by 0x4002E47: ft_add_token (ft_pipeline.c:22)
+==919002==    by 0x40031DB: ft_tokenize (ft_pipeline.c:81)
+==919002==    by 0x4004851: ft_process_prompt_line (main.c:107)
+==919002==    by 0x4004957: ft_prompt (main.c:135)
+==919002==    by 0x4004A22: main (main.c:152)
+==919002== 
+==919002== 48 bytes in 1 blocks are still reachable in loss record 9 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x4004724: ft_init_data (main.c:78)
+==919002==    by 0x40049F3: main (main.c:148)
+==919002== 
+==919002== 80 bytes in 1 blocks are still reachable in loss record 10 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x4001358: ft_cmd_new (ft_cmds_init.c:21)
+==919002==    by 0x4001635: ft_cmds_create (ft_cmds_init.c:92)
+==919002==    by 0x4004898: ft_process_prompt_line (main.c:111)
+==919002==    by 0x4004957: ft_prompt (main.c:135)
+==919002==    by 0x4004A22: main (main.c:152)
+==919002== 
+==919002== 120 bytes in 1 blocks are still reachable in loss record 11 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x4976D95: getdelim (iogetdelim.c:65)
+==919002==    by 0x486D456: readline (in /home/immanuel/42_minishell_tester/utils/libintercept/libintercept.so)
+==919002==    by 0x400492E: ft_prompt (main.c:129)
+==919002==    by 0x4004A22: main (main.c:152)
+==919002== 
+==919002== 344 bytes in 1 blocks are still reachable in loss record 12 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x4008F6E: ft_arrdup (in /home/immanuel/Desktop/msmsms/minishell)
+==919002==    by 0x4004753: ft_init_data (main.c:82)
+==919002==    by 0x40049F3: main (main.c:148)
+==919002== 
+==919002== 1,565 bytes in 42 blocks are still reachable in loss record 13 of 14
+==919002==    at 0x48557A8: malloc (vg_replace_malloc.c:446)
+==919002==    by 0x4008628: ft_strdup (in /home/immanuel/Desktop/msmsms/minishell)
+==919002==    by 0x4008FBD: ft_arrdup (in /home/immanuel/Desktop/msmsms/minishell)
+==919002==    by 0x4004753: ft_init_data (main.c:82)
+==919002==    by 0x40049F3: main (main.c:148)
+==919002== 
+==919002== LEAK SUMMARY:
+==919002==    definitely lost: 0 bytes in 0 blocks
+==919002==    indirectly lost: 0 bytes in 0 blocks
+==919002==      possibly lost: 0 bytes in 0 blocks
+==919002==    still reachable: 2,224 bytes in 51 blocks
+==919002==         suppressed: 4,055 bytes in 4 blocks
+==919002== 
+==919002== ERROR SUMMARY: 18 errors from 18 contexts (suppressed: 4 from 4)
+--919002-- 
+--919002-- used_suppression:      4 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,055 bytes in 4 blocks
+==919002== 
+==919002== ERROR SUMMARY: 18 errors from 18 contexts (suppressed: 4 from 4)
+==918996== 
+==918996== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==918996== Open file descriptor 7:
+==918996==    <inherited from parent>
+==918996== 
+==918996== Open file descriptor 6:
+==918996==    <inherited from parent>
+==918996== 
+==918996== Open file descriptor 5:
+==918996==    <inherited from parent>
+==918996== 
+==918996== Open file descriptor 4:
+==918996==    <inherited from parent>
+==918996== 
+==918996== Open file descriptor 3:
+==918996==    <inherited from parent>
+==918996== 
+==918996== Open file descriptor 2: /dev/null
+==918996==    <inherited from parent>
+==918996== 
+==918996== Open file descriptor 1: /dev/null
+==918996==    <inherited from parent>
+==918996== 
+==918996== Open file descriptor 0:
+==918996==    <inherited from parent>
+==918996== 
+==918996== 
+==918996== HEAP SUMMARY:
+==918996==     in use at exit: 4,016 bytes in 1 blocks
+==918996==   total heap usage: 58 allocs, 57 frees, 10,497 bytes allocated
+==918996== 
+==918996== LEAK SUMMARY:
+==918996==    definitely lost: 0 bytes in 0 blocks
+==918996==    indirectly lost: 0 bytes in 0 blocks
+==918996==      possibly lost: 0 bytes in 0 blocks
+==918996==    still reachable: 0 bytes in 0 blocks
+==918996==         suppressed: 4,016 bytes in 1 blocks
+==918996== 
+==918996== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--918996-- 
+--918996-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==918996== 
+==918996== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)

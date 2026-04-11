@@ -82,3 +82,41 @@ char	**ft_actual_export(t_data *data, char *argv)
 	r_env[i + 1] = NULL;
 	return (free(data->env), r_env);
 }
+
+static char	*ft_cmd_last_arg(t_cmd *cmd)
+{
+	int	i;
+
+	if (!cmd || !cmd->argv || !cmd->argv[0])
+		return (NULL);
+	i = 0;
+	while (cmd->argv[i + 1])
+		i++;
+	return (cmd->argv[i]);
+}
+
+static bool	ft_set_env_value(t_data *data, char *name, char *value)
+{
+	char	*entry;
+	int		env_i;
+
+	entry = ft_strjoin(name, value);
+	if (!entry)
+		return (data->malloc_err = true, false);
+	env_i = ft_var_present(data, entry);
+	if (env_i != -1)
+		ft_modify_var(data, entry, env_i);
+	else
+		ft_add_var(data, entry);
+	return (free(entry), true);
+}
+
+bool	ft_update_underscore(t_data *data, t_cmd *cmd)
+{
+	char	*last;
+
+	last = ft_cmd_last_arg(cmd);
+	if (!data || !last)
+		return (true);
+	return (ft_set_env_value(data, "_=", last));
+}

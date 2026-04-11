@@ -1,0 +1,47 @@
+==856557== Memcheck, a memory error detector
+==856557== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==856557== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==856557== Command: /bin/echo \ \ \ \ \ \ \ \ \ \ \ \ \ \ $USER\ \ \ \ \ \ \ \ \ \ 
+==856557== Parent ==856551== 
+==856551== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==856551== Open file descriptor 7:
+==856551==    <inherited from parent>
+==856551== 
+==856551== Open file descriptor 6:
+==856551==    <inherited from parent>
+==856551== 
+==856551== Open file descriptor 5:
+==856551==    <inherited from parent>
+==856551== 
+==856551== Open file descriptor 4:
+==856551==    <inherited from parent>
+==856551== 
+==856551== Open file descriptor 3:
+==856551==    <inherited from parent>
+==856551== 
+==856551== Open file descriptor 2: /dev/null
+==856551==    <inherited from parent>
+==856551== 
+==856551== Open file descriptor 1: /dev/null
+==856551==    <inherited from parent>
+==856551== 
+==856551== Open file descriptor 0:
+==856551==    <inherited from parent>
+==856551== 
+==856551== 
+==856551== HEAP SUMMARY:
+==856551==     in use at exit: 4,016 bytes in 1 blocks
+==856551==   total heap usage: 62 allocs, 61 frees, 10,722 bytes allocated
+==856551== 
+==856551== LEAK SUMMARY:
+==856551==    definitely lost: 0 bytes in 0 blocks
+==856551==    indirectly lost: 0 bytes in 0 blocks
+==856551==      possibly lost: 0 bytes in 0 blocks
+==856551==    still reachable: 0 bytes in 0 blocks
+==856551==         suppressed: 4,016 bytes in 1 blocks
+==856551== 
+==856551== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--856551-- 
+--856551-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==856551== 
+==856551== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)

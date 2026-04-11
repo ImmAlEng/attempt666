@@ -1,0 +1,193 @@
+==876184== Memcheck, a memory error detector
+==876184== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==876184== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==876184== Command: /bin/grep USER
+==876184== Parent PID: 876176
+==876184== 
+==876184== 
+==876184== FILE DESCRIPTORS: 6 open (6 inherited) at exit.
+==876184== Open file descriptor 7:
+==876184==    <inherited from parent>
+==876184== 
+==876184== Open file descriptor 6:
+==876184==    <inherited from parent>
+==876184== 
+==876184== Open file descriptor 5:
+==876184==    <inherited from parent>
+==876184== 
+==876184== Open file descriptor 4:
+==876184==    <inherited from parent>
+==876184== 
+==876184== Open file descriptor 3:
+==876184==    <inherited from parent>
+==876184== 
+==876184== Open file descriptor 0:
+==876184==    <inherited from parent>
+==876184== 
+==876184== 
+==876184== HEAP SUMMARY:
+==876184==     in use at exit: 112,805 bytes in 19 blocks
+==876184==   total heap usage: 155 allocs, 136 frees, 140,312 bytes allocated
+==876184== 
+==876184== 5 bytes in 1 blocks are still reachable in loss record 1 of 15
+==876184==    at 0x487E7A8: malloc (vg_replace_malloc.c:446)
+==876184==    by 0x40176D0: UnknownInlinedFun (xmalloc.c:45)
+==876184==    by 0x40176D0: UnknownInlinedFun (xmalloc.c:314)
+==876184==    by 0x40176D0: xstrdup (xmalloc.c:339)
+==876184==    by 0x400471B: main (grep.c:2864)
+==876184== 
+==876184== 16 bytes in 1 blocks are still reachable in loss record 2 of 15
+==876184==    at 0x487E7A8: malloc (vg_replace_malloc.c:446)
+==876184==    by 0x40142B4: UnknownInlinedFun (stdlib.h:2069)
+==876184==    by 0x40142B4: UnknownInlinedFun (reallocarray.c:37)
+==876184==    by 0x40142B4: UnknownInlinedFun (xmalloc.c:84)
+==876184==    by 0x40142B4: UnknownInlinedFun (xmalloc.c:102)
+==876184==    by 0x40142B4: UnknownInlinedFun (dfa.c:2107)
+==876184==    by 0x40142B4: state_index (dfa.c:2325)
+==876184==    by 0x40155CF: dfaanalyze.lto_priv.0 (dfa.c:2926)
+==876184==    by 0x400F9B6: UnknownInlinedFun (dfa.c:3851)
+==876184==    by 0x400F9B6: GEAcompile (dfasearch.c:329)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 44 bytes in 1 blocks are still reachable in loss record 3 of 15
+==876184==    at 0x4885C13: calloc (vg_replace_malloc.c:1675)
+==876184==    by 0x4014F3B: UnknownInlinedFun (ialloc.h:91)
+==876184==    by 0x4014F3B: UnknownInlinedFun (xmalloc.c:304)
+==876184==    by 0x4014F3B: UnknownInlinedFun (dfa.c:2612)
+==876184==    by 0x4014F3B: dfaanalyze.lto_priv.0 (dfa.c:2874)
+==876184==    by 0x400F9B6: UnknownInlinedFun (dfa.c:3851)
+==876184==    by 0x400F9B6: GEAcompile (dfasearch.c:329)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 44 bytes in 1 blocks are still reachable in loss record 4 of 15
+==876184==    at 0x4885C13: calloc (vg_replace_malloc.c:1675)
+==876184==    by 0x40154EE: UnknownInlinedFun (ialloc.h:91)
+==876184==    by 0x40154EE: UnknownInlinedFun (xmalloc.c:304)
+==876184==    by 0x40154EE: dfaanalyze.lto_priv.0 (dfa.c:2901)
+==876184==    by 0x400F9B6: UnknownInlinedFun (dfa.c:3851)
+==876184==    by 0x400F9B6: GEAcompile (dfasearch.c:329)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 72 bytes in 1 blocks are still reachable in loss record 5 of 15
+==876184==    at 0x4885C13: calloc (vg_replace_malloc.c:1675)
+==876184==    by 0x400ECEE: UnknownInlinedFun (xmalloc.c:298)
+==876184==    by 0x400ECEE: GEAcompile (dfasearch.c:199)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 72 bytes in 1 blocks are still reachable in loss record 6 of 15
+==876184==    at 0x4885E4F: realloc (vg_replace_malloc.c:1801)
+==876184==    by 0x4013B97: UnknownInlinedFun (stdlib.h:2069)
+==876184==    by 0x4013B97: UnknownInlinedFun (xmalloc.c:66)
+==876184==    by 0x4013B97: xpalloc (xmalloc.c:271)
+==876184==    by 0x4014344: UnknownInlinedFun (dfa.c:825)
+==876184==    by 0x4014344: UnknownInlinedFun (dfa.c:820)
+==876184==    by 0x4014344: state_index (dfa.c:2322)
+==876184==    by 0x40155CF: dfaanalyze.lto_priv.0 (dfa.c:2926)
+==876184==    by 0x400F9B6: UnknownInlinedFun (dfa.c:3851)
+==876184==    by 0x400F9B6: GEAcompile (dfasearch.c:329)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 120 bytes in 1 blocks are still reachable in loss record 7 of 15
+==876184==    at 0x4885E4F: realloc (vg_replace_malloc.c:1801)
+==876184==    by 0x4013B97: UnknownInlinedFun (stdlib.h:2069)
+==876184==    by 0x4013B97: UnknownInlinedFun (xmalloc.c:66)
+==876184==    by 0x4013B97: xpalloc (xmalloc.c:271)
+==876184==    by 0x40075E5: update_patterns (grep.c:191)
+==876184==    by 0x400474F: main (grep.c:2867)
+==876184== 
+==876184== 128 bytes in 1 blocks are still reachable in loss record 8 of 15
+==876184==    at 0x4885E4F: realloc (vg_replace_malloc.c:1801)
+==876184==    by 0x4013B97: UnknownInlinedFun (stdlib.h:2069)
+==876184==    by 0x4013B97: UnknownInlinedFun (xmalloc.c:66)
+==876184==    by 0x4013B97: xpalloc (xmalloc.c:271)
+==876184==    by 0x4013CF4: addtok_mb (dfa.c:1628)
+==876184==    by 0x400FA41: UnknownInlinedFun (dfa.c:2068)
+==876184==    by 0x400FA41: GEAcompile (dfasearch.c:327)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 128 bytes in 1 blocks are possibly lost in loss record 9 of 15
+==876184==    at 0x4885E4F: realloc (vg_replace_malloc.c:1801)
+==876184==    by 0x4013B97: UnknownInlinedFun (stdlib.h:2069)
+==876184==    by 0x4013B97: UnknownInlinedFun (xmalloc.c:66)
+==876184==    by 0x4013B97: xpalloc (xmalloc.c:271)
+==876184==    by 0x400F05E: GEAcompile (dfasearch.c:257)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 264 bytes in 1 blocks are still reachable in loss record 10 of 15
+==876184==    at 0x4885C13: calloc (vg_replace_malloc.c:1675)
+==876184==    by 0x4014840: UnknownInlinedFun (ialloc.h:91)
+==876184==    by 0x4014840: UnknownInlinedFun (xmalloc.c:304)
+==876184==    by 0x4014840: dfaanalyze.lto_priv.0 (dfa.c:2716)
+==876184==    by 0x400F9B6: UnknownInlinedFun (dfa.c:3851)
+==876184==    by 0x400F9B6: GEAcompile (dfasearch.c:329)
+==876184==    by 0x400422F: main (grep.c:2980)
+==876184== 
+==876184== 640 bytes in 5 blocks are still reachable in loss record 11 of 15
+==876184==    at 0x4885E4F: realloc (vg_replace_malloc.c:1801)
+==876184==    by 0x4013B97: UnknownInlinedFun (stdlib.h:2069)
+==876184==    by 0x4013B97: UnknownInlinedFun (xmalloc.c:66)
+==876184==    by 0x4013B97: xpalloc (xmalloc.c:271)
+==876184==    by 0x40144B9: UnknownInlinedFun (dfa.c:825)
+==876184==    by 0x40144B9: UnknownInlinedFun (dfa.c:820)
+==876184==    by 0x40144B9: insert (dfa.c:2135)
+==876184==    by 0x4014C92: UnknownInlinedFun (dfa.c:2204)
+==876184==    by 0x4014C92: dfaanalyze.lto_priv.0 (dfa.c:2782)
+==876184==    by 0x400F9B6: UnknownInlinedFun (dfa.c:3851)
+==876184==  ==876176== 
+==876176== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==876176== Open file descriptor 7:
+==876176==    <inherited from parent>
+==876176== 
+==876176== Open file descriptor 6:
+==876176==    <inherited from parent>
+==876176== 
+==876176== Open file descriptor 5:
+==876176==    <inherited from parent>
+==876176== 
+==876176== Open file descriptor 4:
+==876176==    <inherited from parent>
+==876176== 
+==876176== Open file descriptor 3:
+==876176==    <inherited from parent>
+==876176== 
+==876176== Open file descriptor 2: /dev/null
+==876176==    <inherited from parent>
+==876176== 
+==876176== Open file descriptor 1: /dev/null
+==876176==    <inherited from parent>
+==876176== 
+==876176== Open file descriptor 0:
+==876176==    <inherited from parent>
+==876176== 
+==876176== 
+==876176== HEAP SUMMARY:
+==876176==     in use at exit: 4,016 bytes in 1 blocks
+==876176==   total heap usage: 66 allocs, 65 frees, 10,711 bytes allocated
+==876176== 
+==876176== LEAK SUMMARY:
+==876176==    definitely lost: 0 bytes in 0 blocks
+==876176==    indirectly lost: 0 bytes in 0 blocks
+==876176==      possibly lost: 0 bytes in 0 blocks
+==876176==    still reachable: 0 bytes in 0 blocks
+==876176==         suppressed: 4,016 bytes in 1 blocks
+==876176== 
+==876176== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--876176-- 
+--876176-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==876176== 
+==876176== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+184== 
+==876184== 102,408 bytes in 1 blocks are still reachable in loss record 15 of 15
+==876184==    at 0x487E7A8: malloc (vg_replace_malloc.c:446)
+==876184==    by 0x400431B: UnknownInlinedFun (ialloc.h:57)
+==876184==    by 0x400431B: UnknownInlinedFun (xmalloc.c:51)
+==876184==    by 0x400431B: main (grep.c:3008)
+==876184== 
+==876184== LEAK SUMMARY:
+==876184==    definitely lost: 0 bytes in 0 blocks
+==876184==    indirectly lost: 0 bytes in 0 blocks
+==876184==      possibly lost: 128 bytes in 1 blocks
+==876184==    still reachable: 112,677 bytes in 18 blocks
+==876184==         suppressed: 0 bytes in 0 blocks
+==876184== 
+==876184== ERROR SUMMARY: 21 errors from 21 contexts (suppressed: 0 from 0)
