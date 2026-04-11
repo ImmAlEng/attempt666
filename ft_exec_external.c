@@ -1,36 +1,47 @@
 #include "minishell.h"
 
-int	ft_exec_external(t_data *data)
+static int	ft_wait_external(t_cmd *cmd)
 {
-	char	*path;
-	int		status;
+	int	status;
 
-	data->cmds[0]->exit_status = 1;
-	data->cmds[0]->pid = fork();
-	if (data->cmds[0]->pid == -1)
-		return (perror("fork"), data->cmds[0]->exit_status);
-	if (data->cmds[0]->pid == 0)
-	{
-		ft_reset_signals();
-		if (!ft_handle_redirs(data->cmds[0]))
-			exit(1);
-		path = ft_find_binary(data, 0);
-		execve(path, data->cmds[0]->argv, data->env);
-		perror("execve");
-		if (errno == ENOENT)
-			exit(127);
-		exit(126);
-	}
-	if (data->cmds[0]->has_heredoc)
-		close(data->cmds[0]->her_pipe[0]);
-	while (waitpid(data->cmds[0]->pid, &status, 0) == -1)
+	while (waitpid(cmd->pid, &status, 0) == -1)
 		if (errno != EINTR)
 			break ;
 	if (WIFEXITED(status))
-		data->cmds[0]->exit_status = WEXITSTATUS(status);
-	else if (WIFSIGNALED(status))
-		data->cmds[0]->exit_status = 128 + WTERMSIG(status);
-	return (data->cmds[0]->exit_status);
+		return (WEXITSTATUS(status));
+	if (WIFSIGNALED(status))
+	{
+		if (WTERMSIG(status) == SIGQUIT)
+			write(2, "Quit (core dumped)\n", 19);
+		return (128 + WTERMSIG(status));
+	}
+	return (1);
+}
+
+int	ft_exec_external(t_data *data)
+{
+	char	*path;
+	t_cmd	*cmd;
+
+	cmd = data->cmds[0];
+	cmd->exit_status = 1;
+	cmd->pid = fork();
+	if (cmd->pid == -1)
+		return (perror("fork"), cmd->exit_status);
+	if (cmd->pid == 0)
+	{
+		ft_reset_signals();
+		if (!ft_handle_redirs(cmd))
+			exit(1);
+		path = ft_find_binary(data, 0);
+		execve(path, cmd->argv, data->env);
+		perror("execve");
+		exit(126 + (errno == ENOENT));
+	}
+	if (cmd->has_heredoc)
+		close(cmd->her_pipe[0]);
+	cmd->exit_status = ft_wait_external(cmd);
+	return (cmd->exit_status);
 }
 
 char	*ft_find_binary(t_data *data, int c_i)
@@ -42,18 +53,13 @@ char	*ft_find_binary(t_data *data, int c_i)
 
 	if (!data || !data->cmds || !data->cmds[c_i] || !data->cmds[c_i]->cmd
 		|| !*data->cmds[c_i]->cmd)
-	{
-		write(2, "command not found\n", 18);
-		exit(127);
-	}
-
+		return (write(2, "command not found\n", 18), exit(127), NULL);
 	if (ft_strchr(data->cmds[c_i]->cmd, '/'))
 		return (data->cmds[c_i]->cmd);
 	path_env = ft_get_path_env(data->env);
 	dirs = ft_split(path_env, ':');
 	if (!dirs)
-		if (write(2, "malloc error\n", 13) != -1)
-			exit(1);
+		return (write(2, "malloc error\n", 13), exit(1), NULL);
 	i = -1;
 	while (dirs[++i])
 	{

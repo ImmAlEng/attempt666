@@ -4,8 +4,12 @@ int	ft_exec_builtin(t_data *data, int i)
 {
 	int	std_out;
 	int	std_in;
+	bool	has_redir;
 
 	data->cmds[i]->exit_status = 1;
+	has_redir = (data->cmds[i]->redirs != NULL);
+	if (!has_redir)
+		return (ft_run_builtin(data, i));
 	std_out = dup(STDOUT_FILENO);
 	std_in = dup(STDIN_FILENO);
 	if (std_in == -1 || std_out == -1)

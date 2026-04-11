@@ -22,6 +22,7 @@ void	ft_setup_signals(void)
 {
 	struct sigaction	sa_int;
 	struct sigaction	sa_quit;
+	struct sigaction	sa_pipe;
 
 	ft_bzero(&sa_int, sizeof(sa_int));
 	sa_int.sa_handler = ft_sigint_handler;
@@ -32,6 +33,10 @@ void	ft_setup_signals(void)
 	sa_quit.sa_handler = SIG_IGN;
 	sigemptyset(&sa_quit.sa_mask);
 	sigaction(SIGQUIT, &sa_quit, NULL);
+	ft_bzero(&sa_pipe, sizeof(sa_pipe));
+	sa_pipe.sa_handler = SIG_IGN;
+	sigemptyset(&sa_pipe.sa_mask);
+	sigaction(SIGPIPE, &sa_pipe, NULL);
 	rl_signal_event_hook = ft_readline_signal_hook;
 }
 
@@ -44,6 +49,7 @@ void	ft_reset_signals(void)
 	sigemptyset(&sa.sa_mask);
 	sigaction(SIGINT, &sa, NULL);
 	sigaction(SIGQUIT, &sa, NULL);
+	sigaction(SIGPIPE, &sa, NULL);
 }
 
 int	ft_cleanup_runtime(t_data **data)

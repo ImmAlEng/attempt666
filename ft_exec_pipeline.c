@@ -1,5 +1,15 @@
 #include "minishell.h"
 
+static void	ft_print_signal_msg(t_data *data, int i, int status)
+{
+	if (i != (int)data->n_cmds - 1)
+		return ;
+	if (!WIFSIGNALED(status))
+		return ;
+	if (WTERMSIG(status) == SIGQUIT)
+		write(2, "Quit (core dumped)\n", 19);
+}
+
 int	ft_exec_pipeline(t_data *data)
 {
 	int		i;
@@ -70,7 +80,10 @@ void	ft_wait_kiddo(t_data *data, int *status)
 		if (WIFEXITED(*status))
 			data->cmds[i]->exit_status = WEXITSTATUS(*status);
 		else if (WIFSIGNALED(*status))
+		{
+			ft_print_signal_msg(data, i, *status);
 			data->cmds[i]->exit_status = 128 + WTERMSIG(*status);
+		}
 	}
 	return ;
 }
