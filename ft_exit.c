@@ -47,8 +47,9 @@ int	ft_exit(t_data *data, int cmd_i)
 	return (ft_exit_code(n));
 }
 
-void	ft_free_exit(t_data *data, int e_c)
+void	ft_free_exit(t_data *data, int e_c, int c_i)
 {
+	ft_close(&data->cmds[c_i]->fd_in);
 	ft_cleanup_runtime(&data);
 	exit (e_c);
 }

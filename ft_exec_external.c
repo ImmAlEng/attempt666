@@ -32,11 +32,11 @@ int	ft_exec_external(t_data *data)
 	{
 		ft_reset_signals();
 		if (!ft_handle_redirs(cmd))
-			exit(1);
+			ft_free_exit(data, 1, 0);
 		path = ft_find_binary(data, 0);
 		execve(path, cmd->argv, data->env);
 		perror("execve");
-		ft_free_exit(data, 126 + (errno == ENOENT));
+		ft_free_exit(data, 126 + (errno == ENOENT), 0);
 	}
 	if (cmd->has_heredoc)
 		close(cmd->her_pipe[0]);
@@ -56,24 +56,24 @@ char	*ft_find_binary(t_data *data, int c_i)
 		return (write(2, "command not found\n", 18), exit(127), NULL);
 	if (ft_strchr(data->cmds[c_i]->cmd, '/'))
 		return (data->cmds[c_i]->cmd);
-	path_env = ft_get_path_env(data);
+	path_env = ft_get_path_env(data, c_i);
 	dirs = ft_split(path_env, ':');
 	if (!dirs)
 		return (write(2, "malloc error\n", 13), exit(1), NULL);
 	i = -1;
 	while (dirs[++i])
 	{
-		path = ft_get_path_exec(data, dirs, data->cmds[c_i]->cmd, i);
+		path = ft_get_path_exec(data, dirs, data->cmds[c_i]->cmd, i, c_i);
 		if (access(path, X_OK) == 0)
 			return (ft_env_cleanup(dirs, -1), path);
 		free(path);
 	}
 	ft_env_cleanup(dirs, -1);
 	write(2, "command not found\n", 18);
-	return (ft_free_exit(data, 127), NULL);
+	return (ft_free_exit(data, 127, c_i), NULL);
 }
 
-char	*ft_get_path_env(t_data *data)
+char	*ft_get_path_env(t_data *data, int c_i)
 {
 	int	i;
 
@@ -82,11 +82,11 @@ char	*ft_get_path_env(t_data *data)
 		if (ft_strncmp(data->env[i], "PATH=", 5) == 0)
 			return (data->env[i] + 5);
 	write(2, "command not found\n", 18);
-	ft_free_exit(data, 127);
+	ft_free_exit(data, 127, c_i);
 	return (NULL);
 }
 
-char	*ft_get_path_exec(t_data *data, char **dirs, char *cmd, int i)
+char	*ft_get_path_exec(t_data *data, char **dirs, char *cmd, int i, int c_i)
 {
 	char	*path;
 	int		len;
@@ -96,8 +96,8 @@ char	*ft_get_path_exec(t_data *data, char **dirs, char *cmd, int i)
 	if (!path)
 	{
 		write(2, "malloc error\n", 13);
-		if (ft_env_cleanup(dirs, -1))
-			ft_free_exit(data, 1);
+		ft_env_cleanup(dirs, -1);
+		ft_free_exit(data, 1, c_i);
 	}
 	ft_strcpy(path, dirs[i]);
 	ft_strcat(path, "/");

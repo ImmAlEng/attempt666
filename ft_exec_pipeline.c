@@ -40,16 +40,16 @@ static void	ft_exec_child(t_data *data, int i, char *path)
 	if (data->cmds[i]->is_builtin)
 	{
 		ft_exec_builtin(data, i);
-		ft_free_exit(data, i);
+		ft_free_exit(data, data->cmds[i]->exit_status, i);
 	}
 	if (!ft_handle_redirs(data->cmds[i]))
-		exit(1);//exit
+		ft_free_exit(data, 1, i);
 	if (!data->cmds[i]->cmd)
-		exit(0);
+		ft_free_exit(data, 1, i);
 	path = ft_find_binary(data, i);
 	execve(path, data->cmds[i]->argv, data->env);
 	perror("execve");
-	ft_free_exit(data, data->cmds[i]->exit_status);
+	ft_free_exit(data, data->cmds[i]->exit_status, i);
 }
 
 int	ft_run_pipeline(t_data *data, int i, int *status, char *path)

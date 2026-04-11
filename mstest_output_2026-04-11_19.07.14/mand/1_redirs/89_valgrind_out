@@ -1,0 +1,49 @@
+==1110887== Memcheck, a memory error detector
+==1110887== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1110887== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1110887== Command: /home/amkhuder/desktop/minishell/minishell
+==1110887== Parent PID: 1110886
+==1110887== 
+==1110887== 
+==1110887== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1110887== Open file descriptor 3: /tmp/tmp.YSn2mzhhQI/tmp_valgrind_out
+==1110887==    <inherited from parent>
+==1110887== 
+==1110887== Open file descriptor 2: /dev/null
+==1110887==    <inherited from parent>
+==1110887== 
+==1110887== Open file descriptor 1: /dev/null
+==1110887==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1110887==    by 0x4054B2: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==1110887==    by 0x4051E1: ft_exec_one_cmd (ft_cmds_distro.c:32)
+==1110887==    by 0x40508D: ft_cmds_distro (ft_cmds_distro.c:46)
+==1110887==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1110887==    by 0x404D77: ft_prompt (main.c:141)
+==1110887==    by 0x404F4C: main (main.c:158)
+==1110887== 
+==1110887== Open file descriptor 0:
+==1110887==    at 0x49E109B: dup2 (syscall-template.S:120)
+==1110887==    by 0x4054C5: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==1110887==    by 0x4051E1: ft_exec_one_cmd (ft_cmds_distro.c:32)
+==1110887==    by 0x40508D: ft_cmds_distro (ft_cmds_distro.c:46)
+==1110887==    by 0x404EB5: ft_process_prompt_line (main.c:123)
+==1110887==    by 0x404D77: ft_prompt (main.c:141)
+==1110887==    by 0x404F4C: main (main.c:158)
+==1110887== 
+==1110887== 
+==1110887== HEAP SUMMARY:
+==1110887==     in use at exit: 4,016 bytes in 1 blocks
+==1110887==   total heap usage: 84 allocs, 83 frees, 11,544 bytes allocated
+==1110887== 
+==1110887== LEAK SUMMARY:
+==1110887==    definitely lost: 0 bytes in 0 blocks
+==1110887==    indirectly lost: 0 bytes in 0 blocks
+==1110887==      possibly lost: 0 bytes in 0 blocks
+==1110887==    still reachable: 0 bytes in 0 blocks
+==1110887==         suppressed: 4,016 bytes in 1 blocks
+==1110887== 
+==1110887== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--1110887-- 
+--1110887-- used_suppression:      1 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==1110887== 
+==1110887== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)

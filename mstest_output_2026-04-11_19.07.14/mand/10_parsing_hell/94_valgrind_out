@@ -1,0 +1,86 @@
+==1079014== Memcheck, a memory error detector
+==1079014== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1079014== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1079014== Command: /home/amkhuder/desktop/minishell/minishell
+==1079014== Parent PID: 1079013
+==1079014== 
+==1079026== 
+==1079026== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1079026== Open file descriptor 3: /tmp/tmp.YSn2mzhhQI/tmp_valgrind_out
+==1079026==    <inherited from parent>
+==1079026== 
+==1079026== Open file descriptor 2: /dev/null
+==1079026==    <inherited from parent>
+==1079026== 
+==1079026== Open file descriptor 1: /dev/null
+==1079026==    <inherited from parent>
+==1079026== 
+==1079026== Open file descriptor 0:
+==1079026==    <inherited from parent>
+==1079026== 
+==1079026== 
+==1079026== HEAP SUMMARY:
+==1079026==     in use at exit: 6,598 bytes in 57 blocks
+==1079026==   total heap usage: 101 allocs, 44 frees, 11,721 bytes allocated
+==1079026== 
+==1079026== 48 bytes in 1 blocks are still reachable in loss record 4 of 7
+==1079026==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1079026==    by 0x404C6C: ft_init_data (main.c:84)
+==1079026==    by 0x404F19: main (main.c:154)
+==1079026== 
+==1079026== 416 bytes in 1 blocks are still reachable in loss record 5 of 7
+==1079026==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1079026==    by 0x409A11: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1079026==    by 0x404C9F: ft_init_data (main.c:88)
+==1079026==    by 0x404F19: main (main.c:154)
+==1079026== 
+==1079026== 2,074 bytes in 51 blocks are still reachable in loss record 6 of 7
+==1079026==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1079026==    by 0x408EA9: ft_strdup (in /home/amkhuder/desktop/minishell/minishell)
+==1079026==    by 0x409A54: ft_arrdup (in /home/amkhuder/desktop/minishell/minishell)
+==1079026==    by 0x404C9F: ft_init_data (main.c:88)
+==1079026==    by 0x404F19: main (main.c:154)
+==1079026== 
+==1079026== LEAK SUMMARY:
+==1079026==    definitely lost: 0 bytes in 0 blocks
+==1079026==    indirectly lost: 0 bytes in 0 blocks
+==1079026==      possibly lost: 0 bytes in 0 blocks
+==1079026==    still reachable: 2,538 bytes in 53 blocks
+==1079026==         suppressed: 4,060 bytes in 4 blocks
+==1079026== 
+==1079026== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+--1079026-- 
+--1079026-- used_suppression:      4 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,060 bytes in 4 blocks
+==1079026== 
+==1079026== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 4 from 4)
+==1079014== 
+==1079014== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==1079014== Open file descriptor 3: /tmp/tmp.YSn2mzhhQI/tmp_valgrind_out
+==1079014==    <inherited from parent>
+==1079014== 
+==1079014== Open file descriptor 2: /dev/null
+==1079014==    <inherited from parent>
+==1079014== 
+==1079014== Open file descriptor 1: /dev/null
+==1079014==    <inherited from parent>
+==1079014== 
+==1079014== Open file descriptor 0:
+==1079014==    <inherited from parent>
+==1079014== 
+==1079014== 
+==1079014== HEAP SUMMARY:
+==1079014==     in use at exit: 4,016 bytes in 1 blocks
+==1079014==   total heap usage: 69 allocs, 68 frees, 11,107 bytes allocated
+==1079014== 
+==1079014== LEAK SUMMARY:
+==1079014==    definitely lost: 0 bytes in 0 blocks
+==1079014==    indirectly lost: 0 bytes in 0 blocks
+==1079014==      possibly lost: 0 bytes in 0 blocks
+==1079014==    still reachable: 0 bytes in 0 blocks
+==1079014==         suppressed: 4,016 bytes in 1 blocks
+==1079014== 
+==1079014== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--1079014-- 
+--1079014-- used_suppression:      1 libreadline /home/amkhuder/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==1079014== 
+==1079014== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
