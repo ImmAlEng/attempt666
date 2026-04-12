@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exec_pipeline_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: imengels <imengels@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 14:28:29 by amkhuder          #+#    #+#             */
-/*   Updated: 2026/04/12 14:29:54 by amkhuder         ###   ########.fr       */
+/*   Updated: 2026/04/12 19:47:57 by imengels         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void	ft_exec_child(t_data *data, int i, char *path)
 	ft_handle_pipes(data, i);
 	if (data->cmds[i]->is_builtin)
 	{
+		signal(SIGPIPE, SIG_IGN);
 		ft_exec_builtin(data, i);
 		close(0);
 		close(1);

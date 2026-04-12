@@ -1,0 +1,49 @@
+==665991== Memcheck, a memory error detector
+==665991== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==665991== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==665991== Command: /home/immanuel/Desktop/day1/minishell
+==665991== Parent PID: 665990
+==665991== 
+==665991== 
+==665991== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==665991== Open file descriptor 3: /tmp/tmp.MTmcCtBZGo/tmp_valgrind_out
+==665991==    <inherited from parent>
+==665991== 
+==665991== Open file descriptor 2: /dev/null
+==665991==    <inherited from parent>
+==665991== 
+==665991== Open file descriptor 1: /dev/null
+==665991==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==665991==    by 0x10C95D: ft_exec_builtin (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10C509: ft_exec_one_cmd (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10C57C: ft_cmds_distro (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10BFC1: ft_process_prompt_line (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10C079: ft_prompt (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10BCF3: main (in /home/immanuel/Desktop/day1/minishell)
+==665991== 
+==665991== Open file descriptor 0:
+==665991==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==665991==    by 0x10C971: ft_exec_builtin (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10C509: ft_exec_one_cmd (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10C57C: ft_cmds_distro (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10BFC1: ft_process_prompt_line (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10C079: ft_prompt (in /home/immanuel/Desktop/day1/minishell)
+==665991==    by 0x10BCF3: main (in /home/immanuel/Desktop/day1/minishell)
+==665991== 
+==665991== 
+==665991== HEAP SUMMARY:
+==665991==     in use at exit: 4,016 bytes in 1 blocks
+==665991==   total heap usage: 78 allocs, 77 frees, 16,945 bytes allocated
+==665991== 
+==665991== LEAK SUMMARY:
+==665991==    definitely lost: 0 bytes in 0 blocks
+==665991==    indirectly lost: 0 bytes in 0 blocks
+==665991==      possibly lost: 0 bytes in 0 blocks
+==665991==    still reachable: 0 bytes in 0 blocks
+==665991==         suppressed: 4,016 bytes in 1 blocks
+==665991== 
+==665991== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--665991-- 
+--665991-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==665991== 
+==665991== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)

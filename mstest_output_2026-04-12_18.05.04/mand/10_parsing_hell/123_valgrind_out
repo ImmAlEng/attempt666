@@ -1,0 +1,76 @@
+==664700== Memcheck, a memory error detector
+==664700== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==664700== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==664700== Command: /home/immanuel/Desktop/day1/minishell
+==664700== Parent PID: 664699
+==664700== 
+==664701== 
+==664701== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==664701== Open file descriptor 3: /tmp/tmp.MTmcCtBZGo/tmp_valgrind_out
+==664701==    <inherited from parent>
+==664701== 
+==664701== Open file descriptor 2: /dev/null
+==664701==    <inherited from parent>
+==664701== 
+==664701== Open file descriptor 1: /tmp/tmp.yw1uS39nuo/echo
+==664701==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==664701==    by 0x10DD13: ft_redir_out (in /home/immanuel/Desktop/day1/minishell)
+==664701==    by 0x10DB75: ft_handle_redirs (in /home/immanuel/Desktop/day1/minishell)
+==664701==    by 0x10CD2E: ft_exec_external (in /home/immanuel/Desktop/day1/minishell)
+==664701==    by 0x10C51A: ft_exec_one_cmd (in /home/immanuel/Desktop/day1/minishell)
+==664701==    by 0x10C57C: ft_cmds_distro (in /home/immanuel/Desktop/day1/minishell)
+==664701==    by 0x10BFC1: ft_process_prompt_line (in /home/immanuel/Desktop/day1/minishell)
+==664701==    by 0x10C079: ft_prompt (in /home/immanuel/Desktop/day1/minishell)
+==664701==    by 0x10BCF3: main (in /home/immanuel/Desktop/day1/minishell)
+==664701== 
+==664701== Open file descriptor 0:
+==664701==    <inherited from parent>
+==664701== 
+==664701== 
+==664701== HEAP SUMMARY:
+==664701==     in use at exit: 4,016 bytes in 1 blocks
+==664701==   total heap usage: 98 allocs, 97 frees, 13,269 bytes allocated
+==664701== 
+==664701== LEAK SUMMARY:
+==664701==    definitely lost: 0 bytes in 0 blocks
+==664701==    indirectly lost: 0 bytes in 0 blocks
+==664701==      possibly lost: 0 bytes in 0 blocks
+==664701==    still reachable: 0 bytes in 0 blocks
+==664701==         suppressed: 4,016 bytes in 1 blocks
+==664701== 
+==664701== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--664701-- 
+--664701-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==664701== 
+==664701== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==664700== 
+==664700== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==664700== Open file descriptor 3: /tmp/tmp.MTmcCtBZGo/tmp_valgrind_out
+==664700==    <inherited from parent>
+==664700== 
+==664700== Open file descriptor 2: /dev/null
+==664700==    <inherited from parent>
+==664700== 
+==664700== Open file descriptor 1: /dev/null
+==664700==    <inherited from parent>
+==664700== 
+==664700== Open file descriptor 0:
+==664700==    <inherited from parent>
+==664700== 
+==664700== 
+==664700== HEAP SUMMARY:
+==664700==     in use at exit: 4,016 bytes in 1 blocks
+==664700==   total heap usage: 70 allocs, 69 frees, 12,746 bytes allocated
+==664700== 
+==664700== LEAK SUMMARY:
+==664700==    definitely lost: 0 bytes in 0 blocks
+==664700==    indirectly lost: 0 bytes in 0 blocks
+==664700==      possibly lost: 0 bytes in 0 blocks
+==664700==    still reachable: 0 bytes in 0 blocks
+==664700==         suppressed: 4,016 bytes in 1 blocks
+==664700== 
+==664700== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--664700-- 
+--664700-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==664700== 
+==664700== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
