@@ -19,20 +19,25 @@ SRCS    = ft_cmds_init.c \
 	ft_minishell_printer.c \
 	ft_pipeline.c \
 	ft_redir_init.c \
+	ft_redir_init_utils.c \
 	ft_remove_quotes.c \
-	ft_sort_token.c \
 	ft_superglue_ifs.c \
-	ft_unquoted_expansion.c \
 	ft_free_cmds.c \
 	ft_convert_tokens.c \
 	main.c \
+	main_utils.c \
+	main_utils_2.c \
 	ft_cmds_distro.c \
+	ft_cmds_distro_utils.c \
 	ft_exec_builtin.c \
 	ft_exec_external.c \
+	ft_exec_external_utils.c \
 	ft_exec_pipeline.c \
+	ft_exec_pipeline_utils.c \
 	ft_handle_pipes.c \
 	ft_handle_redirs.c \
 	ft_exec_heredoc.c \
+	ft_exec_heredoc_utils.c \
 	ft_heredoc_expand.c \
 	ft_echo.c \
 	ft_pwd.c \

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 15:06:41 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 15:10:28 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
@@ -103,6 +115,9 @@ int					ft_exec_pipeline(t_data *data);
 int					ft_run_pipeline(t_data *data, int i, int *status,
 						char *path);
 void				ft_wait_kiddo(t_data *data, int *status);
+void				ft_exec_child(t_data *data, int i, char *path);
+void				ft_print_signal_msg(t_data *data, int i, int status);
+int					ft_pipeline_abandon(t_data *data, int i);
 
 /*		pipes		*/
 bool				ft_create_pipes(t_data *data);
@@ -117,8 +132,8 @@ int					ft_run_builtin(t_data *data, int i);
 int					ft_exec_external(t_data *data);
 char				*ft_find_binary(t_data *data, int c_i);
 char				*ft_get_path_env(t_data *data, int c_i);
-char		*ft_get_path_exec(t_data *data, char **dirs, char *cmd, int i, int c_i);
-		// added strcpy and strcat into libft
+char				*ft_get_path_exec(t_data *data, char **dirs,
+						int d_i, int c_i);
 
 /*		redir		*/
 bool				ft_handle_redirs(t_cmd *cmd);
@@ -128,11 +143,16 @@ bool				ft_redir_app(t_cmd *cmd, char *target);
 
 /*		heredoc		*/
 void				ft_exec_heredoc(t_data *data, int c_i);
-void	ft_redir_her(t_data *data, int c_i, char *del, bool quoted);
-		// added strcmp into libft
+void				ft_redir_her(t_data *data, int c_i, char *del, bool quoted);
 void				ft_heredoc_loop(t_data *data, int c_i, char *del,
 						bool quoted);
 void				ft_close_heredoc(t_data *data);
+int					ft_wait_heredoc_child(pid_t pid);
+void				ft_close_inherited_fds(t_data *data, int c_i);
+bool				ft_heredoc_process_line(t_data *data, int c_i,
+						char *del, bool quoted);
+void				ft_heredoc_child(t_data *data, int c_i,
+						char *del, bool quoted);
 
 /*		erlöse mich		*/
 char				*ft_heredoc_expand(t_data *data, char *line);
@@ -194,6 +214,8 @@ void				ft_free_redirs(t_dlist **redirs);
 /*		ft_redir_init.c		*/
 bool				ft_redir_init(t_cmd *cmd, t_dlist **tokens);
 bool				ft_cmds_create(t_data *data);
+t_redir				*ft_get_redir(t_dlist *node);
+t_redir				*ft_redir_new(void);
 
 /*		ft_is.c			*/
 enum e_redir		ft_get_redir_type(char *str);
@@ -236,6 +258,19 @@ bool				ft_match_found(char *c);
 
 /*		ft_expander.c	*/
 bool				ft_expander(t_data *data);
+char				ft_is_quoted(char *c, char *q, bool init);
+
+/*		main utils		*/
+int					ft_cleanup_quit(t_data **data, bool malloc_err);
+t_data				*ft_init_data(int ac, char **av, char **env);
+int					ft_handle_syntax_error(t_data *data);
+int					ft_process_prompt_line(t_data *data);
+bool				ft_prompt(t_data *data);
+int					ft_readline_signal_hook(void);
+void				ft_sigint_handler(int sig);
+void				ft_setup_signals(void);
+void				ft_reset_signals(void);
+int					ft_cleanup_runtime(t_data **data);
 
 /*		ft_convert_token.c	*/
 bool				ft_direct_token_pointers(t_data *data);

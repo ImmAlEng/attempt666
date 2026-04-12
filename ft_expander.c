@@ -1,18 +1,16 @@
-#include "minishell.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_expander.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 14:35:26 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 14:35:27 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	ft_is_quoted(char *c, char *q, bool init)
-{
-	if (init)
-		*q = 0;
-	else
-	{
-		if (*q && *q == *c)
-			*q = 0;
-		else if (!*q && (*c == '\'' || *c == '\"') && ft_match_found(c))
-			*q = *c;
-	}
-	return (*q);
-}
+#include "minishell.h"
 
 static bool	ft_expand_helper(t_expand *e, char *q, t_data *data,
 		t_dlist **tokens)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_expand_dq.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 14:34:46 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 14:40:51 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 static bool	ft_superglue_dq(t_dlist **tok, char *value, size_t start,
@@ -34,4 +46,18 @@ bool	ft_expand_dq(t_expand *e, t_data *data, t_dlist **tok)
 	e->start = e->stop;
 	e->str = (char *)(*tok)->content;
 	return (free(e->name), true);
+}
+
+char	ft_is_quoted(char *c, char *q, bool init)
+{
+	if (init)
+		*q = 0;
+	else
+	{
+		if (*q && *q == *c)
+			*q = 0;
+		else if (!*q && (*c == '\'' || *c == '\"') && ft_match_found(c))
+			*q = *c;
+	}
+	return (*q);
 }

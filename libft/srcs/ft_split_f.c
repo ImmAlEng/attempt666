@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split_f.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imengels <imengels@student.42vienna.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 16:32:44 by imengels          #+#    #+#             */
-/*   Updated: 2025/05/07 16:32:46 by imengels         ###   ########.fr       */
+/*   Updated: 2026/04/12 14:13:55 by amkhuder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static size_t		ft_count_words_f(char const *s, bool (*f)(unsigned char))
+static size_t	ft_count_words_f(char const *s, bool (*f)(unsigned char))
 {
 	size_t	count;
 
@@ -29,7 +29,8 @@ static size_t		ft_count_words_f(char const *s, bool (*f)(unsigned char))
 	return (count);
 }
 
-static char const	*ft_strchr_if_f(char const *s, bool (*f)(unsigned char), bool b)
+static char const	*ft_strchr_if_f(char const *s,
+					bool (*f)(unsigned char), bool b)
 {
 	while (*s)
 	{

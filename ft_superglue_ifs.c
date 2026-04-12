@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_superglue_ifs.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 14:54:13 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 14:54:45 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 static bool	ft_glue_prefix_first(t_dlist *tok, t_ifs *ifs, char *pre,
@@ -101,7 +113,7 @@ bool	ft_expand_nq(t_expand *e, t_data *data, t_dlist **tokens)
 	if (!e->val)
 		return (free(e->name), false);
 	if (!ft_superglue_ifs(tokens, e->val, (size_t)(e->start - e->str),
-			&e->stop))
+		&e->stop))
 		return (free(e->name), false);
 	e->start = e->stop;
 	e->str = (char *)(*tokens)->content;

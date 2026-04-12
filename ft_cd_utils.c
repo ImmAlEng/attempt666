@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cd_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 15:07:55 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 15:08:17 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 int	ft_handle_pwds(t_data *data)
@@ -16,7 +28,8 @@ int	ft_handle_pwds(t_data *data)
 		if (ft_strncmp(data->env[i], "OLDPWD=", 7) == 0)
 			old_pwd = i;
 	}
-	if (cur_pwd >= 0 && old_pwd >= 0 && !ft_update_oldpwd(data, cur_pwd, old_pwd))
+	if (cur_pwd >= 0 && old_pwd >= 0
+		&& !ft_update_oldpwd(data, cur_pwd, old_pwd))
 		exit(1);
 	if (cur_pwd >= 0 && !ft_update_pwd(data, cur_pwd))
 		exit(1);

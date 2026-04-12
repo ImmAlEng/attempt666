@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_delsubstr.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 15:19:30 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 15:21:13 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../libft.h"
 
 char	*ft_delsubstr(char *src, char *del, size_t d_len, size_t pos)
@@ -16,6 +28,7 @@ char	*ft_delsubstr(char *src, char *del, size_t d_len, size_t pos)
 	if (!n_str)
 		return (NULL);
 	ft_memmove(n_str, src, pos);
-	ft_memmove(n_str + pos, src + pos + d_len, ft_strlen(src + pos + d_len) + 1);
+	ft_memmove(n_str + pos, src + pos + d_len,
+		ft_strlen(src + pos + d_len) + 1);
 	return (n_str);
 }

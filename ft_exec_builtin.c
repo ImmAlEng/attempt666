@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_exec_builtin.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 14:12:00 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 15:11:36 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 int	ft_exec_builtin(t_data *data, int i)
 {
-	int	std_out;
-	int	std_in;
-	bool	has_redir;//maybe into cmd struct
+	int		std_out;
+	int		std_in;
+	bool	has_redir;
 
 	data->cmds[i]->exit_status = 1;
 	has_redir = (data->cmds[i]->redirs != NULL);
@@ -26,9 +38,7 @@ int	ft_exec_builtin(t_data *data, int i)
 	}
 	if (data->cmds[i]->has_heredoc)
 		ft_close(&data->cmds[i]->her_pipe[0]);
-	close(std_out);
-	close(std_in);
-	return (data->cmds[i]->exit_status);
+	return (close(std_out), close(std_in), data->cmds[i]->exit_status);
 }
 
 int	ft_run_builtin(t_data *data, int i)

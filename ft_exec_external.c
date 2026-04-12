@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_exec_external.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 15:12:45 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 15:15:52 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 static int	ft_wait_external(t_cmd *cmd)
@@ -61,7 +73,7 @@ static char	*ft_find_in_path(t_data *data, int c_i, char **dirs)
 	i = -1;
 	while (dirs[++i])
 	{
-		path = ft_get_path_exec(data, dirs, data->cmds[c_i]->cmd, i, c_i);
+		path = ft_get_path_exec(data, dirs, i, c_i);
 		if (access(path, X_OK) == 0)
 			return (ft_env_cleanup(dirs, -1), path);
 		free(path);
@@ -86,36 +98,4 @@ char	*ft_find_binary(t_data *data, int c_i)
 		return (write(2, "malloc error\n", 13),
 			ft_free_exit(data, 1, c_i), NULL);
 	return (ft_find_in_path(data, c_i, dirs));
-}
-
-char	*ft_get_path_env(t_data *data, int c_i)
-{
-	int	i;
-
-	i = -1;
-	while (data->env[++i])
-		if (ft_strncmp(data->env[i], "PATH=", 5) == 0)
-			return (data->env[i] + 5);
-	write(2, "command not found\n", 18);
-	ft_free_exit(data, 127, c_i);
-	return (NULL);
-}
-
-char	*ft_get_path_exec(t_data *data, char **dirs, char *cmd, int i, int c_i)
-{
-	char	*path;
-	int		len;
-
-	len = ft_strlen(dirs[i]) + ft_strlen(cmd) + 2;
-	path = malloc(sizeof(char) * len);
-	if (!path)
-	{
-		write(2, "malloc error\n", 13);
-		ft_env_cleanup(dirs, -1);
-		ft_free_exit(data, 1, c_i);
-	}
-	ft_strcpy(path, dirs[i]);
-	ft_strcat(path, "/");
-	ft_strcat(path, cmd);
-	return (path);
 }

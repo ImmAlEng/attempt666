@@ -1,23 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_redir_init.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 14:52:45 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 14:52:46 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
-
-t_redir	*ft_get_redir(t_dlist *node)
-{
-	if (!node || !node->content)
-		return (NULL);
-	return ((t_redir *)node->content);
-}
-
-t_redir	*ft_redir_new(void)
-{
-	t_redir	*redir;
-
-	redir = malloc(sizeof(t_redir));
-	if (!redir)
-		return (NULL);
-	ft_bzero(redir, sizeof(t_redir));
-	redir->type = R_MAX;
-	return (redir);
-}
 
 static bool	ft_strip_quotes(char **content)
 {
@@ -72,7 +65,7 @@ static bool	ft_redir_attach(t_cmd *cmd, t_dlist *op, t_dlist *target)
 		return (ft_free_redirs(&cmd->redirs), ft_dlstdelone(op, free),
 			ft_dlstdelone(target, free), false);
 	redir->quoted = (ft_strchr((char *)target->content, '\'')
-				|| ft_strchr((char *)target->content, '"'));
+			|| ft_strchr((char *)target->content, '"'));
 	if (redir->type == R_HEREDOC && redir->quoted
 		&& !ft_strip_quotes((char **)&target->content))
 		return (ft_free((void **)&redir), ft_dlstdelone(op, free),

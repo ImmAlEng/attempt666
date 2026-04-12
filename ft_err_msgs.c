@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_err_msgs.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 14:11:03 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 14:11:04 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
-// TODO:	some idea for err messages without static const globals . File needs work
+// TODO:	some idea for err messages without
+// 	static const globals . File needs work
 
 int	ft_error_messages(enum e_err error, char *str)
 {
 	static const char	*msg[ERR_MAX] = {"minishell: ambiguous redirect ",
-			"minishell: syntax error", "minishell: No such file or directory "};
+		"minishell: syntax error", "minishell: No such file or directory "};
 
 	ft_putstr_fd((char *)msg[error], 2);
 	ft_putstr_fd(str, 2);

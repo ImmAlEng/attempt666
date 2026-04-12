@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_pipeline.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/12 14:48:40 by amkhuder          #+#    #+#             */
+/*   Updated: 2026/04/12 14:48:41 by amkhuder         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 bool	ft_tokenend(unsigned char s, unsigned char e)
@@ -37,7 +49,7 @@ bool	ft_find_tokenend(char *line, size_t s, size_t *e)
 	while (line[*e])
 	{
 		if (!quote && (line[*e] == '\'' || line[*e] == '\"')
-				&& ft_match_found(&line[*e]))
+			&& ft_match_found(&line[*e]))
 			quote = line[*e];
 		else if (quote == line[*e])
 			quote = 0;
