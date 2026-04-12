@@ -1,45 +1,6 @@
 # Moved candidates: STDERR-only manual-review
 # Heuristic: STD_ERR is ❌ while STD_OUT/EXIT_CODE/CRASH/LEAKS are ✅
 
-  33:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_cd.sh:109  
   34:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_cd.sh:113  
-  38:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_cd.sh:129  
-  39:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_cd.sh:135  
-  40:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_cd.sh:139  
-  45:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_cd.sh:162  
-  3:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:17  
-  5:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:21  
-  6:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:23  
-  7:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:25  
-  8:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:27  
-  14:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:39  
-  19:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:49  
-  20:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:51  
-  21:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:53  
-  22:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:55  
-  23:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:57  
-  25:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:61  
-  26:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:63  
-  27:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:65  
-  29:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:69  
-  30:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:71  
-  31:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:73  
-  32:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:75  
-  34:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:79  
-  35:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:81  
-  36:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:83  
-  40:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:91  
-  41:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:93  
-  42:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:95  
-  43:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:97  
-  45:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:101  
-  46:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:103  
-  48:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:107  
-  49:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:109  
-  50:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:111  
-  53:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:122  
-  54:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:126  
-  76:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/2_correction.sh:166  
-  77:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/2_correction.sh:168  
-  78:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/2_correction.sh:170  
-  80:	STD_OUT: ✅  STD_ERR: ❌  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ✅ /home/immanuel/42_minishell_tester/cmds/mand/2_correction.sh:174  
+
+ 
