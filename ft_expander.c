@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_expander.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: imengels <imengels@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 14:35:26 by amkhuder          #+#    #+#             */
-/*   Updated: 2026/04/12 14:35:27 by amkhuder         ###   ########.fr       */
+/*   Updated: 2026/04/12 20:08:13 by imengels         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,8 @@ static bool	ft_expand_cmd(t_data *data, t_dlist **tokens)
 		e.start = e.str;
 		ft_is_quoted(0, &q, true);
 		while (*e.start)
-		{
 			if (!ft_expand_helper(&e, &q, data, &tok))
 				return (false);
-		}
 		next = tok->next;
 		if (!had_quotes && !*(char *)tok->content)
 		{

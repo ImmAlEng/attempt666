@@ -6,7 +6,7 @@
 /*   By: imengels <imengels@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 14:28:29 by amkhuder          #+#    #+#             */
-/*   Updated: 2026/04/12 19:47:57 by imengels         ###   ########.fr       */
+/*   Updated: 2026/04/12 20:07:14 by imengels         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,7 @@ void	ft_exec_child(t_data *data, int i, char *path)
 		signal(SIGPIPE, SIG_IGN);
 		ft_exec_builtin(data, i);
 		close(0);
-		if (data->cmds[i]->has_redir)
-			close(1);
+		close(1);
 		ft_free_exit(data, data->cmds[i]->exit_status);
 	}
 	if (!ft_handle_redirs(data->cmds[i]))

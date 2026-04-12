@@ -1,1 +1,0 @@
-declare -x LD_PRELOAD="/home/immanuel/42_minishell_tester/utils/libintercept/libintercept.so"
