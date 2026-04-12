@@ -28,20 +28,18 @@ static int	ft_exit_code(long long n)
 
 int	ft_exit(t_data *data, int cmd_i)
 {
-	char	**argv;
 	long long	n;
 
-	argv = data->cmds[cmd_i]->argv;
 	write(1, "exit\n", 5);
-	if (!argv[1])
+	if (!data->cmds[cmd_i]->argv[1])
 	{
 		data->quit = true;
 		return (g_exit_status);
 	}
-	if (!ft_exit_parse_number(argv[1], &n))
+	if (!ft_exit_parse_number(data->cmds[cmd_i]->argv[1], &n))
 		return (ft_err_with_arg("exit: ", "numeric argument required"),
 			data->quit = true, 2);
-	if (argv[2])
+	if (data->cmds[cmd_i]->argv[2])
 		return (ft_err_with_arg("exit: ", "too many arguments"), 1);
 	data->quit = true;
 	return (ft_exit_code(n));

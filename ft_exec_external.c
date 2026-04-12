@@ -46,22 +46,18 @@ int	ft_exec_external(t_data *data)
 	return (cmd->exit_status);
 }
 
-char	*ft_find_binary(t_data *data, int c_i)
+static char	*ft_invalid_cmd(t_data *data, int c_i)
+{
+	write(2, "command not found\n", 18);
+	ft_free_exit(data, 127, c_i);
+	return (NULL);
+}
+
+static char	*ft_find_in_path(t_data *data, int c_i, char **dirs)
 {
 	int		i;
-	char	*path_env;
 	char	*path;
-	char	**dirs;
 
-	if (!data || !data->cmds || !data->cmds[c_i] || !data->cmds[c_i]->cmd
-		|| !*data->cmds[c_i]->cmd)
-		return (write(2, "command not found\n", 18), exit(127), NULL);
-	if (ft_strchr(data->cmds[c_i]->cmd, '/'))
-		return (data->cmds[c_i]->cmd);
-	path_env = ft_get_path_env(data, c_i);
-	dirs = ft_split(path_env, ':');
-	if (!dirs)
-		return (write(2, "malloc error\n", 13), exit(1), NULL);
 	i = -1;
 	while (dirs[++i])
 	{
@@ -71,8 +67,25 @@ char	*ft_find_binary(t_data *data, int c_i)
 		free(path);
 	}
 	ft_env_cleanup(dirs, -1);
-	write(2, "command not found\n", 18);
-	return (ft_free_exit(data, 127, c_i), NULL);
+	return (ft_invalid_cmd(data, c_i));
+}
+
+char	*ft_find_binary(t_data *data, int c_i)
+{
+	char	*path_env;
+	char	**dirs;
+
+	if (!data || !data->cmds || !data->cmds[c_i] || !data->cmds[c_i]->cmd
+		|| !*data->cmds[c_i]->cmd)
+		return (ft_invalid_cmd(data, c_i));
+	if (ft_strchr(data->cmds[c_i]->cmd, '/'))
+		return (data->cmds[c_i]->cmd);
+	path_env = ft_get_path_env(data, c_i);
+	dirs = ft_split(path_env, ':');
+	if (!dirs)
+		return (write(2, "malloc error\n", 13),
+			ft_free_exit(data, 1, c_i), NULL);
+	return (ft_find_in_path(data, c_i, dirs));
 }
 
 char	*ft_get_path_env(t_data *data, int c_i)

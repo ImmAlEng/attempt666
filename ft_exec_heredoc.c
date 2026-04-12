@@ -33,9 +33,33 @@ static void	ft_close_inherited_fds(t_data *data, int c_i)
 	}
 }
 
-static void	ft_heredoc_child(t_data *data, int c_i, char *del, bool quoted)
+static bool	ft_heredoc_process_line(t_data *data, int c_i,
+		char *del, bool quoted)
 {
 	char	*line;
+
+	line = readline("> ");
+	if (!line)
+		return (false);
+	if (ft_strcmp(line, del) == 0)
+		return (free(line), false);
+	if (!quoted)
+	{
+		line = ft_heredoc_expand(data, line);
+		if (!line)
+		{
+			ft_free_data(&data);
+			exit(1);
+		}
+	}
+	write(data->cmds[c_i]->her_pipe[1], line, ft_strlen(line));
+	write(data->cmds[c_i]->her_pipe[1], "\n", 1);
+	free(line);
+	return (true);
+}
+
+static void	ft_heredoc_child(t_data *data, int c_i, char *del, bool quoted)
+{
 	struct sigaction	sa_quit;
 
 	ft_reset_signals();
@@ -45,29 +69,8 @@ static void	ft_heredoc_child(t_data *data, int c_i, char *del, bool quoted)
 	sa_quit.sa_flags = 0;
 	sigaction(SIGQUIT, &sa_quit, NULL);
 	ft_close_inherited_fds(data, c_i);
-	while (1)
-	{
-		line = readline("> ");
-		if (!line)
-			break ;
-		if (ft_strcmp(line, del) == 0)
-		{
-			free(line);
-			break ;
-		}
-		if (!quoted)
-		{
-			line = ft_heredoc_expand(data, line);
-			if (!line)
-			{
-				ft_free_data(&data);
-				exit(1);
-			}
-		}
-		write(data->cmds[c_i]->her_pipe[1], line, ft_strlen(line));
-		write(data->cmds[c_i]->her_pipe[1], "\n", 1);
-		free(line);
-	}
+	while (ft_heredoc_process_line(data, c_i, del, quoted))
+		;
 	ft_close(&data->cmds[c_i]->her_pipe[1]);
 	ft_close(&data->cmds[c_i]->her_pipe[0]);
 	ft_free_data(&data);
@@ -98,6 +101,23 @@ void	ft_exec_heredoc(t_data *data, int c_i)
 	return ;
 }
 
+static void	ft_set_heredoc_status(t_data *data, int c_i, int status)
+{
+	if (status == 130)
+	{
+		data->abandon = true;
+		data->cmds[c_i]->exit_status = 130;
+		g_exit_status = 130;
+		ft_close(&data->cmds[c_i]->her_pipe[0]);
+	}
+	else if (status != 0)
+	{
+		data->abandon = true;
+		data->cmds[c_i]->exit_status = 1;
+		ft_close(&data->cmds[c_i]->her_pipe[0]);
+	}
+}
+
 void	ft_redir_her(t_data *data, int c_i, char *del, bool quoted)
 {
 	pid_t	pid;
@@ -119,19 +139,7 @@ void	ft_redir_her(t_data *data, int c_i, char *del, bool quoted)
 		ft_heredoc_child(data, c_i, del, quoted);
 	ft_close(&data->cmds[c_i]->her_pipe[1]);
 	status = ft_wait_heredoc_child(pid);
-	if (status == 130)
-	{
-		data->abandon = true;
-		data->cmds[c_i]->exit_status = 130;
-		g_exit_status = 130;
-		ft_close(&data->cmds[c_i]->her_pipe[0]);
-	}
-	else if (status != 0)
-	{
-		data->abandon = true;
-		data->cmds[c_i]->exit_status = 1;
-		ft_close(&data->cmds[c_i]->her_pipe[0]);
-	}
+	ft_set_heredoc_status(data, c_i, status);
 	return ;
 }
 

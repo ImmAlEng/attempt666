@@ -9,6 +9,27 @@ minishell
 Exit Message Stdout Builtin:
 exit
 # **************************************************************************** #
+#                          COPILOT QUICK ANALYSIS                              #
+# **************************************************************************** #
+- STD_ERR fails: 401
+- EXIT_CODE fails: 63
+- LEAKS fails: 107
+- CRASH fails: 0
+
+- Valgrind files with non-zero ERROR SUMMARY: 3
+- Valgrind files with definitely lost > 0: 0
+- Valgrind files with still reachable > 0: 3
+
+- Previous run (mstest_output_2026-04-12_02.54.48) non-zero ERROR SUMMARY files: 29
+- Previous run (mstest_output_2026-04-12_02.54.48) still reachable > 0 files: 29
+- Improvement: 29 -> 3 in both metrics
+
+Remaining valgrind contexts:
+- mand/2_correction/2_valgrind_out
+- mand/10_parsing_hell/101_valgrind_out
+- mand/1_scmds/4_valgrind_out
+
+# **************************************************************************** #
   🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
   🚀                              MANDATORY_LEAKS                               🚀
   🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
