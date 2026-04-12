@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: imengels <imengels@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 14:34:37 by amkhuder          #+#    #+#             */
-/*   Updated: 2026/04/12 14:34:38 by amkhuder         ###   ########.fr       */
+/*   Updated: 2026/04/12 20:24:25 by imengels         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,12 @@
 
 static bool	ft_exit_parse_number(char *s, long long *n)
 {
-	char	*end;
+	bool	ok;
 
 	if (!s || !n)
 		return (false);
-	while (ft_isspace((unsigned char)*s))
-		s++;
-	if (!*s)
-		return (false);
-	errno = 0;
-	*n = ft_strtoll(s, &end, 10);
-	if (s == end || errno == ERANGE)
-		return (false);
-	while (ft_isspace((unsigned char)*end))
-		end++;
-	if (*end)
+	*n = ft_my_strtoll(s, &ok);
+	if (!ok)
 		return (false);
 	return (true);
 }

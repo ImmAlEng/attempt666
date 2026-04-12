@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imengels <imengels@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: imengels <imengels@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 16:38:57 by imengels          #+#    #+#             */
-/*   Updated: 2025/05/07 16:38:59 by imengels         ###   ########.fr       */
+/*   Updated: 2026/04/12 20:25:04 by imengels         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int						ft_tolower(int c);
 
 /*		FT_CONVERT		*/
 int						ft_atoi(const char *nptr);
-long long				ft_strtoll(const char *nptr, char **endptr, int base);
 char					*ft_itoa(int n);
 /*______________________________________*/
 

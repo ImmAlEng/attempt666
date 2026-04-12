@@ -251,6 +251,7 @@ bool				ft_expand_dq(t_expand *e, t_data *data, t_dlist **tok);
 
 /*		exit		*/
 int					ft_exit(t_data *data, int cmd_i);
+long long			ft_my_strtoll(const char *nptr, bool *ok);
 void				ft_free_exit(t_data *data, int e_c);
 int					ft_cleanup_runtime(t_data **data);
 

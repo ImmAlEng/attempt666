@@ -3,9 +3,6 @@ CFLAGS  = -Wall -Wextra -Werror -g -MP -MMD
 RLFLAGS = -lreadline
 
 NAME    = minishell
-VALNAME = minishell_val
-
-VAL_CFLAGS = $(CFLAGS) -O0 -g3
 
 SRCS    = ft_cmds_init.c \
 	ft_expand_dq.c \
@@ -46,17 +43,13 @@ SRCS    = ft_cmds_init.c \
 	ft_export_utils.c \
 	ft_cd.c \
 	ft_cd_utils.c \
+	ft_my_strtoll.c \
 	ft_exit.c \
 	ft_err_msgs.c \
 	ft_error_checks.c
 
 OBJS        = $(SRCS:.c=.o)
 DEPS        = $(OBJS:.o=.d)
-
-VAL_OBJS    = $(SRCS:.c=.val.o)
-VAL_DEPS    = $(VAL_OBJS:.o=.d)
-VALGRIND = valgrind --leak-check=full --show-leak-kinds=all \
-           --track-origins=yes --suppressions=readline.supp
 
 LIBFT   = libft/libft.a
 
@@ -65,23 +58,11 @@ all: $(LIBFT) $(NAME)
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(RLFLAGS) $(LIBFT) -o $(NAME)
 
-# New target: val
-val: $(LIBFT) $(VALNAME)
-
-valrun: val
-	$(VALGRIND) ./$(VALNAME)
-
-$(VALNAME): $(VAL_OBJS) $(LIBFT)
-	$(CC) $(VAL_CFLAGS) $(VAL_OBJS) $(RLFLAGS) $(LIBFT) -o $(VALNAME)
-
 $(LIBFT):
 	$(MAKE) -C libft bonus
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-
-%.val.o: %.c
-	$(CC) $(VAL_CFLAGS) -c $< -o $@
 
 clean:
 	$(MAKE) -C libft clean
@@ -89,10 +70,10 @@ clean:
 
 fclean: clean
 	$(MAKE) -C libft fclean
-	rm -f $(NAME) $(VALNAME)
+	rm -f $(NAME)
 
 re: fclean all
 
--include $(DEPS) $(VAL_DEPS)
+-include $(DEPS)
 
-.PHONY: all val valrun clean fclean re
+.PHONY: all clean fclean re
