@@ -1,0 +1,197 @@
+==461940== Memcheck, a memory error detector
+==461940== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==461940== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==461940== Command: /home/immanuel/Desktop/day1/minishell
+==461940== Parent PID: 461939
+==461940== 
+==461941== 
+==461941== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==461941== Open file descriptor 3: /tmp/tmp.NvSZcd8daq/tmp_valgrind_out
+==461941==    <inherited from parent>
+==461941== 
+==461941== Open file descriptor 2: /dev/null
+==461941==    <inherited from parent>
+==461941== 
+==461941== Open file descriptor 1: /dev/null
+==461941==    <inherited from parent>
+==461941== 
+==461941== Open file descriptor 0:
+==461941==    <inherited from parent>
+==461941== 
+==461941== 
+==461941== HEAP SUMMARY:
+==461941==     in use at exit: 4,016 bytes in 1 blocks
+==461941==   total heap usage: 72 allocs, 71 frees, 13,110 bytes allocated
+==461941== 
+==461941== LEAK SUMMARY:
+==461941==    definitely lost: 0 bytes in 0 blocks
+==461941==    indirectly lost: 0 bytes in 0 blocks
+==461941==      possibly lost: 0 bytes in 0 blocks
+==461941==    still reachable: 0 bytes in 0 blocks
+==461941==         suppressed: 4,016 bytes in 1 blocks
+==461941== 
+==461941== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--461941-- 
+--461941-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==461941== 
+==461941== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==461943== 
+==461943== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==461943== Open file descriptor 3: /tmp/tmp.NvSZcd8daq/tmp_valgrind_out
+==461943==    <inherited from parent>
+==461943== 
+==461943== Open file descriptor 2: /dev/null
+==461943==    <inherited from parent>
+==461943== 
+==461943== Open file descriptor 1: /dev/null
+==461943==    <inherited from parent>
+==461943== 
+==461943== Open file descriptor 0:
+==461943==    <inherited from parent>
+==461943== 
+==461943== 
+==461943== HEAP SUMMARY:
+==461943==     in use at exit: 4,016 bytes in 1 blocks
+==461943==   total heap usage: 119 allocs, 118 frees, 13,738 bytes allocated
+==461943== 
+==461943== LEAK SUMMARY:
+==461943==    definitely lost: 0 bytes in 0 blocks
+==461943==    indirectly lost: 0 bytes in 0 blocks
+==461943==      possibly lost: 0 bytes in 0 blocks
+==461943==    still reachable: 0 bytes in 0 blocks
+==461943==         suppressed: 4,016 bytes in 1 blocks
+==461943== 
+==461943== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--461943-- 
+--461943-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==461943== 
+==461943== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==461944== 
+==461944== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==461944== Open file descriptor 3: /tmp/tmp.NvSZcd8daq/tmp_valgrind_out
+==461944==    <inherited from parent>
+==461944== 
+==461944== Open file descriptor 2: /dev/null
+==461944==    <inherited from parent>
+==461944== 
+==461944== Open file descriptor 1: /dev/null
+==461944==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==461944==    by 0x10CAAC: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==461944==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==461944==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==461944==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==461944==    by 0x10C93E: ft_prompt (main.c:150)
+==461944==    by 0x10C9FA: main (main.c:167)
+==461944== 
+==461944== Open file descriptor 0:
+==461944==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==461944==    by 0x10CAC0: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==461944==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==461944==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==461944==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==461944==    by 0x10C93E: ft_prompt (main.c:150)
+==461944==    by 0x10C9FA: main (main.c:167)
+==461944== 
+==461944== 
+==461944== HEAP SUMMARY:
+==461944==     in use at exit: 4,016 bytes in 1 blocks
+==461944==   total heap usage: 123 allocs, 122 frees, 13,764 bytes allocated
+==461944== 
+==461944== LEAK SUMMARY:
+==461944==    definitely lost: 0 bytes in 0 blocks
+==461944==    indirectly lost: 0 bytes in 0 blocks
+==461944==      possibly lost: 0 bytes in 0 blocks
+==461944==    still reachable: 0 bytes in 0 blocks
+==461944==         suppressed: 4,016 bytes in 1 blocks
+==461944== 
+==461944== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--461944-- 
+--461944-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==461944== 
+==461944== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==461945== 
+==461945== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==461945== Open file descriptor 3: /tmp/tmp.NvSZcd8daq/tmp_valgrind_out
+==461945==    <inherited from parent>
+==461945== 
+==461945== Open file descriptor 2: /dev/null
+==461945==    <inherited from parent>
+==461945== 
+==461945== Open file descriptor 1: /dev/null
+==461945==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==461945==    by 0x10CAAC: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==461945==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==461945==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==461945==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==461945==    by 0x10C93E: ft_prompt (main.c:150)
+==461945==    by 0x10C9FA: main (main.c:167)
+==461945== 
+==461945== Open file descriptor 0:
+==461945==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==461945==    by 0x10CAC0: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==461945==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==461945==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==461945==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==461945==    by 0x10C93E: ft_prompt (main.c:150)
+==461945==    by 0x10C9FA: main (main.c:167)
+==461945== 
+==461945== 
+==461945== HEAP SUMMARY:
+==461945==     in use at exit: 4,016 bytes in 1 blocks
+==461945==   total heap usage: 165 allocs, 164 frees, 14,740 bytes allocated
+==461945== 
+==461945== LEAK SUMMARY:
+==461945==    definitely lost: 0 bytes in 0 blocks
+==461945==    indirectly lost: 0 bytes in 0 blocks
+==461945==      possibly lost: 0 bytes in 0 blocks
+==461945==    still reachable: 0 bytes in 0 blocks
+==461945==         suppressed: 4,016 bytes in 1 blocks
+==461945== 
+==461945== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--461945-- 
+--461945-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==461945== 
+==461945== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==461940== 
+==461940== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==461940== Open file descriptor 3: /tmp/tmp.NvSZcd8daq/tmp_valgrind_out
+==461940==    <inherited from parent>
+==461940== 
+==461940== Open file descriptor 2: /dev/null
+==461940==    <inherited from parent>
+==461940== 
+==461940== Open file descriptor 1: /dev/null
+==461940==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==461940==    by 0x10CAAC: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==461940==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==461940==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==461940==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==461940==    by 0x10C93E: ft_prompt (main.c:150)
+==461940==    by 0x10C9FA: main (main.c:167)
+==461940== 
+==461940== Open file descriptor 0:
+==461940==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==461940==    by 0x10CAC0: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==461940==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==461940==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==461940==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==461940==    by 0x10C93E: ft_prompt (main.c:150)
+==461940==    by 0x10C9FA: main (main.c:167)
+==461940== 
+==461940== 
+==461940== HEAP SUMMARY:
+==461940==     in use at exit: 4,016 bytes in 1 blocks
+==461940==   total heap usage: 137 allocs, 136 frees, 14,230 bytes allocated
+==461940== 
+==461940== LEAK SUMMARY:
+==461940==    definitely lost: 0 bytes in 0 blocks
+==461940==    indirectly lost: 0 bytes in 0 blocks
+==461940==      possibly lost: 0 bytes in 0 blocks
+==461940==    still reachable: 0 bytes in 0 blocks
+==461940==         suppressed: 4,016 bytes in 1 blocks
+==461940== 
+==461940== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--461940-- 
+--461940-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==461940== 
+==461940== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)

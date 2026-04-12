@@ -1,0 +1,49 @@
+==426568== Memcheck, a memory error detector
+==426568== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==426568== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==426568== Command: /home/immanuel/Desktop/day1/minishell
+==426568== Parent PID: 426567
+==426568== 
+==426568== 
+==426568== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==426568== Open file descriptor 3: /tmp/tmp.NvSZcd8daq/tmp_valgrind_out
+==426568==    <inherited from parent>
+==426568== 
+==426568== Open file descriptor 2: /dev/null
+==426568==    <inherited from parent>
+==426568== 
+==426568== Open file descriptor 1: /dev/null
+==426568==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==426568==    by 0x10CAAC: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==426568==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==426568==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==426568==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==426568==    by 0x10C93E: ft_prompt (main.c:150)
+==426568==    by 0x10C9FA: main (main.c:167)
+==426568== 
+==426568== Open file descriptor 0:
+==426568==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==426568==    by 0x10CAC0: ft_exec_redirs_only (ft_cmds_distro.c:16)
+==426568==    by 0x10CB97: ft_exec_one_cmd (ft_cmds_distro.c:34)
+==426568==    by 0x10CC30: ft_cmds_distro (ft_cmds_distro.c:48)
+==426568==    by 0x10C8D4: ft_process_prompt_line (main.c:132)
+==426568==    by 0x10C93E: ft_prompt (main.c:150)
+==426568==    by 0x10C9FA: main (main.c:167)
+==426568== 
+==426568== 
+==426568== HEAP SUMMARY:
+==426568==     in use at exit: 4,016 bytes in 1 blocks
+==426568==   total heap usage: 100 allocs, 99 frees, 13,521 bytes allocated
+==426568== 
+==426568== LEAK SUMMARY:
+==426568==    definitely lost: 0 bytes in 0 blocks
+==426568==    indirectly lost: 0 bytes in 0 blocks
+==426568==      possibly lost: 0 bytes in 0 blocks
+==426568==    still reachable: 0 bytes in 0 blocks
+==426568==         suppressed: 4,016 bytes in 1 blocks
+==426568== 
+==426568== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--426568-- 
+--426568-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==426568== 
+==426568== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
