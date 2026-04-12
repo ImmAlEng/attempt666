@@ -27,14 +27,14 @@ int	ft_exec_builtin(t_data *data, int i)
 	if (std_in == -1 || std_out == -1)
 	{
 		perror("dup");
-		ft_free_exit(data, 1, i);
+		ft_free_exit(data, 1);
 	}
 	if (ft_handle_redirs(data->cmds[i]))
 		data->cmds[i]->exit_status = ft_run_builtin(data, i);
 	if (dup2(std_out, STDOUT_FILENO) == -1 || dup2(std_in, STDIN_FILENO) == -1)
 	{
 		perror("dup2");
-		ft_free_exit(data, 1, i);
+		ft_free_exit(data, 1);
 	}
 	if (data->cmds[i]->has_heredoc)
 		ft_close(&data->cmds[i]->her_pipe[0]);

@@ -131,7 +131,7 @@ int					ft_run_builtin(t_data *data, int i);
 /*		external	*/
 int					ft_exec_external(t_data *data);
 char				*ft_find_binary(t_data *data, int c_i);
-char				*ft_get_path_env(t_data *data, int c_i);
+char				*ft_get_path_env(t_data *data);
 char				*ft_get_path_exec(t_data *data, char **dirs,
 						int d_i, int c_i);
 
@@ -250,7 +250,7 @@ bool				ft_expand_dq(t_expand *e, t_data *data, t_dlist **tok);
 
 /*		exit		*/
 int					ft_exit(t_data *data, int cmd_i);
-void				ft_free_exit(t_data *data, int e_c, int c_i);
+void				ft_free_exit(t_data *data, int e_c);
 int					ft_cleanup_runtime(t_data **data);
 
 /*		ft_match_found.c	*/

@@ -83,16 +83,18 @@ void	ft_exec_child(t_data *data, int i, char *path)
 	if (data->cmds[i]->is_builtin)
 	{
 		ft_exec_builtin(data, i);
-		ft_free_exit(data, data->cmds[i]->exit_status, i);
+		close(0);
+		close(1);
+		ft_free_exit(data, data->cmds[i]->exit_status);
 	}
 	if (!ft_handle_redirs(data->cmds[i]))
-		ft_free_exit(data, 1, i);
+		ft_free_exit(data, 1);
 	if (!data->cmds[i]->cmd)
-		ft_free_exit(data, 1, i);
+		ft_free_exit(data, 1);
 	path = ft_find_binary(data, i);
 	execve(path, data->cmds[i]->argv, data->env);
 	perror("execve");
 	if (!ft_strchr(data->cmds[i]->cmd, '/'))
 		free(path);
-	ft_free_exit(data, data->cmds[i]->exit_status, i);
+	ft_free_exit(data, data->cmds[i]->exit_status);
 }

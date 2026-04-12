@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-char	*ft_get_path_env(t_data *data, int c_i)
+char	*ft_get_path_env(t_data *data)
 {
 	int	i;
 
@@ -21,7 +21,7 @@ char	*ft_get_path_env(t_data *data, int c_i)
 		if (ft_strncmp(data->env[i], "PATH=", 5) == 0)
 			return (data->env[i] + 5);
 	write(2, "command not found\n", 18);
-	ft_free_exit(data, 127, c_i);
+	ft_free_exit(data, 127);
 	return (NULL);
 }
 
@@ -36,7 +36,7 @@ char	*ft_get_path_exec(t_data *data, char **dirs, int d_i, int c_i)
 	{
 		write(2, "malloc error\n", 13);
 		ft_env_cleanup(dirs, -1);
-		ft_free_exit(data, 1, c_i);
+		ft_free_exit(data, 1);
 	}
 	ft_strcpy(path, dirs[d_i]);
 	ft_strcat(path, "/");

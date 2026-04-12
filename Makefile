@@ -16,7 +16,6 @@ SRCS    = ft_cmds_init.c \
 	ft_ifs.c \
 	ft_is.c \
 	ft_match_found.c \
-	ft_minishell_printer.c \
 	ft_pipeline.c \
 	ft_redir_init.c \
 	ft_redir_init_utils.c \

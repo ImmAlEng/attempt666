@@ -57,9 +57,8 @@ int	ft_exit(t_data *data, int cmd_i)
 	return (ft_exit_code(n));
 }
 
-void	ft_free_exit(t_data *data, int e_c, int c_i)
+void	ft_free_exit(t_data *data, int e_c)
 {
-	(void)c_i;
 	ft_free_data(&data);
 	exit (e_c);
 }
