@@ -15,7 +15,8 @@ bool	ft_has_ambiguous_redirect(t_cmd **cmds)
 		while (rnode)
 		{
 			r = (t_redir *)rnode->content;
-			if (!r || !r->tokens || !r->tokens->content || r->tokens->next)
+			if (!r || !r->tokens || !r->tokens->content || r->tokens->next
+				|| !*((char *)r->tokens->content))
 				return (true);
 			rnode = rnode->next;
 		}

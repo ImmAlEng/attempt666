@@ -43,7 +43,8 @@ SRCS    = ft_cmds_init.c \
 	ft_cd.c \
 	ft_cd_utils.c \
 	ft_exit.c \
-	ft_err_msgs.c
+	ft_err_msgs.c \
+	ft_error_checks.c
 
 OBJS        = $(SRCS:.c=.o)
 DEPS        = $(OBJS:.o=.d)

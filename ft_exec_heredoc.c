@@ -14,6 +14,25 @@ static int	ft_wait_heredoc_child(pid_t pid)
 	return (1);
 }
 
+static void	ft_close_inherited_fds(t_data *data, int c_i)
+{
+	int	i;
+
+	i = -1;
+	while (++i < (int)data->n_cmds - 1)
+	{
+		ft_close_if(&data->cmds[i]->pipe[0]);
+		ft_close_if(&data->cmds[i]->pipe[1]);
+	}
+	i = -1;
+	while (++i < (int)data->n_cmds)
+	{
+		ft_close_if(&data->cmds[i]->her_pipe[0]);
+		if (i != c_i)
+			ft_close_if(&data->cmds[i]->her_pipe[1]);
+	}
+}
+
 static void	ft_heredoc_child(t_data *data, int c_i, char *del, bool quoted)
 {
 	char	*line;
@@ -25,6 +44,7 @@ static void	ft_heredoc_child(t_data *data, int c_i, char *del, bool quoted)
 	sigemptyset(&sa_quit.sa_mask);
 	sa_quit.sa_flags = 0;
 	sigaction(SIGQUIT, &sa_quit, NULL);
+	ft_close_inherited_fds(data, c_i);
 	while (1)
 	{
 		line = readline("> ");

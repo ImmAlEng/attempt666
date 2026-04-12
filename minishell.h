@@ -141,6 +141,7 @@ char				*ft_heredoc_expand(t_data *data, char *line);
 int					ft_error_messages(enum e_err error, char *str);
 void				ft_err_with_arg(const char *arg, const char *suffix);
 void				ft_perror_arg(const char *arg);
+bool				ft_has_ambiguous_redirect(t_cmd **cmds);
 
 /*		echo		*/
 int					ft_echo(t_cmd *cmd);

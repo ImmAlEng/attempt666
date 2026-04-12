@@ -121,6 +121,14 @@ static int	ft_process_prompt_line(t_data *data)
 		return (-1);
 	if (!ft_direct_token_pointers(data))
 		return (-1);
+	if (ft_has_ambiguous_redirect(data->cmds))
+	{
+		ft_error_messages(ERR_AMBIGOUS, "");
+		g_exit_status = 1;
+		if (ft_cleanup_runtime(&data))
+			return (0);
+		return (1);
+	}
 	g_exit_status = ft_cmds_distro(data);
 	if (ft_cleanup_runtime(&data))
 		return (0);
