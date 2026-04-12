@@ -36,6 +36,8 @@ int	ft_exec_external(t_data *data)
 		path = ft_find_binary(data, 0);
 		execve(path, cmd->argv, data->env);
 		perror("execve");
+		if (!ft_strchr(cmd->cmd, '/'))
+			free(path);
 		ft_free_exit(data, 126 + (errno == ENOENT), 0);
 	}
 	if (cmd->has_heredoc)

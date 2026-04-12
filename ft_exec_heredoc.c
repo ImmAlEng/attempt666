@@ -59,7 +59,10 @@ static void	ft_heredoc_child(t_data *data, int c_i, char *del, bool quoted)
 		{
 			line = ft_heredoc_expand(data, line);
 			if (!line)
+			{
+				ft_free_data(&data);
 				exit(1);
+			}
 		}
 		write(data->cmds[c_i]->her_pipe[1], line, ft_strlen(line));
 		write(data->cmds[c_i]->her_pipe[1], "\n", 1);
@@ -67,6 +70,7 @@ static void	ft_heredoc_child(t_data *data, int c_i, char *del, bool quoted)
 	}
 	ft_close(&data->cmds[c_i]->her_pipe[1]);
 	ft_close(&data->cmds[c_i]->her_pipe[0]);
+	ft_free_data(&data);
 	exit(0);
 }
 

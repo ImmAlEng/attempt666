@@ -49,6 +49,8 @@ static void	ft_exec_child(t_data *data, int i, char *path)
 	path = ft_find_binary(data, i);
 	execve(path, data->cmds[i]->argv, data->env);
 	perror("execve");
+	if (!ft_strchr(data->cmds[i]->cmd, '/'))
+		free(path);
 	ft_free_exit(data, data->cmds[i]->exit_status, i);
 }
 
