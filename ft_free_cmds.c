@@ -38,6 +38,10 @@ static void	ft_free_cmd_content(t_cmd **cmd)
 		ft_dlstclear(&(*cmd)->tokens, ft_free_token_content);
 	ft_close_if(&(*cmd)->fd_in);
 	ft_close_if(&(*cmd)->fd_out);
+	ft_close_if(&(*cmd)->pipe[0]);
+	ft_close_if(&(*cmd)->pipe[1]);
+	ft_close_if(&(*cmd)->her_pipe[0]);
+	ft_close_if(&(*cmd)->her_pipe[1]);
 	ft_free((void **)cmd);
 }
 

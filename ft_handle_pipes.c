@@ -13,8 +13,8 @@ bool	ft_create_pipes(t_data *data)
 			data->cmds[i]->exit_status = 1;
 			while (--i >= 0)
 			{
-				close(data->cmds[i]->pipe[0]);
-				close(data->cmds[i]->pipe[1]);
+				ft_close(&data->cmds[i]->pipe[0]);
+				ft_close(&data->cmds[i]->pipe[1]);
 			}
 			return (0);
 		}
@@ -29,8 +29,8 @@ void	ft_close_pipes(t_data *data)
 	i = -1;
 	while (++i < (int)data->n_cmds - 1)
 	{
-		close(data->cmds[i]->pipe[0]);
-		close(data->cmds[i]->pipe[1]);
+		ft_close(&data->cmds[i]->pipe[0]);
+		ft_close(&data->cmds[i]->pipe[1]);
 	}
 	return ;
 }

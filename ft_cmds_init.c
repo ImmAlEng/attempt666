@@ -22,6 +22,12 @@ t_cmd	*ft_cmd_new(void)
 	if (!cmd)
 		return (NULL);
 	ft_bzero(cmd, sizeof(t_cmd));
+	cmd->fd_in = -1;
+	cmd->fd_out = -1;
+	cmd->pipe[0] = -1;
+	cmd->pipe[1] = -1;
+	cmd->her_pipe[0] = -1;
+	cmd->her_pipe[1] = -1;
 	return (cmd);
 }
 

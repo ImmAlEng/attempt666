@@ -108,6 +108,7 @@ static int	ft_handle_syntax_error(t_data *data)
 
 static int	ft_process_prompt_line(t_data *data)
 {
+	data->abandon = false;
 	if (data->line[0] != '\0')
 		add_history(data->line);
 	if (!ft_tokenize(data))

@@ -6,7 +6,7 @@ static bool	ft_handle_heredoc_redir(t_cmd *cmd, int *i)
 	if (*i == cmd->n_heredoc)
 	{
 		if (dup2(cmd->her_pipe[0], STDIN_FILENO) == -1)
-			return (close(cmd->her_pipe[0]), 0);
+			return (ft_close(&cmd->her_pipe[0]), 0);
 	}
 	return (1);
 }
@@ -43,8 +43,8 @@ bool	ft_redir_in(t_cmd *cmd, char *target)
 	if (cmd->fd_in == -1)
 		return (perror("open"), 0);
 	if (dup2(cmd->fd_in, STDIN_FILENO))
-		return (perror("dup2"), close(cmd->fd_in), 0);
-	close(cmd->fd_in);
+		return (perror("dup2"), ft_close(&cmd->fd_in), 0);
+	ft_close(&cmd->fd_in);
 	return (1);
 }
 
@@ -54,8 +54,8 @@ bool	ft_redir_out(t_cmd *cmd, char *target)
 	if (cmd->fd_out == -1)
 		return (perror("open"), 0);
 	if (dup2(cmd->fd_out, STDOUT_FILENO) == -1)
-		return (perror("dup2"), close(cmd->fd_out), 0);
-	close(cmd->fd_out);
+		return (perror("dup2"), ft_close(&cmd->fd_out), 0);
+	ft_close(&cmd->fd_out);
 	return (1);
 }
 
@@ -65,7 +65,7 @@ bool	ft_redir_app(t_cmd *cmd, char *target)
 	if (cmd->fd_out == -1)
 		return (perror("open"), 0);
 	if (dup2(cmd->fd_out, STDOUT_FILENO) == -1)
-		return (perror("dup2"), close(cmd->fd_out), 0);
-	close(cmd->fd_out);
+		return (perror("dup2"), ft_close(&cmd->fd_out), 0);
+	ft_close(&cmd->fd_out);
 	return (1);
 }

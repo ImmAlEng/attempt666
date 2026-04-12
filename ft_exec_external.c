@@ -39,7 +39,7 @@ int	ft_exec_external(t_data *data)
 		ft_free_exit(data, 126 + (errno == ENOENT), 0);
 	}
 	if (cmd->has_heredoc)
-		close(cmd->her_pipe[0]);
+		ft_close(&cmd->her_pipe[0]);
 	cmd->exit_status = ft_wait_external(cmd);
 	return (cmd->exit_status);
 }

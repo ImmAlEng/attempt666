@@ -25,7 +25,7 @@ int	ft_exec_builtin(t_data *data, int i)
 		ft_free_exit(data, 1, i);
 	}
 	if (data->cmds[i]->has_heredoc)
-		close(data->cmds[i]->her_pipe[0]);
+		ft_close(&data->cmds[i]->her_pipe[0]);
 	close(std_out);
 	close(std_in);
 	return (data->cmds[i]->exit_status);

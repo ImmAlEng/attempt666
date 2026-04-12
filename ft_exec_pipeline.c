@@ -54,10 +54,22 @@ static void	ft_exec_child(t_data *data, int i, char *path)
 
 int	ft_run_pipeline(t_data *data, int i, int *status, char *path)
 {
+	int	j;
+
 	while (++i < (int)data->n_cmds)
 	{
 		if (data->cmds[i]->has_heredoc)
 			ft_exec_heredoc(data, i);
+		if (data->abandon)
+		{
+			ft_close_heredoc(data);
+			ft_close_pipes(data);
+			j = -1;
+			while (++j < i)
+				waitpid(data->cmds[j]->pid, NULL, 0);
+			data->cmds[data->n_cmds - 1]->exit_status = data->cmds[i]->exit_status;
+			return (0);
+		}
 		data->cmds[i]->pid = fork();
 		if (data->cmds[i]->pid == -1)
 			return (perror("fork"), data->cmds[i]->exit_status);

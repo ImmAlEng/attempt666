@@ -16,7 +16,7 @@ static int	ft_exec_redirs_only(t_cmd *cmd)
 	if (dup2(std_out, STDOUT_FILENO) == -1 || dup2(std_in, STDIN_FILENO) == -1)
 		return (perror("dup2"), close(std_out), close(std_in), 1);
 	if (cmd->has_heredoc)
-		close(cmd->her_pipe[0]);
+		ft_close(&cmd->her_pipe[0]);
 	close(std_out);
 	close(std_in);
 	return (exit_status);
@@ -28,6 +28,8 @@ static int	ft_exec_one_cmd(t_data *data)
 
 	if (data->cmds[0]->has_heredoc)
 		ft_exec_heredoc(data, 0);
+	if (data->abandon)
+		return (data->cmds[0]->exit_status);
 	if (!data->cmds[0]->cmd)
 		return (ft_exec_redirs_only(data->cmds[0]));
 	if (data->cmds[0]->is_builtin)

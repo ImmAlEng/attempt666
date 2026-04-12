@@ -1,0 +1,100 @@
+==1314488== Memcheck, a memory error detector
+==1314488== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==1314488== Using Valgrind-3.25.1 and LibVEX; rerun with -h for copyright info
+==1314488== Command: /home/immanuel/Desktop/day1/minishell
+==1314488== Parent PID: 1314487
+==1314488== 
+==1314494== 
+==1314494== FILE DESCRIPTORS: 8 open (7 inherited) at exit.
+==1314494== Open file descriptor 7:
+==1314494==    <inherited from parent>
+==1314494== 
+==1314494== Open file descriptor 6:
+==1314494==    <inherited from parent>
+==1314494== 
+==1314494== Open file descriptor 5:
+==1314494==    <inherited from parent>
+==1314494== 
+==1314494== Open file descriptor 4:
+==1314494==    <inherited from parent>
+==1314494== 
+==1314494== Open file descriptor 3:
+==1314494==    <inherited from parent>
+==1314494== 
+==1314494== Open file descriptor 2: /dev/null
+==1314494==    <inherited from parent>
+==1314494== 
+==1314494== Open file descriptor 1: /tmp/tmp.iZYp4W6BhV/echo
+==1314494==    at 0x49FE7AB: dup2 (dup2.c:29)
+==1314494==    by 0x4006493: ft_redir_out (ft_handle_redirs.c:56)
+==1314494==    by 0x40062E1: ft_handle_redirs (ft_handle_redirs.c:27)
+==1314494==    by 0x400553B: ft_exec_external (ft_exec_external.c:34)
+==1314494==    by 0x4004D04: ft_exec_one_cmd (ft_cmds_distro.c:38)
+==1314494==    by 0x4004D66: ft_cmds_distro (ft_cmds_distro.c:48)
+==1314494==    by 0x40049E7: ft_process_prompt_line (main.c:124)
+==1314494==    by 0x4004A51: ft_prompt (main.c:142)
+==1314494==    by 0x4004B1C: main (main.c:159)
+==1314494== 
+==1314494== Open file descriptor 0:
+==1314494==    <inherited from parent>
+==1314494== 
+==1314494== 
+==1314494== HEAP SUMMARY:
+==1314494==     in use at exit: 4,016 bytes in 1 blocks
+==1314494==   total heap usage: 90 allocs, 89 frees, 11,289 bytes allocated
+==1314494== 
+==1314494== LEAK SUMMARY:
+==1314494==    definitely lost: 0 bytes in 0 blocks
+==1314494==    indirectly lost: 0 bytes in 0 blocks
+==1314494==      possibly lost: 0 bytes in 0 blocks
+==1314494==    still reachable: 0 bytes in 0 blocks
+==1314494==         suppressed: 4,016 bytes in 1 blocks
+==1314494== 
+==1314494== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--1314494-- 
+--1314494-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==1314494== 
+==1314494== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+==1314488== 
+==1314488== FILE DESCRIPTORS: 8 open (8 inherited) at exit.
+==1314488== Open file descriptor 7:
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== Open file descriptor 6:
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== Open file descriptor 5:
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== Open file descriptor 4:
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== Open file descriptor 3:
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== Open file descriptor 2: /dev/null
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== Open file descriptor 1: /dev/null
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== Open file descriptor 0:
+==1314488==    <inherited from parent>
+==1314488== 
+==1314488== 
+==1314488== HEAP SUMMARY:
+==1314488==     in use at exit: 4,016 bytes in 1 blocks
+==1314488==   total heap usage: 64 allocs, 63 frees, 10,687 bytes allocated
+==1314488== 
+==1314488== LEAK SUMMARY:
+==1314488==    definitely lost: 0 bytes in 0 blocks
+==1314488==    indirectly lost: 0 bytes in 0 blocks
+==1314488==      possibly lost: 0 bytes in 0 blocks
+==1314488==    still reachable: 0 bytes in 0 blocks
+==1314488==         suppressed: 4,016 bytes in 1 blocks
+==1314488== 
+==1314488== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
+--1314488-- 
+--1314488-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==1314488== 
+==1314488== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 1 from 1)
