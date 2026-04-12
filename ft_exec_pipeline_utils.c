@@ -85,7 +85,8 @@ void	ft_exec_child(t_data *data, int i, char *path)
 		signal(SIGPIPE, SIG_IGN);
 		ft_exec_builtin(data, i);
 		close(0);
-		close(1);
+		if (data->cmds[i]->has_redir)
+			close(1);
 		ft_free_exit(data, data->cmds[i]->exit_status);
 	}
 	if (!ft_handle_redirs(data->cmds[i]))

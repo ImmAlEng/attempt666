@@ -82,6 +82,7 @@ typedef struct s_cmd
 	int				her_pipe[2];
 	int				n_heredoc;
 	bool			has_heredoc;
+	bool			has_redir;
 	bool			is_builtin;
 	bool			needs_fork;
 	int				exit_status;

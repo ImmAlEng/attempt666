@@ -19,6 +19,10 @@ void	ft_cmds_check(t_data *data)
 	i = -1;
 	while (++i < (int)data->n_cmds)
 	{
+		if (data->cmds[i]->redirs)
+			data->cmds[i]->has_redir = true;
+		else
+			data->cmds[i]->has_redir = false;
 		ft_has_heredoc(data->cmds[i]);
 		if (ft_is_builtin(data->cmds[i]))
 		{
