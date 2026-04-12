@@ -1,5 +1,0 @@
-minishell>cat << "eof"
-> $USER
-> eof
-$USER
-minishell>

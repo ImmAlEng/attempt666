@@ -1,6 +1,0 @@
-$USER
-$USER
-immanuel
-hello world
-line one
-line two

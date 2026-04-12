@@ -93,7 +93,7 @@ A structured list of tasks and progress tracking for the Minishell project (42 s
 ## 🧪 TESTSUITE
 
 - [x] Create test scripts for builtins.
-- [ ] Create tests for syntax errors.
+- [x] Create tests for syntax errors.
 - [x] Create tests for redirections and pipes.
 - [x] Create tests for variable expansion.
 - [x] Compare minishell output and exit codes with bash.

@@ -11,7 +11,7 @@ static bool	ft_exit_parse_number(char *s, long long *n)
 	if (!*s)
 		return (false);
 	errno = 0;
-	*n = strtoll(s, &end, 10);
+	*n = ft_strtoll(s, &end, 10);
 	if (s == end || errno == ERANGE)
 		return (false);
 	while (ft_isspace((unsigned char)*end))

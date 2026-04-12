@@ -81,6 +81,7 @@ int						ft_tolower(int c);
 
 /*		FT_CONVERT		*/
 int						ft_atoi(const char *nptr);
+long long				ft_strtoll(const char *nptr, char **endptr, int base);
 char					*ft_itoa(int n);
 /*______________________________________*/
 

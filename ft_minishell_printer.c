@@ -1,5 +1,12 @@
 #include "minishell.h"
 
+static void	ft_dbg_put(const char *s)
+{
+	if (!s)
+		return ;
+	write(1, s, ft_strlen((char *)s));
+}
+
 /* ---------- small enum printers ---------- */
 
 static const char	*ft_redir_type_str(enum e_redir t)
@@ -41,7 +48,7 @@ static void	ft_print_str_arr(const char *label, char **arr)
 	printf("%s: [", label);
 	if (!arr)
 	{
-		printf("NULL]\n");
+		ft_dbg_put("NULL]\n");
 		return ;
 	}
 	i = 0;
@@ -61,15 +68,15 @@ void	ft_print_ifs(t_ifs *ifs)
 {
 	if (!ifs)
 	{
-		printf("t_ifs: NULL\n");
+		ft_dbg_put("t_ifs: NULL\n");
 		return ;
 	}
-	printf("t_ifs {\n");
+	ft_dbg_put("t_ifs {\n");
 	printf("  lead_sep: %s\n", ifs->lead_sep ? "true" : "false");
 	printf("  trail_sep: %s\n", ifs->trail_sep ? "true" : "false");
 	printf("  ");
 	ft_print_str_dlist("fields", ifs->fields);
-	printf("}\n");
+	ft_dbg_put("}\n");
 }
 
 void	ft_print_redir(t_redir *r)
@@ -78,10 +85,10 @@ void	ft_print_redir(t_redir *r)
 
 	if (!r)
 	{
-		printf("t_redir: NULL\n");
+		ft_dbg_put("t_redir: NULL\n");
 		return ;
 	}
-	printf("t_redir {\n");
+	ft_dbg_put("t_redir {\n");
 	printf("  type: %s\n", ft_redir_type_str(r->type));
 	printf("  target: %s\n", r->target ? r->target : "(null)");
 	printf("  quoted: %s\n", r->quoted ? "true" : "false");
@@ -94,8 +101,8 @@ void	ft_print_redir(t_redir *r)
 			printf(", ");
 		tok = tok->next;
 	}
-	printf("]\n");
-	printf("}\n");
+	ft_dbg_put("]\n");
+	ft_dbg_put("}\n");
 }
 
 void	ft_print_cmd(t_cmd *cmd, size_t idx)
@@ -114,7 +121,7 @@ void	ft_print_cmd(t_cmd *cmd, size_t idx)
 	ft_print_str_arr("argv", cmd->argv);
 	printf("  ");
 	ft_print_str_dlist("tokens", cmd->tokens);
-	printf("  redirs:\n");
+	ft_dbg_put("  redirs:\n");
 	rnode = cmd->redirs;
 	ridx = 0;
 	while (rnode)
@@ -125,8 +132,8 @@ void	ft_print_cmd(t_cmd *cmd, size_t idx)
 		ridx++;
 	}
 	if (!cmd->redirs)
-		printf("    (none)\n");
-	printf("}\n");
+		ft_dbg_put("    (none)\n");
+	ft_dbg_put("}\n");
 }
 
 void	ft_print_data(t_data *data)
@@ -135,17 +142,17 @@ void	ft_print_data(t_data *data)
 
 	if (!data)
 	{
-		printf("t_data: NULL\n");
+		ft_dbg_put("t_data: NULL\n");
 		return ;
 	}
-	printf("t_data {\n");
+	ft_dbg_put("t_data {\n");
 	printf("  line: %s\n", data->line ? data->line : "(null)");
 	printf("  ");
 	ft_print_str_dlist("pipeline", data->pipeline);
 	printf("  n_cmds: %zu\n", data->n_cmds);
-	printf("  cmds:\n");
+	ft_dbg_put("  cmds:\n");
 	if (!data->cmds)
-		printf("    (null)\n");
+		ft_dbg_put("    (null)\n");
 	else
 	{
 		i = 0;
@@ -155,7 +162,7 @@ void	ft_print_data(t_data *data)
 			i++;
 		}
 		if (i == 0)
-			printf("    (empty)\n");
+			ft_dbg_put("    (empty)\n");
 	}
-	printf("}\n");
+	ft_dbg_put("}\n");
 }

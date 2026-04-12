@@ -1,0 +1,45 @@
+# Moved candidates: only LEAKS is ❌
+# Heuristic: STD_OUT/STD_ERR/EXIT_CODE/CRASH are ✅ and only LEAKS is ❌
+
+  3:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/10_parsing_hell.sh:10  
+  4:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/10_parsing_hell.sh:14  
+  17:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/10_parsing_hell.sh:54  
+  18:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/10_parsing_hell.sh:58  
+  19:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/10_parsing_hell.sh:62  
+  54:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/10_parsing_hell.sh:159  
+  57:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/10_parsing_hell.sh:167  
+  2:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/11_expansion.sh:7  
+  12:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_cd.sh:48  
+  1:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_env.sh:5  
+  2:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_env.sh:7  
+  3:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_env.sh:9  
+  4:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_env.sh:11  
+  1:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:5  
+  2:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:11  
+  51:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:113  
+  52:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:117  
+  55:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:130  
+  56:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_builtins_export.sh:134  
+  3:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:8  
+  5:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:12  
+  11:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:24  
+  12:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:26  
+  13:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:28  
+  14:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:30  
+  18:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:38  
+  21:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:44  
+  36:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:144  
+  37:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:148  
+  41:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:168  
+  42:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_pipelines.sh:173  
+  11:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_redirs.sh:24  
+  89:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_redirs.sh:248  
+  91:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_redirs.sh:254  
+  92:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_redirs.sh:257  
+  94:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_redirs.sh:263  
+  96:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/1_redirs.sh:271  
+  69:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/2_correction.sh:147  
+  6:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/9_go_wild.sh:18  
+  7:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/9_go_wild.sh:22  
+  10:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/9_go_wild.sh:30  
+  11:	STD_OUT: ✅  STD_ERR: ✅  EXIT_CODE: ✅  CRASH: ✅  LEAKS: ❌ /home/immanuel/42_minishell_tester/cmds/mand/9_go_wild.sh:37  
