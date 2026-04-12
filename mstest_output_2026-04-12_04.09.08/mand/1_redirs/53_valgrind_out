@@ -1,0 +1,123 @@
+==399412== Memcheck, a memory error detector
+==399412== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==399412== Using Valgrind-3.19.0 and LibVEX; rerun with -h for copyright info
+==399412== Command: /home/immanuel/Desktop/day1/minishell
+==399412== Parent PID: 399411
+==399412== 
+==399414== 
+==399414== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==399414== Open file descriptor 3: /tmp/tmp.foZIbCKyXp/tmp_valgrind_out
+==399414==    <inherited from parent>
+==399414== 
+==399414== Open file descriptor 2: /dev/null
+==399414==    <inherited from parent>
+==399414== 
+==399414== Open file descriptor 1: /dev/null
+==399414==    <inherited from parent>
+==399414== 
+==399414== Open file descriptor 0:
+==399414==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==399414==    by 0x10E03A: ft_handle_pipes (ft_handle_pipes.c:42)
+==399414==    by 0x10DA02: ft_exec_child (ft_exec_pipeline.c:39)
+==399414==    by 0x10DD2F: ft_run_pipeline (ft_exec_pipeline.c:79)
+==399414==    by 0x10D97E: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==399414==    by 0x10CC12: ft_cmds_distro (ft_cmds_distro.c:47)
+==399414==    by 0x10C8C4: ft_process_prompt_line (main.c:132)
+==399414==    by 0x10C92E: ft_prompt (main.c:150)
+==399414==    by 0x10C9EA: main (main.c:167)
+==399414== 
+==399414== 
+==399414== HEAP SUMMARY:
+==399414==     in use at exit: 4,016 bytes in 1 blocks
+==399414==   total heap usage: 77 allocs, 76 frees, 12,899 bytes allocated
+==399414== 
+==399414== LEAK SUMMARY:
+==399414==    definitely lost: 0 bytes in 0 blocks
+==399414==    indirectly lost: 0 bytes in 0 blocks
+==399414==      possibly lost: 0 bytes in 0 blocks
+==399414==    still reachable: 0 bytes in 0 blocks
+==399414==         suppressed: 4,016 bytes in 1 blocks
+==399414== 
+==399414== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--399414-- 
+--399414-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==399414== 
+==399414== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==399413== 
+==399413== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==399413== Open file descriptor 3: /tmp/tmp.foZIbCKyXp/tmp_valgrind_out
+==399413==    <inherited from parent>
+==399413== 
+==399413== Open file descriptor 2: /dev/null
+==399413==    <inherited from parent>
+==399413== 
+==399413== Open file descriptor 1:
+==399413==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==399413==    by 0x10D001: ft_exec_builtin (ft_exec_builtin.c:22)
+==399413==    by 0x10DA33: ft_exec_child (ft_exec_pipeline.c:42)
+==399413==    by 0x10DD2F: ft_run_pipeline (ft_exec_pipeline.c:79)
+==399413==    by 0x10D97E: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==399413==    by 0x10CC12: ft_cmds_distro (ft_cmds_distro.c:47)
+==399413==    by 0x10C8C4: ft_process_prompt_line (main.c:132)
+==399413==    by 0x10C92E: ft_prompt (main.c:150)
+==399413==    by 0x10C9EA: main (main.c:167)
+==399413== 
+==399413== Open file descriptor 0:
+==399413==    at 0x49BCA97: dup2 (syscall-template.S:120)
+==399413==    by 0x10D015: ft_exec_builtin (ft_exec_builtin.c:22)
+==399413==    by 0x10DA33: ft_exec_child (ft_exec_pipeline.c:42)
+==399413==    by 0x10DD2F: ft_run_pipeline (ft_exec_pipeline.c:79)
+==399413==    by 0x10D97E: ft_exec_pipeline (ft_exec_pipeline.c:27)
+==399413==    by 0x10CC12: ft_cmds_distro (ft_cmds_distro.c:47)
+==399413==    by 0x10C8C4: ft_process_prompt_line (main.c:132)
+==399413==    by 0x10C92E: ft_prompt (main.c:150)
+==399413==    by 0x10C9EA: main (main.c:167)
+==399413== 
+==399413== 
+==399413== HEAP SUMMARY:
+==399413==     in use at exit: 4,016 bytes in 1 blocks
+==399413==   total heap usage: 77 allocs, 76 frees, 12,899 bytes allocated
+==399413== 
+==399413== LEAK SUMMARY:
+==399413==    definitely lost: 0 bytes in 0 blocks
+==399413==    indirectly lost: 0 bytes in 0 blocks
+==399413==      possibly lost: 0 bytes in 0 blocks
+==399413==    still reachable: 0 bytes in 0 blocks
+==399413==         suppressed: 4,016 bytes in 1 blocks
+==399413== 
+==399413== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--399413-- 
+--399413-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==399413== 
+==399413== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+==399412== 
+==399412== FILE DESCRIPTORS: 4 open (3 std) at exit.
+==399412== Open file descriptor 3: /tmp/tmp.foZIbCKyXp/tmp_valgrind_out
+==399412==    <inherited from parent>
+==399412== 
+==399412== Open file descriptor 2: /dev/null
+==399412==    <inherited from parent>
+==399412== 
+==399412== Open file descriptor 1: /dev/null
+==399412==    <inherited from parent>
+==399412== 
+==399412== Open file descriptor 0:
+==399412==    <inherited from parent>
+==399412== 
+==399412== 
+==399412== HEAP SUMMARY:
+==399412==     in use at exit: 4,016 bytes in 1 blocks
+==399412==   total heap usage: 78 allocs, 77 frees, 13,019 bytes allocated
+==399412== 
+==399412== LEAK SUMMARY:
+==399412==    definitely lost: 0 bytes in 0 blocks
+==399412==    indirectly lost: 0 bytes in 0 blocks
+==399412==      possibly lost: 0 bytes in 0 blocks
+==399412==    still reachable: 0 bytes in 0 blocks
+==399412==         suppressed: 4,016 bytes in 1 blocks
+==399412== 
+==399412== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
+--399412-- 
+--399412-- used_suppression:      1 libreadline /home/immanuel/42_minishell_tester/utils/minishell.supp:2 suppressed: 4,016 bytes in 1 blocks
+==399412== 
+==399412== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 1 from 1)
