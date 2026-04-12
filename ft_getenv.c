@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getenv.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amkhuder <amkhuder@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: imengels <imengels@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/12 14:45:48 by amkhuder          #+#    #+#             */
-/*   Updated: 2026/04/12 14:45:49 by amkhuder         ###   ########.fr       */
+/*   Updated: 2026/04/12 16:36:30 by imengels         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ bool	ft_should_expand_dollar(char *dollar)
 		return (false);
 	if (dollar[1] == '?')
 		return (true);
-	return (ft_isalpha((unsigned char)dollar[1]));
+	return (ft_isalpha((unsigned char)dollar[1]) || dollar[1] == '_');
 }
 
 char	*ft_getenv(char *name, char **env)
